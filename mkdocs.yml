@@ -1,0 +1,6 @@
+site_name: My Guide
+theme:
+  name: material
+nav:
+  - Inicio: index.md
+

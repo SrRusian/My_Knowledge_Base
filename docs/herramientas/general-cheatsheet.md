@@ -1,0 +1,15 @@
+# 3\. COMANDOS BASICOS
+
+- _passwd_ (Crear nueva contraseña)
+- _ls_ (Listar o mostrar documentos en carpeta actual)
+- _man_ (Muestra un manual)
+- _pwd_ (Mostrar directorio actual)
+- _cd_ (Cambiar entre carpetas)
+- _mkdir_ (Crear directorio)
+- _rmdir_ (Remover directorio)
+- _cat_ (Visualizar, unir y crear archivos)
+- _nano_ (Editar archivos)
+- _ifconfig_ (Mostrar información de red)
+- _updatedb_ (Crea base de datos sobre archivos en el sistema)
+- _locate_ (Ubicar dirección de documento o carpeta registrada en la BD(updatedb))
+- _uname_ (Mostrar versión kali actual)
