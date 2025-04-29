@@ -90,5 +90,6 @@ EJERCICIO EXPLORACION HERRAMIENTA ARMITAGE
 17. De nuevo en Armitage abrimos el documento de antes (reverse_tcp), elegimos el puerto 9090, Output multi/handler y Launch
 18. Ahora ejecutamos el virus en la maquina windows
 19. Y ahora el Logo de la maquina windows habrá cambiado al igual de la nueva consola
+![IMAGEN DEL LOGO DE EJEMPLO](../assets/image53.png)
 20. Y tendremos una nueva opción llamada **Meterpreter 1** al dar clic derecho en la maquina
 21. De los cuales podremos usar para Explorar Archivos en la máquina, abrir su Shell de comandos, tomar capturas de pantalla, abrir su webcam, o podemos observar las pulsaciones de tecla(Esta última va a tardar un poco en iniciar)

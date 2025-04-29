@@ -27,6 +27,7 @@ nav:
   - Laboratorio:
       - NMAP: laboratorio/nmap-lab.md
       - EtterCap: laboratorio/ettercap-lab.md
+      - WireShark: laboratorio/wireshark-lab.md
       - Metasploit: laboratorio/metasploit-lab.md
       - Metasploitable VM Setup: laboratorio/metasploitableVM-setup.md
       - Nikto en Metasploitable VM: laboratorio/nikto-metasploitable.md
@@ -37,4 +38,6 @@ nav:
       - WPScan: laboratorio/wpscan-lab.md
       
 site_url: https://emm4nuelcm.github.io/my-knowledge-base/
+extra_css:
+  - assets/extra.css
 

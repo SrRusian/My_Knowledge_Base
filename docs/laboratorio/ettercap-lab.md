@@ -1,7 +1,9 @@
 PRACTICA ETTERCAP MAN IN THE MIDDLE
 
 1. En la maquina Windows ejecutaremos **_ipconfig_** para obtener la Default Gateway
+![COMANDO IPCONFIG](../assets/image44.png)
 2. Y posteriormente ejecutamos **_arp -a_** para obtener la Physical Addres/MAC de esta misma ip antes deseada
+![RESULTADO CON DIRECCION MAC](../assets/image45.png)
 3. En Kali abrimos una terminal y ejecutamos **_ifconfig_** para obtener nuestra MAC la cual está marcada como **ether cc:47:40:67:34:07**
 4. Abrimos en Kali la aplicación ettercap y en **Aceptar/Iniciar** arriba a la derecha para ejecutarla
 5. Escaneamos los hosts en la opción superior izquierda (**SCAN FOR HOSTS**)
@@ -12,9 +14,11 @@ PRACTICA ETTERCAP MAN IN THE MIDDLE
 10. Marcamos solo para esta práctica la opción **ONLY POISON ONE-WAY** y **OK**
 11. Verificamos el falso ARP enviado a la maquina objetivo Windows y en la CMD ejecutamos de nuevo **arp -a**
 12. Veremos como ahora la mayoría de las direcciones físicas están sustituidas por la MAC de nuestra maquina atacante Kali, pero la importante es la puerta de enlace 192.168.0.1
+![RESULTADO DEL COMANDO ANTERIOR](../assets/image46.png)
 13. Comprobado esto nos iremos a Wireshark en nuestra maquina Kali y comenzamos a capturar paquetes
 14. Nos vamos a la maquina Windows víctima, abrimos el navegador y simplemente nos vamos a [www.google.com](http://www.google.com)
 15. En Wireshark aplicamos el filtro **ip.src==&lt;ip objetivo&gt;**
+![ENTRADA PARA APLICAR FILTROS EN WIRESHARK](../assets/image47.png)
 16. Y de esta forma podremos ver las Query o paquetes enviados desde la maquina victima Windows.
 
 
@@ -27,18 +31,21 @@ PRACTICA ETTERCAP DNS SPOOFING
 
 1. Abrimos el archive index.html con: **_leafpad index.html_**
 2. Borramos el contenido completo y haremos una página html muy sencilla para esta prueba y la guardamos
+![CONTENIDO FINAL DEL INDEX](../assets/image48.png)
 3. Para que esto funcione debemos hacer unas modificaciones antes a los 2 archivos de ettercap pues será esta la aplicación a usar en esta prueba, los dos archivos son **etter.conf** y **etter.dns**, para esto los tenemos que localizar con **_locate etter.conf_** (si no te aparece nada recuerda ejecutar **_updatedb_** para actualizar la base de datos de los documentos en la máquina, pues aquí se guardan las ubicaciones de todos los documentos de esta)
 4. Ya mostrada la ubicación del documento lo abriremos:
 
 **_leafpad /etc/ettercap/etter.conf_**
 
 1. Estos 2 valores debemos marcarlos en 0 y guardar (**uid y gid**)
+![CORRECION DE VALORES DEL CONF](../assets/image49.png)
 
 
 1. Ahora localizamos el archivo **etter.dns** y lo abrimos con leafpad, igual que el anterior.
 2. Y en la última línea del documento para esta práctica agregaremos lo siguiente y lo guardaremos:
 
 (En esta práctica solamente la línea: [**_www.google.com_**](http://www.google.com) **_A (IP Maquina Kali)_**)
+![RESULTADO DE LA CONFIGURACION DEL .DNS](../assets/image50.png)
 
 1. Levantamos el servidor apache para que se puedan conectar a nuestra ip y muestre nuestro documento **index.html** antes modificado:
 

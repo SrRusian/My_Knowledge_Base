@@ -6,6 +6,7 @@ EJERCICIO TRANSFERENCIA DE ARCHIVOS
 4. Guardamos los cambios en Share y veremos que nos da una dirección o ruta de la carpeta compartida.
 
 **Dirección carpeta Windows:**
+![EJEMPLO DE DIRECCION DE CARPETA](../assets/image52.png)
 
 1. Ahora nos iremos a la maquina Kali y abrimos la terminal para instalar los servicios básicos de internet: **_apt-get install cifs-utils_**
 2. Ahora crearemos otra carpeta llamada **winmount** en nuestro escritorio en Kali

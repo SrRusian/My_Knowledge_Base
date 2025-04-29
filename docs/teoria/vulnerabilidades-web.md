@@ -23,6 +23,7 @@ Esto ocurre cuando el código desarrollado no se implementa correctamente en el 
 Incluso después de que una aplicación web haya sido desarrollada e implementada con éxito, seguirá siendo vulnerable si no se aplican correctamente las actualizaciones de seguridad o si se introducen nuevos errores durante el mantenimiento. Por ejemplo, si una actualización de software no se instala correctamente o introduce nuevas vulnerabilidades, la seguridad de la aplicación puede verse comprometida.
 
 **OWASP TOP 10**
+![OWASP TOP 10 2021](../assets/image56.png)
 
 - **Broken Access Control (Control de acceso roto):** Se refiere a la incapacidad de una aplicación para aplicar restricciones de acceso adecuadas, lo que permite a los usuarios no autorizados acceder a recursos protegidos o realizar acciones que no deberían poder realizar.
 - **Cryptographic Failures (Fallos criptográficos)**: Esta categoría aborda los errores en la implementación de la criptografía, incluidos el uso de algoritmos débiles o inseguros, el almacenamiento inadecuado de claves criptográficas y la falta de protección adecuada para datos sensibles. Los fallos criptográficos pueden conducir a la exposición de datos confidenciales, como contraseñas o información financiera, y comprometer la integridad y la autenticidad de los datos transmitidos o almacenados.
@@ -46,7 +47,10 @@ Los datos hostiles del atacante engañan al interprete para que ejecute comandos
 
 Cualquier aplicación Web que dependa del uso de un intérprete tiene el potencial de ser víctima de este tipo de fallo.
 
-EJEMPLO (Búsqueda por ID)  
+EJEMPLO (Búsqueda por ID)
+![EJEMPLO DE BUSQUEDA](../assets/image57.png)
+
+![RESULTADO DETRAS DEL BOTON DE BUSCAR](../assets/image58.png)
 
 ¿COMO PROTEGERSE?
 
@@ -60,6 +64,8 @@ EJEMPLO (Búsqueda por ID)
 Las aplicaciones pueden filtrar involuntariamente información sobre su configuración, funcionamiento interno, o violar la privacidad a través de una variedad de problemas de aplicación para luego los atacantes utilizar esta debilidad para robar datos sensibles o llevar a cabo ataques más graves.
 
 Los algoritmos criptográficos débiles son susceptibles de ataques y revelan datos sensibles.
+![IMAGEN DE EJEMPLO 1](../assets/image59.png)
+![IMAGEN DE EJEMPLO 2](../assets/image60.png)
 
 ¿COMO PROTEGERSE?
 
@@ -80,6 +86,7 @@ Un ataque de XML External Entity (XXE) es una vulnerabilidad de seguridad que af
 Los datos **XML** (Extensible Markup Language) son un formato de datos que se utiliza para estructurar y organizar la información de manera jerárquica mediante etiquetas que describen el contenido de los datos. XML es un lenguaje de marcado similar a HTML, pero está diseñado para ser más flexible y extensible.
 
 En XML, los datos se organizan en elementos, que están delimitados por etiquetas de apertura y cierre. Cada elemento puede contener texto, otros elementos o atributos que describen características específicas del elemento. Por ejemplo:
+![EJEMPLO DE ESTRUCTURA XML](../assets/image61.png)
 
 En este ejemplo, &lt;libro&gt;, &lt;titulo&gt;, &lt;autor&gt; y &lt;publicación&gt; son elementos, y el texto dentro de las etiquetas representa los datos asociados a cada elemento.
 
@@ -115,6 +122,7 @@ Se considera una mala configuración de seguridad cuando:
 - No se siguen los requisitos de seguridad en los servidores
 - No se aplican las mejores practicas
 - Favorecer la practicidad sobre la seguridad
+![EJEMPLO DE MALA CONFIGURACION](../assets/image62.png)
 
 ¿COMO PROTEGERSE?
 
@@ -135,10 +143,13 @@ Es fundamental para los desarrolladores implementar medidas de seguridad, como l
   - Los ataques reflejados llegan a la víctima por otra vía (a través de un mensaje de correo electrónico o rebotados desde otro servidor)
   - El ataque suele adoptar la forma de una etiqueta HTML (a menudo el hipervínculo) que contiene secuencias de comandos maliciosas (a menudo JavaScript)
   - Suele realizarse cuando existe una ubicación en la que se puede introducir contenido arbitrario (como un mensaje de correo electrónico o un campo de texto libre, por ejemplo) y a continuación, el objetivo del ataque hace referencia a él.
+  ![IMAGEN DE EJEMPLO DE XSS REFLEJADO](../assets/image63.png)
+  
 - **Almacenado(persistente)**
   - El código inyectado se almacena de forma permanente en la aplicación web, como en una base de datos, un foro de mensajes, un registro de comentarios o un perfil de usuario.
   - Cuando un usuario accede a la página comprometida, el script malicioso se ejecuta automáticamente, lo que puede tener consecuencias graves, como robo de sesiones, modificación de contenido o redirección a sitios maliciosos.
   - Este tipo de ataque puede ser más peligroso que los ataques reflejados, ya que el código malicioso permanece activo y puede afectar a múltiples usuarios durante un período prolongado de tiempo.
+  ![IMAGEN DE EJEMPLO DE XSS PERSISTENTE](../assets/image64.png)
 
 ¿COMO PROTEGERSE?
 
@@ -155,6 +166,7 @@ Es fundamental para los desarrolladores implementar medidas de seguridad, como l
 Algunas de las aplicaciones guardan datos del lado del cliente utilizando objetos serializados, estas aplicaciones confían en el cliente para mantener el estado, pero permitirán la manipulación de datos serializados, ejemplo:
 
 Alteración de los objetos serializados en las cookies para escalada de privilegios
+![COMPARACION DE COOKIES](../assets/image65.png)
 
 ¿COMO PROTEGERSE?
 

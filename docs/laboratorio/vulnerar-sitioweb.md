@@ -7,6 +7,7 @@ EJEMPLO: <https://www.burobd.org/network-and-linkages.php?id=8>
 
 - Y para saber si el sitio es vulnerable al final de la URL agregamos ‘
 - Si es vulnerable nos debe mandar un error relacionado a “Error SQL Syntax”
+![MENSAJE DE ERROR RECIBIDO](../assets/image66.png)
 - Si es así copiamos el enlace original de la página y en la terminal ejecutamos:
 
 **_sqlmap -u &lt;URL&gt; --dbs_**
@@ -61,3 +62,6 @@ navegador>Ajustes/Preferencias>Proxy>Settings>Manual proxy
 - Comenzaremos a buscar vulnerabilidades como en la PRACTICA 1 y 2 para tratar de obtener la BD
 
 EXTRAS (Pruebas a otras Paginas)
+![RESULTADO DE LA PRUEBA A UNA PAGINA VULNERABLE](../assets/image67.png)
+
+![OBTENCION DE DATOS DE LA PAGINA VULNERABLE](../assets/image68.png)

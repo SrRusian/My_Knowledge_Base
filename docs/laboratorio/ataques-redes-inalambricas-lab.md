@@ -23,6 +23,7 @@ EJERCICIO (FUERZA BRUTA)
 1. Ahora ocupamos un **Handshake** de la red por lo que en otra terminal ejecutaremos: aireplay-ng -0 &lt;paquetesAEnviar&gt; -a &lt;BSSID&gt; -c &lt;STATION&gt; wlan0mon  
     **aireplay-ng -0 10 -a 5C:E9:31:01:36:DF -c D8:1F:12:B4:41:A9 wlan0mon**
 2. Y ahora en la anterior terminal deberíamos tener el HANDSHAKE en la parte superior derecha. EJEMPLO:
+![RESULTADO DEL HANDSHAKE CORRECTO](../assets/image55.png)
 3. Y ahora podemos detener este monitoreo y cerrar la otra terminal
 4. Y ahora intentaremos entrar en la red: aircrack-ng -w &lt;ubicacionListaPalabras&gt; -b &lt;SSID&gt; &lt;archivoCapCreadoDelMonitoreoAnterior&gt;
 

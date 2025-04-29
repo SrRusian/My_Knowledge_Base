@@ -9,6 +9,7 @@
 - Ejecutamos en la Terminal (Agregamos el nombre exacto del loader)  
     java -jar LOADER.jar
 - Se nos muestra esta pantalla
+![PANTALLA ABIERTA DEL BS LOADER](../assets/image32.png)
 - En el Loader Command debemos modificar al final el nombre el de nuestra versión de Burpsuite Pro pues este comando ejecutara nuestro archivo Burpsuite Pro descargado
 - Si todo esta correcto al correr el comando en **Run** debería mostrar que se abre burpsuite Pro pidiendo una llave de licencia donde debemos pegar todo el cuadro de texto que nos da el Loader en su cuadro License
 - Damos Next en Burpsuite y Seleccionamos Manual Activation
@@ -21,6 +22,7 @@
         nano launch_burpsuite.sh
   - Y dentro del documento pegaremos completo el Loader Command que tiene ya el LOADER al darle RUN
   - Deberíamos tener algo como por ejemplo:
+  ![EJEMPLO FINAL ESPERADO DEL SH](../assets/image33.png)
   - Esto abrirá una terminal, navegara a la ubicación donde están nuestros documentos y ejecutara el código del Loader directo
   - Ahora ya creado le daremos privilegios  
         **_chmod +x ~/Desktop/launch_burpsuite.sh_**
@@ -48,4 +50,6 @@
 - Actualizamos el cache de las aplicaciones  
     **update-desktop-database ~/.local/share/applications**
 - Ahora al buscarla en las aplicaciones debería aparecer y al ejecutarla debería abrirse sin problema alguno
+![RESULTADO BUSQUEDA DE APLICACION](../assets/image34.png)
 - Podemos borrar otras versiones de burpsuite si queremos y si movemos la ubicación de nuestra carpeta debemos modificar también las rutas de los 2 documentos sh y desktop.
+![RESULTADO FINAL DEL SH](../assets/image35.png)

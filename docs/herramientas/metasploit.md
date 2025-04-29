@@ -5,6 +5,7 @@ Metasploit Framework es una plataforma de código abierto que proporciona una co
 Esta funciona al permitir a los usuarios buscar, desarrollar y ejecutar exploits contra sistemas objetivo para probar su seguridad. Los exploits son programas o scripts diseñados para aprovechar vulnerabilidades conocidas en software o sistemas operativos. Metasploit Framework proporciona una interfaz de línea de comandos y una interfaz gráfica de usuario (llamada msfconsole) que permiten a los usuarios interactuar con la plataforma y realizar acciones como buscar exploits, seleccionar payloads, configurar opciones y ejecutar ataques.
 
 ARQUITECTURA DE METASPLOIT FRAMEWORK
+![EJEMPLO DE ARQUITECTURA](../assets/image51.png)
 
 **MSF BASE**
 
