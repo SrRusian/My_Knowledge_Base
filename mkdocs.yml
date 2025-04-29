@@ -3,4 +3,38 @@ theme:
   name: material
 nav:
   - Inicio: index.md
+  - Pentesting:
+      - Introduccion: pentest/introduccion.md
+      - Pentest en APIs: pentest/pentest-apis.md
+  - Teoria:
+      - Modelado de Amenazas: teoria/amenazas-modelado.md
+      - Ataque a Redes: teoria/ataque-redes.md
+      - Infiltracion: teoria/infiltracion.md
+      - Vulnerabilidades en Sitios Web: teoria/vulnerabilidades-web.md
+  - Herramientas:
+      - Comandos Comunes: herramientas/general-cheatsheet.md
+      - NMAP: herramientas/nmap.md
+      - Metasploit: herramientas/metasploit.md
+      - Metasploitable VM: herramientas/metasploitableVM.md
+      - Armitage: herramientas/armitage.md
+      - WPScan: herramientas/wpscan.md
+  - Configuracion de Maquina:
+      - Particiones: configuracion-maquina/particiones.md
+      - Terminal: configuracion-maquina/terminal.md
+      - GUI: configuracion-maquina/gui.md
+      - Extras: configuracion-maquina/extras.md
+      - Herramientas: configuracion-maquina/herramientas.md
+  - Laboratorio:
+      - NMAP: laboratorio/nmap-lab.md
+      - EtterCap: laboratorio/ettercap-lab.md
+      - Metasploit: laboratorio/metasploit-lab.md
+      - Metasploitable VM Setup: laboratorio/metasploitableVM-setup.md
+      - Nikto en Metasploitable VM: laboratorio/nikto-metasploitable.md
+      - Burpsuite: laboratorio/burpsuite-lab.md
+      - Transferencia de Archivos: laboratorio/transferencia-archivos.md
+      - Ataque a Redes Inalambricas: laboratorio/ataques-redes-inalambricas-lab.md
+      - Como Vulnerar un Sitio Web: laboratorio/vulnerar-sitioweb.md
+      - WPScan: laboratorio/wpscan-lab.md
+      
+site_url: https://emm4nuelcm.github.io/my-knowledge-base/
 
