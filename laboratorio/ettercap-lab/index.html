@@ -1,0 +1,1181 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Emm4nuelCM.github.io/my-knowledge-base/laboratorio/ettercap-lab/">
+      
+      
+        <link rel="prev" href="../nmap-lab/">
+      
+      
+        <link rel="next" href="../metasploit-lab/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>EtterCap - My Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Guide" class="md-header__button md-logo" aria-label="My Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EtterCap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Guide" class="md-nav__button md-logo" aria-label="My Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pentesting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pentesting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pentest/introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pentest/pentest-apis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pentest en APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/amenazas-modelado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelado de Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/ataque-redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ataque a Redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/infiltracion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infiltracion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/vulnerabilidades-web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades en Sitios Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Herramientas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/general-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comandos Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/metasploit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/metasploitableVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploitable VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/armitage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Armitage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../herramientas/wpscan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configuracion de Maquina
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Configuracion de Maquina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuracion-maquina/particiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Particiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuracion-maquina/terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuracion-maquina/gui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuracion-maquina/extras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuracion-maquina/herramientas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nmap-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    EtterCap
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploitableVM-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploitable VM Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nikto-metasploitable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nikto en Metasploitable VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burpsuite-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Burpsuite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transferencia-archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferencia de Archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ataques-redes-inalambricas-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ataque a Redes Inalambricas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vulnerar-sitioweb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Como Vulnerar un Sitio Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wpscan-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>EtterCap</h1>
+
+<p>PRACTICA ETTERCAP MAN IN THE MIDDLE</p>
+<ol>
+<li>En la maquina Windows ejecutaremos <strong><em>ipconfig</em></strong> para obtener la Default Gateway</li>
+<li>Y posteriormente ejecutamos <strong><em>arp -a</em></strong> para obtener la Physical Addres/MAC de esta misma ip antes deseada</li>
+<li>En Kali abrimos una terminal y ejecutamos <strong><em>ifconfig</em></strong> para obtener nuestra MAC la cual está marcada como <strong>ether cc:47:40:67:34:07</strong></li>
+<li>Abrimos en Kali la aplicación ettercap y en <strong>Aceptar/Iniciar</strong> arriba a la derecha para ejecutarla</li>
+<li>Escaneamos los hosts en la opción superior izquierda (<strong>SCAN FOR HOSTS</strong>)</li>
+<li>Abrimos la lista de anfitriones en la opción superior izquierda (<strong>HOSTS LIST</strong>)</li>
+<li>Vemos nuestra maquina objetivo Windows en la lista con la ip 192.168.0.90</li>
+<li>La seleccionamos, clic derecho y <strong>Add Target 1</strong></li>
+<li>Nos vamos al menú MITM arriba a la derecha (<strong>MITM MENU</strong>) y seleccionamos <strong>ARP POISONING</strong></li>
+<li>Marcamos solo para esta práctica la opción <strong>ONLY POISON ONE-WAY</strong> y <strong>OK</strong></li>
+<li>Verificamos el falso ARP enviado a la maquina objetivo Windows y en la CMD ejecutamos de nuevo <strong>arp -a</strong></li>
+<li>Veremos como ahora la mayoría de las direcciones físicas están sustituidas por la MAC de nuestra maquina atacante Kali, pero la importante es la puerta de enlace 192.168.0.1</li>
+<li>Comprobado esto nos iremos a Wireshark en nuestra maquina Kali y comenzamos a capturar paquetes</li>
+<li>Nos vamos a la maquina Windows víctima, abrimos el navegador y simplemente nos vamos a <a href="http://www.google.com">www.google.com</a></li>
+<li>En Wireshark aplicamos el filtro <strong>ip.src==&lt;ip objetivo&gt;</strong></li>
+<li>Y de esta forma podremos ver las Query o paquetes enviados desde la maquina victima Windows.</li>
+</ol>
+<p>PRACTICA ETTERCAP DNS SPOOFING</p>
+<ol>
+<li>En la terminal de Kali ejecutaremos <strong><em>cd /var/www/html/</em></strong> y listamos con <strong><em>ls</em></strong></li>
+<li>Copiaremos el documento html original ahí mismo con otro nombre ejecutando:</li>
+</ol>
+<p><strong><em>cp index.html index_old.html</em></strong></p>
+<ol>
+<li>Abrimos el archive index.html con: <strong><em>leafpad index.html</em></strong></li>
+<li>Borramos el contenido completo y haremos una página html muy sencilla para esta prueba y la guardamos</li>
+<li>Para que esto funcione debemos hacer unas modificaciones antes a los 2 archivos de ettercap pues será esta la aplicación a usar en esta prueba, los dos archivos son <strong>etter.conf</strong> y <strong>etter.dns</strong>, para esto los tenemos que localizar con <strong><em>locate etter.conf</em></strong> (si no te aparece nada recuerda ejecutar <strong><em>updatedb</em></strong> para actualizar la base de datos de los documentos en la máquina, pues aquí se guardan las ubicaciones de todos los documentos de esta)</li>
+<li>Ya mostrada la ubicación del documento lo abriremos:</li>
+</ol>
+<p><strong><em>leafpad /etc/ettercap/etter.conf</em></strong></p>
+<ol>
+<li>
+<p>Estos 2 valores debemos marcarlos en 0 y guardar (<strong>uid y gid</strong>)</p>
+</li>
+<li>
+<p>Ahora localizamos el archivo <strong>etter.dns</strong> y lo abrimos con leafpad, igual que el anterior.</p>
+</li>
+<li>Y en la última línea del documento para esta práctica agregaremos lo siguiente y lo guardaremos:</li>
+</ol>
+<p>(En esta práctica solamente la línea: <a href="http://www.google.com"><strong><em>www.google.com</em></strong></a> <strong><em>A (IP Maquina Kali)</em></strong>)</p>
+<ol>
+<li>Levantamos el servidor apache para que se puedan conectar a nuestra ip y muestre nuestro documento <strong>index.html</strong> antes modificado:</li>
+</ol>
+<p><strong><em>service apache2 start</em></strong></p>
+<ol>
+<li>Si nos vamos a nuestro navegador web en Kali y ponemos la Ip de nuestra misma maquina Kali deberíamos de ver la página simple que acabamos de crear.</li>
+<li>Ya todo configurado antes y funcionando nuestro servidor local abriremos Ettercap, iniciaremos, escanearemos los hosts, mostraremos los hosts, seleccionaremos la ip de la maquina objetivo Windows y la agregaremos a Target 1</li>
+<li>Nos iremos al menú de MITM, ARP Poisoning, marcamos la opción <strong><em>Sniff Remote Connections</em></strong> y Ok</li>
+<li>Nos iremos a las opciones de ettercap arriba a la derecha (<strong>Ettercap Menu</strong>) y seleccionaremos <strong>plugins</strong> y <strong>Manage Plugins</strong></li>
+<li>Daremos doble clic en <strong>dns_spoof</strong> y ya se ejecutará nuestro spoofing a la maquina objetivo</li>
+<li>Ahora en nuestra maquina objetivo Windows abriremos el navegador y de preferencia abrir una ventana en incognito o privada para que al buscar no tengamos cache de nuestras consultas anteriores de DNS porque nos dará problemas.</li>
+<li>Y vamos a ingresar el DNS exacto que antes agregamos como objetivo para el Spoof que es <a href="http://www.google.com">www.google.com</a> exactamente tal cual lo pusimos en el archivo <strong>etter.dns</strong></li>
+<li>Y podremos ver que hemos sido cambiados a la página que nosotros hicimos, pero manteniendo en la barra de búsqueda el DNS google.com</li>
+</ol>
+<p>EXTRAS</p>
+<ul>
+<li>El uso de la letra <strong>A</strong> se utiliza para redireccionar un nombre de dominio a una dirección IP especifica que fue la que hicimos de <a href="http://www.google.com">www.google.com</a> A 192.168.0.247(IP Local). <strong>DNS EXACTA</strong></li>
+<li>El asterisco (*) inicial se utiliza como comodín para representar cualquier nombre de dominio. Cuando se coloca al principio de una línea seguido de un espacio, indica que esta configuración se aplicara a todos los nombres de dominio que no coincidan con otras entradas en el archivo. <strong>MULTIPLES DNS RELEVANTES</strong></li>
+<li>El PTR se utiliza para mapear direcciones IP a nombres de dominio en lugar de mapear nombres de dominio a direcciones IP como lo hacen la mayoría de las consultas DNS. <strong>CONSULTA INVERTIDA</strong></li>
+<li><strong>HAY QUE RECORDAR</strong> que este tipo de ataque puede ser mitigado en la capa de transporte o aplicación al realizar una validación de extremo a extremo como TLS y Firmas Digitales por lo que el navegador verifica si el certificado digital del servidor es válido antes de establecer una conexión por lo que esto solo funcionara en sitios web que no utilizan encriptación.</li>
+</ul>
+<p>PRACTICA ETTERCAP ATAQUES DOS</p>
+<ol>
+<li>Abrimos la aplicación ETTERCAP e Iniciamos</li>
+<li>Vamos al menú de Plugins y seleccionamos <strong>DOS_ATTACK</strong></li>
+<li>Ingresamos a IP Objetivo y volvemos a ingresar la misma IP Objetivo</li>
+<li>Se comenzará a atacar a la maquina objetivo</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
