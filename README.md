@@ -1,6 +1,3 @@
-CONTENIDO ORIGINAL: https://docs.google.com/document/d/1ryxZEu4mOWmVHBWwe2Rk7ujzBXhI8GDeUfZJo1flwzI/edit?tab=t.0
----
-
 ## 🛡️ My Knowledge Base - Pentesting & Cybersecurity
 
 Bienvenido a **My Knowledge Base**, un repositorio creado con el objetivo de documentar, estructurar y compartir conocimientos fundamentales y avanzados sobre **ciberseguridad ofensiva**, pruebas de penetración (pentesting) y el uso de herramientas esenciales en entornos Kali Linux.
@@ -56,7 +53,7 @@ Puedes acceder a la documentación completa en GitHub Pages:
 O clonarla localmente y correrla con MkDocs:
 
 ```bash
-git clone https://github.com/rusian/my-knowledge-base.git
+git clone https://github.com/emm4nuelcm/my-knowledge-base.git
 cd my-knowledge-base
 sudo apt install mkdocs-material
 mkdocs serve
