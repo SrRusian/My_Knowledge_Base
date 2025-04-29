@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -837,6 +839,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../metasploit-lab/" class="md-nav__link">
         
   
@@ -1079,7 +1103,8 @@
 <ol>
 <li>Ahora ocupamos un <strong>Handshake</strong> de la red por lo que en otra terminal ejecutaremos: aireplay-ng -0 &lt;paquetesAEnviar&gt; -a &lt;BSSID&gt; -c &lt;STATION&gt; wlan0mon<br />
 <strong>aireplay-ng -0 10 -a 5C:E9:31:01:36:DF -c D8:1F:12:B4:41:A9 wlan0mon</strong></li>
-<li>Y ahora en la anterior terminal deberíamos tener el HANDSHAKE en la parte superior derecha. EJEMPLO:</li>
+<li>Y ahora en la anterior terminal deberíamos tener el HANDSHAKE en la parte superior derecha. EJEMPLO:
+<img alt="RESULTADO DEL HANDSHAKE CORRECTO" src="../../assets/image55.png" /></li>
 <li>Y ahora podemos detener este monitoreo y cerrar la otra terminal</li>
 <li>Y ahora intentaremos entrar en la red: aircrack-ng -w &lt;ubicacionListaPalabras&gt; -b &lt;SSID&gt; &lt;archivoCapCreadoDelMonitoreoAnterior&gt;</li>
 </ol>

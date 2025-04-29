@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -919,6 +921,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../../laboratorio/wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../laboratorio/metasploit-lab/" class="md-nav__link">
         
   
@@ -1175,28 +1199,8 @@
 
 <h1 id="5-mas-de-9-formas-de-atacar-una-red">5. MAS DE 9 FORMAS DE ATACAR UNA RED</h1>
 <h2 id="wireshark-simplificado">WIRESHARK SIMPLIFICADO</h2>
-<p>Herramienta de rastreo usada para comprender un protocolo, depurar un problema de red, analizar el tráfico, utiliza Libcap en Linux y Winpcap en Windows y su secreto está en utilizar los filtros Capturar y Mostrar.</p>
-<p>PRACTICA</p>
-<ol>
-<li>Abrimos Wireshark</li>
-<li>Filtramos las interfaces (Usaremos solo Wireless esta vez)</li>
-<li>Iniciamos la captura de paquetes en la red</li>
-<li>En la pantalla superior se observa el tráfico de datos en la red basado en el filtro que antes aplicamos.</li>
-<li>En otra maquina con WINDOWS debemos instalar netcat, para eso instalaremos <a href="https://nmap.org/download#windows">Nmap</a> y lo instalaremos en la máquina.</li>
-<li>Abrimos su CMD y ejecutamos <strong><em>ncat -nlvp 2222</em></strong> (2222 es el puerto que usaremos)</li>
-<li>En Kali abriremos la terminal y ejecutaremos nc -nv (la ip de la maquina objetivo) (su puerto) en este ejemplo el mio es (<strong><em>nc -nv 192.168.0.90 2222</em></strong>)</li>
-<li>Escribimos un mensaje y damos enter</li>
-<li>El mensaje lo debemos recibir en la CMD de nuestra maquina WINDOWS</li>
-<li>Regresamos a Wireshark y lo detenemos</li>
-<li>En la barra inferior del botón de detener que dice <strong><em>Apply a display filter…</em></strong> aplicamos el filtro <strong><em>tcp</em></strong>)</li>
-<li>Tendremos varios resultados de los cuales el primero es el HANDSHAKE o inicio de la conexión de la maquina Kali con la Windows.</li>
-</ol>
-<p>El siguiente es un mensaje de que la conexión se ha hecho el cual va desde la maquina Windows hacia Kali.</p>
-<p>Posteriormente el tercer paquete debería ser el primer mensaje el cual enviamos desde kali.</p>
-<ol>
-<li>Seleccionaremos el paquete que creemos es que se mandó el texto plano y con clic derecho nos vamos a <strong><em>Follow&gt;TCP Stream</em></strong></li>
-<li>Podremos ver el resultado final que sucedió en esta conexión el cual será el mensaje o mensajes enviados de una a otra máquina.</li>
-</ol>
+<p>Herramienta de rastreo usada para comprender un protocolo, depurar un problema de red, analizar el tráfico, utiliza Libcap en Linux y Winpcap en Windows y su secreto está en utilizar los filtros Capturar y Mostrar.
+<img alt="EJEMPLO DE 3-WAY TCP HANDSHAKE" src="../../assets/image38.png" /></p>
 <h2 id="como-funciona-la-exploracion-de-puertos">COMO FUNCIONA LA EXPLORACION DE PUERTOS</h2>
 <p>El escaneado de puertos es el proceso de verificar los puertos abiertos (TCP o UDP)</p>
 <ul>
@@ -1210,8 +1214,10 @@
 <p>Por lo que ahora ¿Qué tal el escaneo de una red de clase C con 254 hosts, o incluso de una red clase B? Pues imaginando que se escanean todos los puertos de todos los Host en una red de clase C podemos llegar a generar un tráfico de alrededor 1GB por lo que hacer un escaneo completo en una red clase B imagina la cantidad de tráfico que se estaría generando, conteniendo hasta 65,536 hosts.</p>
 <h2 id="link-a-nmap-herramienta">LINK A NMAP HERRAMIENTA</h2>
 <h2 id="ejecutar-ataques-man-in-the-middle">EJECUTAR ATAQUES MAN-IN-THE-MIDDLE</h2>
-<p>CIRCUNSTANCIAS NORMALES DE UNA CONEXIÓN</p>
-<p>CIRCUNSTANCIAS ANORMALES DE UNA CONEXIÓN (ARP SPOOFED)</p>
+<p>CIRCUNSTANCIAS NORMALES DE UNA CONEXIÓN
+<img alt="EJEMPLO CIRCUNSTANCIA NORMAL" src="../../assets/image42.png" /></p>
+<p>CIRCUNSTANCIAS ANORMALES DE UNA CONEXIÓN (ARP SPOOFED)
+<img alt="EJEMPLO CONEXION COMPROMETIDA" src="../../assets/image43.png" /></p>
 <p><strong>5.5. REALIZAR UN ATAQUE DE SUPLANTACION DE DNS</strong></p>
 <p>La suplantación DNS, es una técnica utilizada para manipular las respuestas del sistema de nombres de dominio (DNS) de manera que los usuarios sean dirigidos a direcciones IP incorrectas o maliciosas cuando intentan accedes a un sitio web.</p>
 <p>Su funcionamiento básico implica interceptar y falsificar las respuestas DNS enviadas desde un servidor DNS legítimo, una vez que el atacante ha logrado falsificar las respuestas DNS puede redirigir a los usuarios a sitios web falsos que se asemejan a sitios legítimos. Esto puede conducir a diversas formas de ataques como phishing, robo de credenciales, malware, entre otros.</p>
@@ -1227,7 +1233,8 @@
 </ul>
 <h1 id="6-atacar-redes-inalambricas">6. ATACAR REDES INALAMBRICAS</h1>
 <p>El ataque a redes inalámbricas es un tipo de ciberataque dirigido a redes Wifi para comprometer su seguridad y obtener acceso no autorizado a la red o a la información transmitida a través de ella. Los atacantes pueden aprovechar diferentes vulnerabilidades en los protocolos de seguridad utilizados por las redes Wifi para llevar a cabo estos ataques.</p>
-<p><strong>COMPARACION DE WPAs</strong></p>
+<p><strong>COMPARACION DE WPAs</strong>
+<img alt="TABLA DE COMPARACION" src="../../assets/image54.png" /></p>
 <p>HERRAMIENTAS DE HACKING</p>
 <ul>
 <li>WPA/WPA2</li>

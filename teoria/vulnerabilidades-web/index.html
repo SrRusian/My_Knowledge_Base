@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -852,6 +854,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../../laboratorio/wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../laboratorio/metasploit-lab/" class="md-nav__link">
         
   
@@ -1084,7 +1108,8 @@
 <li><strong>Introducción de fallos durante el mantenimiento o la actualización</strong></li>
 </ul>
 <p>Incluso después de que una aplicación web haya sido desarrollada e implementada con éxito, seguirá siendo vulnerable si no se aplican correctamente las actualizaciones de seguridad o si se introducen nuevos errores durante el mantenimiento. Por ejemplo, si una actualización de software no se instala correctamente o introduce nuevas vulnerabilidades, la seguridad de la aplicación puede verse comprometida.</p>
-<p><strong>OWASP TOP 10</strong></p>
+<p><strong>OWASP TOP 10</strong>
+<img alt="OWASP TOP 10 2021" src="../../assets/image56.png" /></p>
 <ul>
 <li><strong>Broken Access Control (Control de acceso roto):</strong> Se refiere a la incapacidad de una aplicación para aplicar restricciones de acceso adecuadas, lo que permite a los usuarios no autorizados acceder a recursos protegidos o realizar acciones que no deberían poder realizar.</li>
 <li><strong>Cryptographic Failures (Fallos criptográficos)</strong>: Esta categoría aborda los errores en la implementación de la criptografía, incluidos el uso de algoritmos débiles o inseguros, el almacenamiento inadecuado de claves criptográficas y la falta de protección adecuada para datos sensibles. Los fallos criptográficos pueden conducir a la exposición de datos confidenciales, como contraseñas o información financiera, y comprometer la integridad y la autenticidad de los datos transmitidos o almacenados.</li>
@@ -1104,7 +1129,9 @@
 <li>Consultas OS (Uso de llamadas al sistema para realizar a su vez llamadas al sistema operativo)</li>
 </ul>
 <p>Cualquier aplicación Web que dependa del uso de un intérprete tiene el potencial de ser víctima de este tipo de fallo.</p>
-<p>EJEMPLO (Búsqueda por ID)  </p>
+<p>EJEMPLO (Búsqueda por ID)
+<img alt="EJEMPLO DE BUSQUEDA" src="../../assets/image57.png" /></p>
+<p><img alt="RESULTADO DETRAS DEL BOTON DE BUSCAR" src="../../assets/image58.png" /></p>
 <p>¿COMO PROTEGERSE?</p>
 <ul>
 <li>Realizar revisiones del diseño y del código de las bibliotecas reutilizables para garantizar la seguridad</li>
@@ -1114,7 +1141,9 @@
 </ul>
 <p><strong>7.3. VULNERABILIDADES EN LA EXPOSICION DE DATOS SENSIBLES</strong></p>
 <p>Las aplicaciones pueden filtrar involuntariamente información sobre su configuración, funcionamiento interno, o violar la privacidad a través de una variedad de problemas de aplicación para luego los atacantes utilizar esta debilidad para robar datos sensibles o llevar a cabo ataques más graves.</p>
-<p>Los algoritmos criptográficos débiles son susceptibles de ataques y revelan datos sensibles.</p>
+<p>Los algoritmos criptográficos débiles son susceptibles de ataques y revelan datos sensibles.
+<img alt="IMAGEN DE EJEMPLO 1" src="../../assets/image59.png" />
+<img alt="IMAGEN DE EJEMPLO 2" src="../../assets/image60.png" /></p>
 <p>¿COMO PROTEGERSE?</p>
 <ul>
 <li>Evitar la visualización de mensajes de error internos detallados, incluyendo trazas de pila, mensajes con nombres de bases de datos o tablas, protocolos y otros códigos de error. (Esto puede proporcionar a los atacantes pistas sobre posibles fallos)</li>
@@ -1128,7 +1157,8 @@
 <p>Esto se puede utilizar para ejecutar código, robar datos y realizar otras tareas maliciosas.</p>
 <p>Un ataque de XML External Entity (XXE) es una vulnerabilidad de seguridad que afecta a aplicaciones web que procesan datos XML. En un ataque XXE, un atacante aprovecha la capacidad de una aplicación para procesar entradas XML externas no confiables y maliciosas que pueden conducir a una variedad de problemas de seguridad, incluida la revelación de información confidencial, la ejecución remota de código y la denegación de servicio (DoS).</p>
 <p>Los datos <strong>XML</strong> (Extensible Markup Language) son un formato de datos que se utiliza para estructurar y organizar la información de manera jerárquica mediante etiquetas que describen el contenido de los datos. XML es un lenguaje de marcado similar a HTML, pero está diseñado para ser más flexible y extensible.</p>
-<p>En XML, los datos se organizan en elementos, que están delimitados por etiquetas de apertura y cierre. Cada elemento puede contener texto, otros elementos o atributos que describen características específicas del elemento. Por ejemplo:</p>
+<p>En XML, los datos se organizan en elementos, que están delimitados por etiquetas de apertura y cierre. Cada elemento puede contener texto, otros elementos o atributos que describen características específicas del elemento. Por ejemplo:
+<img alt="EJEMPLO DE ESTRUCTURA XML" src="../../assets/image61.png" /></p>
 <p>En este ejemplo, &lt;libro&gt;, &lt;titulo&gt;, &lt;autor&gt; y &lt;publicación&gt; son elementos, y el texto dentro de las etiquetas representa los datos asociados a cada elemento.</p>
 <p>XML se utiliza ampliamente para intercambiar datos entre sistemas y aplicaciones, ya que es legible tanto por humanos como por máquinas, y su estructura flexible permite definir formatos de datos personalizados para una amplia variedad de casos de uso.</p>
 <p>¿COMO PROTEGERSE?</p>
@@ -1155,7 +1185,8 @@
 <ul>
 <li>No se siguen los requisitos de seguridad en los servidores</li>
 <li>No se aplican las mejores practicas</li>
-<li>Favorecer la practicidad sobre la seguridad</li>
+<li>Favorecer la practicidad sobre la seguridad
+<img alt="EJEMPLO DE MALA CONFIGURACION" src="../../assets/image62.png" /></li>
 </ul>
 <p>¿COMO PROTEGERSE?</p>
 <ul>
@@ -1172,11 +1203,17 @@
 <li><strong>Reflejados (no persistentes)</strong></li>
 <li>Los ataques reflejados llegan a la víctima por otra vía (a través de un mensaje de correo electrónico o rebotados desde otro servidor)</li>
 <li>El ataque suele adoptar la forma de una etiqueta HTML (a menudo el hipervínculo) que contiene secuencias de comandos maliciosas (a menudo JavaScript)</li>
-<li>Suele realizarse cuando existe una ubicación en la que se puede introducir contenido arbitrario (como un mensaje de correo electrónico o un campo de texto libre, por ejemplo) y a continuación, el objetivo del ataque hace referencia a él.</li>
-<li><strong>Almacenado(persistente)</strong></li>
+<li>
+<p>Suele realizarse cuando existe una ubicación en la que se puede introducir contenido arbitrario (como un mensaje de correo electrónico o un campo de texto libre, por ejemplo) y a continuación, el objetivo del ataque hace referencia a él.
+  <img alt="IMAGEN DE EJEMPLO DE XSS REFLEJADO" src="../../assets/image63.png" /></p>
+</li>
+<li>
+<p><strong>Almacenado(persistente)</strong></p>
+</li>
 <li>El código inyectado se almacena de forma permanente en la aplicación web, como en una base de datos, un foro de mensajes, un registro de comentarios o un perfil de usuario.</li>
 <li>Cuando un usuario accede a la página comprometida, el script malicioso se ejecuta automáticamente, lo que puede tener consecuencias graves, como robo de sesiones, modificación de contenido o redirección a sitios maliciosos.</li>
-<li>Este tipo de ataque puede ser más peligroso que los ataques reflejados, ya que el código malicioso permanece activo y puede afectar a múltiples usuarios durante un período prolongado de tiempo.</li>
+<li>Este tipo de ataque puede ser más peligroso que los ataques reflejados, ya que el código malicioso permanece activo y puede afectar a múltiples usuarios durante un período prolongado de tiempo.
+  <img alt="IMAGEN DE EJEMPLO DE XSS PERSISTENTE" src="../../assets/image64.png" /></li>
 </ul>
 <p>¿COMO PROTEGERSE?</p>
 <ul>
@@ -1190,7 +1227,8 @@
 </ul>
 <p><strong>7.8. VULNERABILIDADES DE DESERIALIZACION INSEGURAS</strong></p>
 <p>Algunas de las aplicaciones guardan datos del lado del cliente utilizando objetos serializados, estas aplicaciones confían en el cliente para mantener el estado, pero permitirán la manipulación de datos serializados, ejemplo:</p>
-<p>Alteración de los objetos serializados en las cookies para escalada de privilegios</p>
+<p>Alteración de los objetos serializados en las cookies para escalada de privilegios
+<img alt="COMPARACION DE COOKIES" src="../../assets/image65.png" /></p>
 <p>¿COMO PROTEGERSE?</p>
 <ul>
 <li>Cifrado de los datos serializados</li>
