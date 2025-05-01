@@ -1,4 +1,4 @@
-**INSTALACION**
+## LABORATORIO 1 (INSTALACION DE WORDPRESS VM)
 
 **Para esta prueba usaremos un entorno seguro, descargaremos la VM WordPress** [**ISO**](https://www.turnkeylinux.org/wordpress)**.**
 
@@ -9,7 +9,7 @@
 - Finalmente configurada la VM se nos mostrara las direcciones ip para poder acceder a ellas desde nuestro navegador, así tendríamos la instalación correctamente hecha.(En ajustes de la VM debemos tener la configuración de network adapter como bridge o puente e iniciarla de esa forma para poder acceder a las ip)
 ![RESULTADO FINAL DE LA MAQUINA CONFIGURADA Y ACTIVA](../assets/image69.png)
 
-**LABORATORIO**
+## LABORATORIO 2 (OBTENCION DE CLAVES CON FUERZA BRUTA)
 
 - Actualizar wpscan (wpscan --update)
 - Escaneamos la ip de WordPress de la VM (wpscan --url 192.168.1.47)

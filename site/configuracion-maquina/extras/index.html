@@ -776,15 +776,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gestor-de-recursos" class="md-nav__link">
-    <span class="md-ellipsis">
-      GESTOR DE RECURSOS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#templates" class="md-nav__link">
     <span class="md-ellipsis">
       TEMPLATES
@@ -1165,15 +1156,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gestor-de-recursos" class="md-nav__link">
-    <span class="md-ellipsis">
-      GESTOR DE RECURSOS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#templates" class="md-nav__link">
     <span class="md-ellipsis">
       TEMPLATES
@@ -1215,8 +1197,6 @@
 <li>Agregamos la línea<br />
 <strong><em>sudo systemctl start bluetooth</em></strong></li>
 </ul>
-<h3 id="gestor-de-recursos">GESTOR DE RECURSOS</h3>
-<p>En nuestro administrador o cajón de aplicaciones podemos encontrar la aplicación <strong>Extensions</strong> donde ahí mismo podremos activar el monitor de recursos</p>
 <h3 id="templates">TEMPLATES</h3>
 <p>Al cambiar a un nuevo entorno grafico desde kali a GNOME no tendremos el acceso directo a la creación rápida de documentos con clic derecho, sin embargo podremos usar las Templates que nos ayudaran a copiar un poco esta funcionalidad.</p>
 <ul>
@@ -1227,20 +1207,22 @@
 <li>Agregamos un texto DEFAULT: Este es un script ejecutable</li>
 <li>Ahora de un Lanzador<br />
 <strong><em>nano ~/Templates/NuevoLanzador.desktop</em></strong></li>
-<li>Para este debemos agregar sus valores DEFAULT:<br />
-<em>[Desktop Entry]</em></li>
-</ul>
-<p><em>Version=1.0</em></p>
-<p><em>Type=Application</em></p>
-<p><em>Name=NuevoLanzador</em></p>
-<p><em>Exec=/ruta/al/ejecutable</em></p>
-<p><em>Icon=/ruta/al/icono.png</em></p>
-<p><em>Terminal=false</em></p>
-<p><em>Categories=Utility;</em></p>
-<ul>
-<li>Si es necesario les damos permisos de ejecución<br />
+<li>
+<p>Para este debemos agregar sus valores DEFAULT:<br />
+<em>[Desktop Entry]</em><br />
+<em>Version=1.0</em><br />
+<em>Type=Application</em><br />
+<em>Name=NuevoLanzador</em><br />
+<em>Exec=/ruta/al/ejecutable</em><br />
+<em>Icon=/ruta/al/icono.png</em><br />
+<em>Terminal=false</em><br />
+<em>Categories=Utility;</em>  </p>
+</li>
+<li>
+<p>Si es necesario les damos permisos de ejecución<br />
 <strong><em>chmod +x ~/Templates/NuevoEjecutable.sh<br />
-    chmod +x ~/Templates/NuevoLanzador.desktop</em></strong></li>
+    chmod +x ~/Templates/NuevoLanzador.desktop</em></strong></p>
+</li>
 <li>También podemos hacer el mismo procedimiento para un <strong>nuevoDocumento.txt</strong></li>
 </ul>
 

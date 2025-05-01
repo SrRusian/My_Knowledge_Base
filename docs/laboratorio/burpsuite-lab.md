@@ -1,4 +1,4 @@
-**7.15. INTERCEPTAR TRAFICO WEB**
+## LABORATORIO 1 (INTERCEPTAR TRAFICO WEB)
 
 - Ejecutaremos nuestra máquina virtual Metasploitable
 - Abrir burpsuite en la sección Proxy>Proxy Settings veremos la ip en la cual esta burpsuite escuchando

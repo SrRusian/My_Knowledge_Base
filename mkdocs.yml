@@ -29,8 +29,8 @@ nav:
       - EtterCap: laboratorio/ettercap-lab.md
       - WireShark: laboratorio/wireshark-lab.md
       - Metasploit: laboratorio/metasploit-lab.md
-      - Metasploitable VM Setup: laboratorio/metasploitableVM-setup.md
-      - Nikto en Metasploitable VM: laboratorio/nikto-metasploitable.md
+      - Metasploitable VM: laboratorio/metasploitableVM.md
+      - Nikto (UNDER CONSTRUCTION): laboratorio/nikto.md
       - Burpsuite: laboratorio/burpsuite-lab.md
       - Transferencia de Archivos: laboratorio/transferencia-archivos.md
       - Ataque a Redes Inalambricas: laboratorio/ataques-redes-inalambricas-lab.md

