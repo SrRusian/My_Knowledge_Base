@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-interaccion-basica" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -846,6 +851,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -856,6 +873,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-interaccion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INTERACCION BASICA)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -891,11 +934,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -913,11 +956,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -1063,6 +1106,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-interaccion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INTERACCION BASICA)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,11 +1139,11 @@
 
   <h1>WireShark</h1>
 
-<p>PRACTICA WIRESHARK</p>
+<h2 id="laboratorio-1-interaccion-basica">LABORATORIO 1 (INTERACCION BASICA)</h2>
 <ol>
 <li>Abrimos Wireshark</li>
 <li>Filtramos las interfaces (Usaremos solo Wireless esta vez)</li>
-<li>Iniciamos la captura de paquetes en la red(<img alt="BOTON PARA COMENZAR CAPTURA" src="../../assets/image39.png" />)</li>
+<li>Iniciamos la captura de paquetes en la red <img alt="BOTON PARA COMENZAR CAPTURA" src="../../assets/image39.png" /></li>
 <li>En la pantalla superior se observa el tráfico de datos en la red basado en el filtro que antes aplicamos.</li>
 <li>En otra maquina con WINDOWS debemos instalar netcat, para eso instalaremos <a href="https://nmap.org/download#windows">Nmap</a> y lo instalaremos en la máquina.</li>
 <li>Abrimos su CMD y ejecutamos <strong><em>ncat -nlvp 2222</em></strong> (2222 es el puerto que usaremos)</li>
@@ -1091,7 +1151,7 @@
 <li>Escribimos un mensaje y damos enter</li>
 <li>El mensaje lo debemos recibir en la CMD de nuestra maquina WINDOWS
 <img alt="RESULTADO DE LA PRUEBA" src="../../assets/image40.png" /></li>
-<li>Regresamos a Wireshark y lo detenemos(<img alt="BOTON PARA DETENER CAPTURA" src="../../assets/image41.png" />)</li>
+<li>Regresamos a Wireshark y lo detenemos <img alt="BOTON PARA DETENER CAPTURA" src="../../assets/image41.png" /></li>
 <li>En la barra inferior del botón de detener que dice <strong><em>Apply a display filter…</em></strong> aplicamos el filtro <strong><em>tcp</em></strong>)</li>
 <li>Tendremos varios resultados de los cuales el primero es el HANDSHAKE o inicio de la conexión de la maquina Kali con la Windows.</li>
 </ol>

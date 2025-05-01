@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-transferencia-de-archivos" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -883,11 +888,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -905,11 +910,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -956,6 +961,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Transferencia de Archivos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -966,6 +983,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-transferencia-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (TRANSFERENCIA DE ARCHIVOS)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1063,6 +1106,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-transferencia-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (TRANSFERENCIA DE ARCHIVOS)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,28 +1139,32 @@
 
   <h1>Transferencia de Archivos</h1>
 
-<p>EJERCICIO TRANSFERENCIA DE ARCHIVOS</p>
+<h2 id="laboratorio-1-transferencia-de-archivos">LABORATORIO 1 (TRANSFERENCIA DE ARCHIVOS)</h2>
 <ol>
 <li>En nuestra maquina Windows crearemos una carpeta en el escritorio en mi caso llamada <strong>tomount</strong></li>
 <li>Le damos clic derecho, propiedades, compartiendo y en compartir</li>
 <li>Agregaremos una nueva entrada/usuario ahí mismo y seleccionaremos la opción <strong>Everyone (Cualquiera)</strong> y le damos permisos de <strong>Leer/Escribir</strong></li>
-<li>Guardamos los cambios en Share y veremos que nos da una dirección o ruta de la carpeta compartida.</li>
-</ol>
-<p><strong>Dirección carpeta Windows:</strong>
+<li>
+<p>Guardamos los cambios en Share y veremos que nos da una dirección o ruta de la carpeta compartida.<br />
+<strong>Dirección carpeta Windows:</strong>
 <img alt="EJEMPLO DE DIRECCION DE CARPETA" src="../../assets/image52.png" /></p>
-<ol>
-<li>Ahora nos iremos a la maquina Kali y abrimos la terminal para instalar los servicios básicos de internet: <strong><em>apt-get install cifs-utils</em></strong></li>
+</li>
+<li>
+<p>Ahora nos iremos a la maquina Kali y abrimos la terminal para instalar los servicios básicos de internet: <strong><em>apt-get install cifs-utils</em></strong></p>
+</li>
 <li>Ahora crearemos otra carpeta llamada <strong>winmount</strong> en nuestro escritorio en Kali</li>
 <li>En la terminal antes abierta ejecutamos: <strong>mount.cifs //&lt;IP MAQUINA WINDOWS&gt;/&lt;Pegaremos la ruta desde la parte Users&gt; &lt;Ruta de la carpeta en Kali&gt; -o user=&lt;usuario Windows&gt;,uid=&lt;usuario kali&gt;(</strong>Este último para poder tener acceso a modificar la carpeta)</li>
-<li>En mi caso quedaría de la siguiente forma:</li>
+<li>
+<p>En mi caso quedaría de la siguiente forma:<br />
+<strong><em>mount.cifs //192.168.0.90/Users/SrRusian/Desktop/tomount /home/rusian/Desktop/winmount -o user=SrRusian,uid=rusian</em></strong><br />
+(En vez de escribir la dirección de la carpeta en Kali la podemos arrastrar directamente a la terminal y se agregara la dirección sola)</p>
+</li>
+<li>
+<p>Nos pedirá la contraseña de la maquina Windows y la vamos a ingresar</p>
+</li>
+<li>Hecho esto podemos usar la carpeta para agregar documentos y se compartirán entre las 2 máquinas, puedes probar creando un archivo de texto desde kali y lo debemos ver en la carpeta de Windows y viceversa.<br />
+(Es necesario volver a ejecutar el comando anterior cada vez que nuestra maquina Kali se apague/suspenda)</li>
 </ol>
-<p><strong><em>mount.cifs //192.168.0.90/Users/SrRusian/Desktop/tomount /home/rusian/Desktop/winmount -o user=SrRusian,uid=rusian</em></strong></p>
-<p>(En vez de escribir la dirección de la carpeta en Kali la podemos arrastrar directamente a la terminal y se agregara la dirección sola)</p>
-<ol>
-<li>Nos pedirá la contraseña de la maquina Windows y la vamos a ingresar</li>
-<li>Hecho esto podemos usar la carpeta para agregar documentos y se compartirán entre las 2 máquinas, puedes probar creando un archivo de texto desde kali y lo debemos ver en la carpeta de Windows y viceversa.</li>
-</ol>
-<p>(Es necesario volver a ejecutar el comando anterior cada vez que nuestra maquina Kali se apague/suspenda)</p>
 
 
 

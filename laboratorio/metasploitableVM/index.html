@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/nikto-metasploitable/">
+        <link rel="canonical" href="https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/metasploitableVM/">
       
       
-        <link rel="prev" href="../metasploitableVM-setup/">
+        <link rel="prev" href="../metasploit-lab/">
       
       
-        <link rel="next" href="../burpsuite-lab/">
+        <link rel="next" href="../nikto/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Nikto en Metasploitable VM - My Guide</title>
+        <title>Metasploitable VM - My Guide</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-instalacion-de-metasploitable-vm" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nikto en Metasploitable VM
+              Metasploitable VM
             
           </span>
         </div>
@@ -880,28 +885,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Metasploitable VM Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -912,17 +895,95 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metasploitable VM
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Metasploitable VM
     
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-instalacion-de-metasploitable-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INSTALACION DE METASPLOITABLE VM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-nikto-metasploitablevm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (NIKTO-MetasploitableVM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-owasp-zap-metasploitablevm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (OWASP ZAP-MetasploitableVM)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nikto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nikto (UNDER CONSTRUCTION)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1063,6 +1124,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-instalacion-de-metasploitable-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INSTALACION DE METASPLOITABLE VM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-nikto-metasploitablevm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (NIKTO-MetasploitableVM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-owasp-zap-metasploitablevm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (OWASP ZAP-MetasploitableVM)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1077,26 +1173,41 @@
 
 
 
-  <h1>Nikto en Metasploitable VM</h1>
+  <h1>Metasploitable VM</h1>
 
-<p>PRACTICA (NIKTO-Metasploitable)</p>
+<h2 id="laboratorio-1-instalacion-de-metasploitable-vm">LABORATORIO 1 (INSTALACION DE METASPLOITABLE VM)</h2>
+<ul>
+<li>Necesitaremos instalar <a href="https://www.kali.org/docs/virtualization/install-virtualbox-host/">VirtualBox</a> siguiendo las instrucciones</li>
+<li>Si te da error de kernel haz el siguiente paso, sino omítelo:</li>
+<li>
+<p>Instalamos los Header Kernels en este caso la versión 6.6.15 (Mi Mas Actual)<br />
+<strong><em>sudo apt-get install linux-headers-6.6.15-amd64</em></strong></p>
+</li>
+<li>
+<p>Y <a href="https://www.rapid7.com/products/metasploit/metasploitable/">METASPLOITABLE VM</a> que es un ZIP</p>
+</li>
+<li>Extraemos el ZIP y reiniciamos la maquina</li>
+<li>Abrimos VirtualBox</li>
+<li>Creamos una Nueva Máquina Virtual llamada Metasploitable, Type Linux, Versión Ubuntu 64Bit y en Virtual Hard Disk File&gt;Add seleccionamos él .vmdk de nuestros archivos recién extraídos de Metasploitable2</li>
+<li>Abrimos File&gt;Tools&gt;Network Manager&gt;Host-only Networks&gt;Create</li>
+<li>En los ajustes de la VM acabada de crear, en Network seleccionamos Host-only Adapter y ejecutamos la maquina</li>
+<li>El usuario y contraseña es <strong>msfadmin</strong></li>
+<li>Ejecutamos <strong>ifconfig</strong> y pegamos la IP de la maquina en nuestro navegador</li>
+</ul>
+<h2 id="laboratorio-2-nikto-metasploitablevm">LABORATORIO 2 (NIKTO-MetasploitableVM)</h2>
 <ul>
 <li>Ejecutada nuestra VM Metasploitable en KALI y loggeado obtenemos su ip con <strong><em>ifconfig</em></strong> y la ingresamos en el navegador deberíamos ver su índex <strong>metasploitable2</strong></li>
-<li>Minimizamos la VM y abrimos una terminal en Kali y escaneamos la ip con nikto:</li>
-</ul>
-<p><strong><em>nikto -h &lt;IP_de_la_VM&gt;</em></strong></p>
-<ul>
-<li>Si lo queremos exportar:</li>
-</ul>
-<p><strong><em>nikto -h &lt;IP_de_la_VM&gt; -output &lt;ubicación guardada&gt; -Format html</em></strong></p>
-<ul>
+<li>Minimizamos la VM y abrimos una terminal en Kali y escaneamos la ip con nikto:<br />
+<strong><em>nikto -h &lt;IP_de_la_VM&gt;</em></strong></li>
+<li>Si lo queremos exportar:<br />
+<strong><em>nikto -h &lt;IP_de_la_VM&gt; -output &lt;ubicación guardada&gt; -Format html</em></strong></li>
 <li>Lo buscamos en la ubicación asignada y abrimos con el navegador</li>
 <li>Y podremos ver el informe en un formato HTML</li>
-<li>Si queremos escanear vulnerabilidades exclusivamente para SQL Injection la opción 9 de Tuning nos ayudara (para ver opciones ejecutar <strong><em>nikto</em></strong>):</li>
+<li>Si queremos escanear vulnerabilidades exclusivamente para SQL Injection la opción 9 de Tuning nos ayudara (para ver opciones ejecutar <strong><em>nikto</em></strong>):<br />
+<strong><em>nikto -h &lt;IP_de_la_VM&gt; -Tuning 9</em></strong></li>
 </ul>
-<p><strong><em>nikto -h &lt;IP_de_la_VM&gt; -Tuning 9</em></strong></p>
 <p>También podemos escanear una de las aplicaciones web de Metasploitable que es DVWA: <strong><em>nikto -h http://&lt;IP_de_la_VM&gt;/dvwa/ -Tuning 9</em></strong></p>
-<p>PRACTICA (OWASP ZAP-Metasploitable)</p>
+<h2 id="laboratorio-3-owasp-zap-metasploitablevm">LABORATORIO 3 (OWASP ZAP-MetasploitableVM)</h2>
 <ul>
 <li>Si no lo tienes debes descargarlo e instalarlo</li>
 <li>Lo abrimos desde las aplicaciones instaladas</li>

