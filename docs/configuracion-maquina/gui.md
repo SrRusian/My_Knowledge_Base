@@ -1,4 +1,4 @@
-## GUI
+# GUI
 
 Esto cambiara la interfaz default de kali por algo más diseñado y bonito pero sacrificaremos unas pocas cosas de kali que aunque podemos acceder a ellas debemos hacer unas configuraciones según sea necesario después.
 

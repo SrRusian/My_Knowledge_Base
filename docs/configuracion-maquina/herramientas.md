@@ -1,6 +1,6 @@
-### HERRAMIENTAS
+# HERRAMIENTAS
 
-#### BURPSUITE PROFESSIONAL
+## BURPSUITE PROFESSIONAL
 
 - Se necesitará instalar JAVA 21 JDK para esta instalación y elegirlo como “Por defecto”
 - Descargar la última versión de [BurpSuite Professional](https://portswigger.net/burp/releases/professional-community-2024-7-6)
@@ -29,21 +29,14 @@
   - Ahora crearemos un Lanzador.dektop:  
         nano ~/.local/share/applications/burpsuite-launcher.desktop
   - Agregaremos y guardaremos:  
-        **\[Desktop Entry\]**
-
-**Version=1.0**
-
-**Name=BurpSuite Pro Launcher**
-
-**Exec=/home/rusian/Desktop/launch_burpsuite.sh**
-
-**Icon=/ruta/completa/hacia/icono.png # Puedes elegir un icono si tienes uno disponible**
-
-**Type=Application**
-
-**Categories=Development;Security;**
-
-**Terminal=false**
+        **\[Desktop Entry\]**  
+        **Version=1.0**  
+        **Name=BurpSuite Pro Launcher**  
+        **Exec=/home/rusian/Desktop/launch_burpsuite.sh**  
+        **Icon=/ruta/completa/hacia/icono.png # Puedes elegir un icono si tienes uno disponible**  
+        **Type=Application**  
+        **Categories=Development;Security;**  
+        **Terminal=false**  
 
 - Le damos ahora privilegios  
     **_chmod +x ~/.local/share/applications/burpsuite-launcher.desktop_**
