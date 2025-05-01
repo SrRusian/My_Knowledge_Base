@@ -1,4 +1,4 @@
-# 3\. COMANDOS BASICOS
+## COMANDOS BASICOS
 
 - _passwd_ (Crear nueva contraseña)
 - _ls_ (Listar o mostrar documentos en carpeta actual)

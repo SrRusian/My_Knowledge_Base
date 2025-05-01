@@ -1,4 +1,4 @@
-**7.1. METASPLOITABLE VM**
+# METASPLOITABLE VM
 
 Metasploitable es una máquina virtual diseñada específicamente para ser vulnerable a ataques de seguridad con el propósito de ser utilizada como un entorno de pruebas para probar y aprender sobre herramientas y técnicas de seguridad informática.
 
