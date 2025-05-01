@@ -2,114 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/extras/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/gui/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/herramientas/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/particiones/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/terminal/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/armitage/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/general-cheatsheet/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/metasploit/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/metasploitableVM/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/nmap/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/wpscan/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/ataques-redes-inalambricas-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/burpsuite-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/ettercap-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/metasploit-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/metasploitableVM-setup/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/nikto-metasploitable/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/nmap-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/transferencia-archivos/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/vulnerar-sitioweb/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/wireshark-lab/</loc>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/wpscan-lab/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/pentest/introduccion/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/pentest/pentest-apis/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/amenazas-modelado/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/ataque-redes/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/infiltracion/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/vulnerabilidades-web/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-01</lastmod>
     </url>
 </urlset>

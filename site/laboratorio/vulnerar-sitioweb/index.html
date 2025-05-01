@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -837,6 +839,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../metasploit-lab/" class="md-nav__link">
         
   
@@ -1063,7 +1087,8 @@
 <p>EJEMPLO: <a href="https://www.burobd.org/network-and-linkages.php?id=8">https://www.burobd.org/network-and-linkages.php?id=8</a></p>
 <ul>
 <li>Y para saber si el sitio es vulnerable al final de la URL agregamos ‘</li>
-<li>Si es vulnerable nos debe mandar un error relacionado a “Error SQL Syntax”</li>
+<li>Si es vulnerable nos debe mandar un error relacionado a “Error SQL Syntax”
+<img alt="MENSAJE DE ERROR RECIBIDO" src="../../assets/image66.png" /></li>
 <li>Si es así copiamos el enlace original de la página y en la terminal ejecutamos:</li>
 </ul>
 <p><strong><em>sqlmap -u &lt;URL&gt; --dbs</em></strong></p>
@@ -1121,7 +1146,9 @@
 <li>Ejecutamos <strong><em>sqlmap -r &lt;ubicacionDeNuestroTxt&gt;</em></strong></li>
 <li>Comenzaremos a buscar vulnerabilidades como en la PRACTICA 1 y 2 para tratar de obtener la BD</li>
 </ul>
-<p>EXTRAS (Pruebas a otras Paginas)</p>
+<p>EXTRAS (Pruebas a otras Paginas)
+<img alt="RESULTADO DE LA PRUEBA A UNA PAGINA VULNERABLE" src="../../assets/image67.png" /></p>
+<p><img alt="OBTENCION DE DATOS DE LA PAGINA VULNERABLE" src="../../assets/image68.png" /></p>
 
 
 

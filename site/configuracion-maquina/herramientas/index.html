@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -903,6 +905,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../../laboratorio/wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../laboratorio/metasploit-lab/" class="md-nav__link">
         
   
@@ -1154,7 +1178,8 @@
 <li>Ya instalado JAVA debemos tener el LOADER y el Burpsuite Professional JAR en el mismo directorio</li>
 <li>Ejecutamos en la Terminal (Agregamos el nombre exacto del loader)<br />
     java -jar LOADER.jar</li>
-<li>Se nos muestra esta pantalla</li>
+<li>Se nos muestra esta pantalla
+<img alt="PANTALLA ABIERTA DEL BS LOADER" src="../../assets/image32.png" /></li>
 <li>En el Loader Command debemos modificar al final el nombre el de nuestra versión de Burpsuite Pro pues este comando ejecutara nuestro archivo Burpsuite Pro descargado</li>
 <li>Si todo esta correcto al correr el comando en <strong>Run</strong> debería mostrar que se abre burpsuite Pro pidiendo una llave de licencia donde debemos pegar todo el cuadro de texto que nos da el Loader en su cuadro License</li>
 <li>Damos Next en Burpsuite y Seleccionamos Manual Activation</li>
@@ -1166,7 +1191,8 @@
 <li>Abriremos una terminal dentro de la carpeta donde están los documentos y ejecutaremos<br />
         nano launch_burpsuite.sh</li>
 <li>Y dentro del documento pegaremos completo el Loader Command que tiene ya el LOADER al darle RUN</li>
-<li>Deberíamos tener algo como por ejemplo:</li>
+<li>Deberíamos tener algo como por ejemplo:
+  <img alt="EJEMPLO FINAL ESPERADO DEL SH" src="../../assets/image33.png" /></li>
 <li>Esto abrirá una terminal, navegara a la ubicación donde están nuestros documentos y ejecutara el código del Loader directo</li>
 <li>Ahora ya creado le daremos privilegios<br />
 <strong><em>chmod +x ~/Desktop/launch_burpsuite.sh</em></strong></li>
@@ -1187,8 +1213,10 @@
 <strong><em>chmod +x ~/.local/share/applications/burpsuite-launcher.desktop</em></strong></li>
 <li>Actualizamos el cache de las aplicaciones<br />
 <strong>update-desktop-database ~/.local/share/applications</strong></li>
-<li>Ahora al buscarla en las aplicaciones debería aparecer y al ejecutarla debería abrirse sin problema alguno</li>
-<li>Podemos borrar otras versiones de burpsuite si queremos y si movemos la ubicación de nuestra carpeta debemos modificar también las rutas de los 2 documentos sh y desktop.</li>
+<li>Ahora al buscarla en las aplicaciones debería aparecer y al ejecutarla debería abrirse sin problema alguno
+<img alt="RESULTADO BUSQUEDA DE APLICACION" src="../../assets/image34.png" /></li>
+<li>Podemos borrar otras versiones de burpsuite si queremos y si movemos la ubicación de nuestra carpeta debemos modificar también las rutas de los 2 documentos sh y desktop.
+<img alt="RESULTADO FINAL DEL SH" src="../../assets/image35.png" /></li>
 </ul>
 
 

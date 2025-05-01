@@ -14,7 +14,7 @@
         <link rel="prev" href="../nmap-lab/">
       
       
-        <link rel="next" href="../metasploit-lab/">
+        <link rel="next" href="../wireshark-lab/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -44,6 +44,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -845,6 +847,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../metasploit-lab/" class="md-nav__link">
         
   
@@ -1057,8 +1081,10 @@
 
 <p>PRACTICA ETTERCAP MAN IN THE MIDDLE</p>
 <ol>
-<li>En la maquina Windows ejecutaremos <strong><em>ipconfig</em></strong> para obtener la Default Gateway</li>
-<li>Y posteriormente ejecutamos <strong><em>arp -a</em></strong> para obtener la Physical Addres/MAC de esta misma ip antes deseada</li>
+<li>En la maquina Windows ejecutaremos <strong><em>ipconfig</em></strong> para obtener la Default Gateway
+<img alt="COMANDO IPCONFIG" src="../../assets/image44.png" /></li>
+<li>Y posteriormente ejecutamos <strong><em>arp -a</em></strong> para obtener la Physical Addres/MAC de esta misma ip antes deseada
+<img alt="RESULTADO CON DIRECCION MAC" src="../../assets/image45.png" /></li>
 <li>En Kali abrimos una terminal y ejecutamos <strong><em>ifconfig</em></strong> para obtener nuestra MAC la cual está marcada como <strong>ether cc:47:40:67:34:07</strong></li>
 <li>Abrimos en Kali la aplicación ettercap y en <strong>Aceptar/Iniciar</strong> arriba a la derecha para ejecutarla</li>
 <li>Escaneamos los hosts en la opción superior izquierda (<strong>SCAN FOR HOSTS</strong>)</li>
@@ -1068,10 +1094,12 @@
 <li>Nos vamos al menú MITM arriba a la derecha (<strong>MITM MENU</strong>) y seleccionamos <strong>ARP POISONING</strong></li>
 <li>Marcamos solo para esta práctica la opción <strong>ONLY POISON ONE-WAY</strong> y <strong>OK</strong></li>
 <li>Verificamos el falso ARP enviado a la maquina objetivo Windows y en la CMD ejecutamos de nuevo <strong>arp -a</strong></li>
-<li>Veremos como ahora la mayoría de las direcciones físicas están sustituidas por la MAC de nuestra maquina atacante Kali, pero la importante es la puerta de enlace 192.168.0.1</li>
+<li>Veremos como ahora la mayoría de las direcciones físicas están sustituidas por la MAC de nuestra maquina atacante Kali, pero la importante es la puerta de enlace 192.168.0.1
+<img alt="RESULTADO DEL COMANDO ANTERIOR" src="../../assets/image46.png" /></li>
 <li>Comprobado esto nos iremos a Wireshark en nuestra maquina Kali y comenzamos a capturar paquetes</li>
 <li>Nos vamos a la maquina Windows víctima, abrimos el navegador y simplemente nos vamos a <a href="http://www.google.com">www.google.com</a></li>
-<li>En Wireshark aplicamos el filtro <strong>ip.src==&lt;ip objetivo&gt;</strong></li>
+<li>En Wireshark aplicamos el filtro <strong>ip.src==&lt;ip objetivo&gt;</strong>
+<img alt="ENTRADA PARA APLICAR FILTROS EN WIRESHARK" src="../../assets/image47.png" /></li>
 <li>Y de esta forma podremos ver las Query o paquetes enviados desde la maquina victima Windows.</li>
 </ol>
 <p>PRACTICA ETTERCAP DNS SPOOFING</p>
@@ -1082,21 +1110,24 @@
 <p><strong><em>cp index.html index_old.html</em></strong></p>
 <ol>
 <li>Abrimos el archive index.html con: <strong><em>leafpad index.html</em></strong></li>
-<li>Borramos el contenido completo y haremos una página html muy sencilla para esta prueba y la guardamos</li>
+<li>Borramos el contenido completo y haremos una página html muy sencilla para esta prueba y la guardamos
+<img alt="CONTENIDO FINAL DEL INDEX" src="../../assets/image48.png" /></li>
 <li>Para que esto funcione debemos hacer unas modificaciones antes a los 2 archivos de ettercap pues será esta la aplicación a usar en esta prueba, los dos archivos son <strong>etter.conf</strong> y <strong>etter.dns</strong>, para esto los tenemos que localizar con <strong><em>locate etter.conf</em></strong> (si no te aparece nada recuerda ejecutar <strong><em>updatedb</em></strong> para actualizar la base de datos de los documentos en la máquina, pues aquí se guardan las ubicaciones de todos los documentos de esta)</li>
 <li>Ya mostrada la ubicación del documento lo abriremos:</li>
 </ol>
 <p><strong><em>leafpad /etc/ettercap/etter.conf</em></strong></p>
 <ol>
 <li>
-<p>Estos 2 valores debemos marcarlos en 0 y guardar (<strong>uid y gid</strong>)</p>
+<p>Estos 2 valores debemos marcarlos en 0 y guardar (<strong>uid y gid</strong>)
+<img alt="CORRECION DE VALORES DEL CONF" src="../../assets/image49.png" /></p>
 </li>
 <li>
 <p>Ahora localizamos el archivo <strong>etter.dns</strong> y lo abrimos con leafpad, igual que el anterior.</p>
 </li>
 <li>Y en la última línea del documento para esta práctica agregaremos lo siguiente y lo guardaremos:</li>
 </ol>
-<p>(En esta práctica solamente la línea: <a href="http://www.google.com"><strong><em>www.google.com</em></strong></a> <strong><em>A (IP Maquina Kali)</em></strong>)</p>
+<p>(En esta práctica solamente la línea: <a href="http://www.google.com"><strong><em>www.google.com</em></strong></a> <strong><em>A (IP Maquina Kali)</em></strong>)
+<img alt="RESULTADO DE LA CONFIGURACION DEL .DNS" src="../../assets/image50.png" /></p>
 <ol>
 <li>Levantamos el servidor apache para que se puedan conectar a nuestra ip y muestre nuestro documento <strong>index.html</strong> antes modificado:</li>
 </ol>

@@ -43,6 +43,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -835,6 +837,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../metasploit-lab/" class="md-nav__link">
         
   
@@ -1060,18 +1084,21 @@
 <li>Elegimos instalar en el disco y dejamos todas las opciones por defecto, aceptamos y reiniciamos la VM.</li>
 <li>Al reiniciar elegiremos las contraseñas de acceso a decisión propia, recomiendo usar las mismas en todas para las pruebas posteriores</li>
 <li>Podemos hacer el paso de agregar la API Key, en mi caso lo hare de una vez pero es opcional</li>
-<li>Finalmente configurada la VM se nos mostrara las direcciones ip para poder acceder a ellas desde nuestro navegador, así tendríamos la instalación correctamente hecha.(En ajustes de la VM debemos tener la configuración de network adapter como bridge o puente e iniciarla de esa forma para poder acceder a las ip)</li>
+<li>Finalmente configurada la VM se nos mostrara las direcciones ip para poder acceder a ellas desde nuestro navegador, así tendríamos la instalación correctamente hecha.(En ajustes de la VM debemos tener la configuración de network adapter como bridge o puente e iniciarla de esa forma para poder acceder a las ip)
+<img alt="RESULTADO FINAL DE LA MAQUINA CONFIGURADA Y ACTIVA" src="../../assets/image69.png" /></li>
 </ul>
 <p><strong>LABORATORIO</strong></p>
 <ul>
 <li>Actualizar wpscan (wpscan --update)</li>
 <li>Escaneamos la ip de WordPress de la VM (wpscan --url 192.168.1.47)</li>
-<li>Podemos agregar el (-e u) para enumerar a los usuarios (wpscan --url 192.168.1.47 -e u)</li>
+<li>Podemos agregar el (-e u) para enumerar a los usuarios (wpscan --url 192.168.1.47 -e u)
+<img alt="ENUMERACION DE USUARIOS" src="../../assets/image70.png" /></li>
 <li>Obtenemos que hay un usuario administrador</li>
 <li>Con el comando (--help) podemos ver sus opciones a detalle</li>
 <li>Con el nombre de usuario obtenido podemos ejecutar un ataque de fuerza bruta con un diccionario de palabras que tengamos, ocuparemos especificar la ruta del diccionario y el usuario a atacar</li>
 <li>(wpscan --url 192.168.1.47 -P /Desktop/wordlist.txt -U admin)</li>
-<li>Si nuestro diccionario es fuerte y tiene muchas contraseñas y una logra coincidir podremos obtener la contraseña de administrador del sitio de WordPress</li>
+<li>Si nuestro diccionario es fuerte y tiene muchas contraseñas y una logra coincidir podremos obtener la contraseña de administrador del sitio de WordPress
+<img alt="OBTENCION DE LA CONTRASENA DEL USUARIO ADMIN" src="../../assets/image71.png" /></li>
 <li>Esta misma prueba y muchas más opciones de WPScan pueden ser aplicadas en sitios web, sin embargo esto no es recomendable hacerlo aparte de ser ilegal</li>
 </ul>
 

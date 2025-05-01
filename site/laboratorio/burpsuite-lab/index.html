@@ -45,6 +45,8 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -837,6 +839,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../wireshark-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../metasploit-lab/" class="md-nav__link">
         
   
@@ -1058,12 +1082,14 @@
 <p><strong>7.15. INTERCEPTAR TRAFICO WEB</strong></p>
 <ul>
 <li>Ejecutaremos nuestra máquina virtual Metasploitable</li>
-<li>Abrir burpsuite en la sección Proxy&gt;Proxy Settings veremos la ip en la cual esta burpsuite escuchando</li>
+<li>Abrir burpsuite en la sección Proxy&gt;Proxy Settings veremos la ip en la cual esta burpsuite escuchando
+<img alt="CONFIGURACION DE NUESTRO PROXY LISTENER" src="../../assets/image72.png" /></li>
 <li>Ahora en nuestro navegador nos iremos a ajustes y buscamos proxy, nos metemos en sus ajustes y en Proxy Manual agregamos la ip y el puerto donde estaba burpsuite para redirigir el tráfico de datos(Esto solo funcionara para sitios HTTP; Para sitios HTTPS es necesario en el proxy del navegador agregar de igual forma la ip y puerto, y también tendremos que exportar los certificados de burpsuite e importarlos en el navegador para poder acceder de forma correcta a las peticiones)</li>
 <li>En nuestra maquina Metasploitable escribimos (ip a) para saber la ip y acceder a ella desde nuestro navegador</li>
 <li>Dentro de la página probaremos el Login de DVWA</li>
 <li>De regreso en burpsuite en la sección "Target" veremos un resumen de las rutas a las cuales hemos consultado dentro de cada dirección ip</li>
-<li>Con clic derecho sobre la ip de nuestra máquina virtual podemos rastrear el host (Add To Scope)</li>
+<li>Con clic derecho sobre la ip de nuestra máquina virtual podemos rastrear el host (Add To Scope)
+<img alt="RESULTADO DE AGREGAR EL HOST AL SCOPE" src="../../assets/image73.png" /></li>
 <li>En la siguiente opción de modificar el alcance seleccionaremos "Yes"</li>
 <li>Luego en la sección "Scope" modificaremos el alcance, en este caso solo tenemos la ip de la máquina virtual Metasploitable</li>
 </ul>
