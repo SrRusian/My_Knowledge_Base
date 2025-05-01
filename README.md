@@ -48,7 +48,7 @@ Una recopilación práctica de comandos esenciales para el manejo del entorno Ka
 
 Puedes acceder a la documentación completa en GitHub Pages:
 
-📎 **[Ver guía en línea](https://srrusian.github.io/my-knowledge-base/)**
+📎 **[Ver guía en línea](https://srrusian.github.io/My_Knowledge_Base/)**
 
 O clonarla localmente y correrla con MkDocs:
 
