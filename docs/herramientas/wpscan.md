@@ -7,4 +7,6 @@
 
 Funciona a través de una base de datos actualizada de vulnerabilidades específicas de WordPress y es muy útil para detectar y corregir posibles brechas de seguridad en sitios web antes de que puedan ser explotadas.
 
-## HACKEAR FACILMENTE UN SITIO WORDPRESS
+<center>
+[PRACTICA HACKEAR SITIO DE WORDPRESS](../laboratorio/wpscan-lab.md)
+</center>

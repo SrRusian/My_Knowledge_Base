@@ -35,3 +35,8 @@ Nmap utiliza paquetes de IP sin procesar para determinar:
 | \-A | Comprobar Sistema Operativo + | Detectar sistemas operativos y servicios. |
 | \-Pn | Omitir descubrimiento | Asumir que el host esta activo, saltándose así la fase de descubrimiento del host. |
 | \-script | Utilizar script | Este parámetro recibe una lista separada por comas de archivos, categorías y directorios que contiene script de NSE. |
+
+<center>
+[PRACTICA DE NMAP](../laboratorio/nmap-lab.md#laboratorio-2-escaneo-local-de-puertos-con-filtros)
+</center>
+

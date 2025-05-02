@@ -4,6 +4,9 @@
 
 Herramienta de rastreo usada para comprender un protocolo, depurar un problema de red, analizar el tráfico, utiliza Libcap en Linux y Winpcap en Windows y su secreto está en utilizar los filtros Capturar y Mostrar.
 ![EJEMPLO DE 3-WAY TCP HANDSHAKE](../assets/image38.png)
+<center>
+[PRACTICA WIRESHARK](../laboratorio/wireshark-lab.md#laboratorio-1-interaccion-basica)
+</center>
 
 
 ## COMO FUNCIONA LA EXPLORACION DE PUERTOS
@@ -18,6 +21,9 @@ El escaneado de puertos es el proceso de verificar los puertos abiertos (TCP o U
 - Consideraciones sobre el tráfico al usar esta herramienta es que estos mil puertos predeterminados pueden generar hasta 70KB de tráfico dependiendo de la configuración de la red y de la respuesta de los servicios en los puertos escaneados. Sin embargo, si se amplía el escaneo para incluir todos los 65,536 puertos posibles, el tráfico generado puede ser mucho mayor, alcanzando alrededor de 4MB solo para un host.
 
 Por lo que ahora ¿Qué tal el escaneo de una red de clase C con 254 hosts, o incluso de una red clase B? Pues imaginando que se escanean todos los puertos de todos los Host en una red de clase C podemos llegar a generar un tráfico de alrededor 1GB por lo que hacer un escaneo completo en una red clase B imagina la cantidad de tráfico que se estaría generando, conteniendo hasta 65,536 hosts.
+<center>
+[PRACTICA DE NMAP](../laboratorio/nmap-lab.md#laboratorio-1-escaneo-local-de-puertos)
+</center>
 
 ## EJECUTAR ATAQUES MAN-IN-THE-MIDDLE
 
@@ -26,12 +32,18 @@ CIRCUNSTANCIAS NORMALES DE UNA CONEXIÓN
 
 CIRCUNSTANCIAS ANORMALES DE UNA CONEXIÓN (ARP SPOOFED)
 ![EJEMPLO CONEXION COMPROMETIDA](../assets/image43.png)
+<center>
+[PRACTICA MIM](../laboratorio/ettercap-lab.md#laboratorio-1-man-in-the-middle)
+</center>
 
 ### **REALIZAR UN ATAQUE DE SUPLANTACION DE DNS**
 
 La suplantación DNS, es una técnica utilizada para manipular las respuestas del sistema de nombres de dominio (DNS) de manera que los usuarios sean dirigidos a direcciones IP incorrectas o maliciosas cuando intentan accedes a un sitio web.
 
 Su funcionamiento básico implica interceptar y falsificar las respuestas DNS enviadas desde un servidor DNS legítimo, una vez que el atacante ha logrado falsificar las respuestas DNS puede redirigir a los usuarios a sitios web falsos que se asemejan a sitios legítimos. Esto puede conducir a diversas formas de ataques como phishing, robo de credenciales, malware, entre otros.
+<center>
+[PRACTICA SPOOFING](../laboratorio/ettercap-lab.md#laboratorio-2-dns-spoofing)
+</center>
 
 ### **PLANIFICAR ATAQUES DOS Y DDOS**
 
@@ -66,6 +78,9 @@ El ataque a redes inalámbricas es un tipo de ciberataque dirigido a redes Wifi 
 ### WEP CRACKING
 
 WEP fue uno de los primeros protocolos de seguridad utilizados en redes WiFi. Sin embargo, se descubrieron múltiples vulnerabilidades en su implementación que permiten a los atacantes interceptar y descifrar el tráfico de la red con relativa facilidad. Como resultado, se considera inseguro y obsoleto, y no se recomienda su uso.
+<center>
+[PRACTICA WEP CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-1-fern-wifi-cracker)
+</center>
 
 
 ### WPA Y WPA2 CRACKING
@@ -73,8 +88,13 @@ WEP fue uno de los primeros protocolos de seguridad utilizados en redes WiFi. Si
 WPA fue desarrollado como una mejora de seguridad sobre WEP. Utiliza un cifrado más robusto y técnicas de autenticación más sólidas para proteger las comunicaciones inalámbricas. Sin embargo, algunas versiones tempranas de WPA también han sido vulnerables a ataques de fuerza bruta y otros métodos de explotación.
 
 WPA2 es la versión más segura y ampliamente utilizada de los protocolos de seguridad WiFi en la actualidad. Utiliza el cifrado AES (Advanced Encryption Standard) y el protocolo de autenticación de claves de precompartidas (PSK) para garantizar la seguridad de la red. Aunque WPA2 es generalmente seguro, se han descubierto algunas vulnerabilidades, como el ataque KRACK (Key Reinstallation Attack), que afectó a algunas implementaciones de WPA2.
-
+<center>
+[PRACTICA WPA & WPA2 CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-2-fuerza-bruta)
+</center>
 
 ### WPS CRACKING
 
 WPS es un protocolo diseñado para simplificar el proceso de configuración y conexión de dispositivos a redes WiFi. Sin embargo, se han descubierto múltiples vulnerabilidades en WPS que permiten a los atacantes obtener acceso no autorizado a la red WiFi utilizando métodos como el ataque de PIN WPS y el ataque de fuerza bruta. Por esta razón, se recomienda desactivar WPS en los enrutadores y dispositivos WiFi para mejorar la seguridad de la red.
+<center>
+[PRACTICA WPS CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-3-wps-crack)
+</center>

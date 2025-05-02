@@ -49,6 +49,10 @@ EJEMPLO (Búsqueda por ID)
 - Uso de APIs seguras y consultas parametrizadas
 - Ejecutar comandos con privilegios mínimos
 
+<center>
+[PRACTICA INYECCION SQL](../laboratorio/vulnerar-sitioweb.md)
+</center>
+
 ### VULNERABILIDADES EN LA EXPOSICION DE DATOS SENSIBLES
 
 Las aplicaciones pueden filtrar involuntariamente información sobre su configuración, funcionamiento interno, o violar la privacidad a través de una variedad de problemas de aplicación para luego los atacantes utilizar esta debilidad para robar datos sensibles o llevar a cabo ataques más graves.

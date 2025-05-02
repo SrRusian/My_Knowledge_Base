@@ -27,4 +27,8 @@ Este es el núcleo de Metasploit Framework que proporciona la funcionalidad esen
 Es un marco de trabajo (framework) dentro de Metasploit que se utiliza para el desarrollo de herramientas y scripts personalizados. Proporciona una serie de herramientas y bibliotecas (librareis) que los usuarios pueden utilizar para automatizar tareas específicas durante una prueba de penetración.
 
 - **Herramientas:** Son las herramientas específicas que forman parte del marco Rex y se utilizan para realizar acciones concretas durante una prueba de penetración.
-- **Librerías:** Son las bibliotecas de funciones y utilidades que proporcionan funcionalidades adicionales para el desarrollo de herramientas y scripts personalizados en Metasploit.
+- **Librerías:** Son las bibliotecas de funciones y utilidades que proporcionan funcionalidades adicionales para el desarrollo de herramientas y scripts personalizados en Metasploit.  
+
+<center>
+[PRACTICA INTERACCION BASICA METASPLOIT](../laboratorio/metasploit-lab.md#laboratorio-1-interaccion-basica)
+</center>
