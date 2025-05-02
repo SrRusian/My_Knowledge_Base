@@ -4,7 +4,7 @@
 
 - Se necesitará instalar JAVA 21 JDK para esta instalación y elegirlo como “Por defecto”
 - Descargar la última versión de [BurpSuite Professional](https://portswigger.net/burp/releases/professional-community-2024-7-6)
-- Descargar el [LOADER](https://drive.google.com/file/d/1W44h3l1aYtbiDiXW5dMxN0Anw5IJYGou/view?usp=sharing) la contraseña es 1321 o desde su [Repositorio](https://github.com/gt0day/Burp-Suite)
+- Descargar el [LOADER](https://github.com/SrRusian/My_Knowledge_Base/blob/main/docs/assets/LOADER.zip) la contraseña es 1321
 - Ya instalado JAVA debemos tener el LOADER y el Burpsuite Professional JAR en el mismo directorio
 - Ejecutamos en la Terminal (Agregamos el nombre exacto del loader)  
     java -jar LOADER.jar
