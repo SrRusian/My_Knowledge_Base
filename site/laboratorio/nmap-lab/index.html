@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#laboratorio-1" class="md-skip">
+        <a href="#laboratorio-1-escaneo-local-de-puertos" class="md-skip">
           Skip to content
         </a>
       
@@ -844,18 +844,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laboratorio-1" class="md-nav__link">
+  <a href="#laboratorio-1-escaneo-local-de-puertos" class="md-nav__link">
     <span class="md-ellipsis">
-      LABORATORIO 1
+      LABORATORIO 1 (ESCANEO LOCAL DE PUERTOS)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#laboratorio-2" class="md-nav__link">
+  <a href="#laboratorio-2-escaneo-local-de-puertos-con-filtros" class="md-nav__link">
     <span class="md-ellipsis">
-      LABORATORIO 2
+      LABORATORIO 2 (ESCANEO LOCAL DE PUERTOS CON FILTROS)
     </span>
   </a>
   
@@ -943,11 +943,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -965,11 +965,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -1122,18 +1122,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laboratorio-1" class="md-nav__link">
+  <a href="#laboratorio-1-escaneo-local-de-puertos" class="md-nav__link">
     <span class="md-ellipsis">
-      LABORATORIO 1
+      LABORATORIO 1 (ESCANEO LOCAL DE PUERTOS)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#laboratorio-2" class="md-nav__link">
+  <a href="#laboratorio-2-escaneo-local-de-puertos-con-filtros" class="md-nav__link">
     <span class="md-ellipsis">
-      LABORATORIO 2
+      LABORATORIO 2 (ESCANEO LOCAL DE PUERTOS CON FILTROS)
     </span>
   </a>
   
@@ -1157,47 +1157,54 @@
 
   <h1>NMAP</h1>
 
-<h3 id="laboratorio-1">LABORATORIO 1</h3>
+<h3 id="laboratorio-1-escaneo-local-de-puertos">LABORATORIO 1 (ESCANEO LOCAL DE PUERTOS)</h3>
 <ol>
-<li>En la terminal de Kali ejecutamos (nmap &lt;ip objetivo&gt;) en mi caso sería</li>
-</ol>
-<p><strong><em>nmap 192.168.0.90</em></strong></p>
-<ol>
-<li>Obtendremos resultado del escaneo de la ip objetivo</li>
+<li>
+<p>En la terminal de Kali ejecutamos (nmap &lt;ip objetivo&gt;) en mi caso sería<br />
+<strong><em>nmap 192.168.0.90</em></strong></p>
+</li>
+<li>
+<p>Obtendremos resultado del escaneo de la ip objetivo</p>
+</li>
 <li>Para escaneo de ip en un rango ejecutaremos <strong><em>nmap 192.168.0.1-254</em></strong> (Toma en cuenta que escanearas todas las ip dentro del rango por lo que tardara un poco más)</li>
 <li>El ejemplo para escanear una red seria <strong><em>nmap 192.168.0.0/24</em></strong></li>
 <li>Para escanear un puerto: <strong><em>nmap -p &lt;puerto&gt; &lt;ip objetivo&gt;</em></strong></li>
-<li>Para escanear un rango de puertos: nmap -p &lt;rango&gt; &lt;ip objetivo&gt;</li>
+<li>
+<p>Para escanear un rango de puertos: nmap -p &lt;rango&gt; &lt;ip objetivo&gt;<br />
+  (<strong><em>nmap -p 1-100 192.168.0.90</em></strong>)</p>
+</li>
+<li>
+<p>Escaneo rápido: <strong><em>nmap -F &lt;ip objetivo&gt;</em></strong></p>
+</li>
+<li>
+<p>Para hacer un escaneo de todos los puertos: <strong><em>nmap -p- &lt;ip objetivo&gt;</em></strong><br />
+(Esto escaneara todos los puertos del objetivo por lo que tardara demasiado en terminar ya que son un total de 65535 puertos)</p>
+</li>
+<li>
+<p>Ver los scripts de nmap a poder ejecutar: <strong><em>cd /usr/share/nmap/scripts/</em></strong></p>
+</li>
 </ol>
-<p>(<strong><em>nmap -p 1-100 192.168.0.90</em></strong>)</p>
+<h3 id="laboratorio-2-escaneo-local-de-puertos-con-filtros">LABORATORIO 2 (ESCANEO LOCAL DE PUERTOS CON FILTROS)</h3>
 <ol>
-<li>Escaneo rápido: <strong><em>nmap -F &lt;ip objetivo&gt;</em></strong></li>
-<li>Para hacer un escaneo de todos los puertos: <strong><em>nmap -p- &lt;ip objetivo&gt;</em></strong></li>
-</ol>
-<p>(Esto escaneara todos los puertos del objetivo por lo que tardara demasiado en terminar ya que son un total de 65535 puertos)</p>
-<ol>
-<li>Ver los scripts de nmap a poder ejecutar: <strong><em>cd /usr/share/nmap/scripts/</em></strong></li>
-</ol>
-<h3 id="laboratorio-2">LABORATORIO 2</h3>
-<ol>
-<li>Hay que recordar que podemos ver el manual con:</li>
-</ol>
-<p><strong>nmap --help</strong></p>
-<ol>
-<li>Si quiero saber que hosts están en mi red sin comenzar un escaneo usamos (-sn solo es útil para dispositivos que tienen activado el ping):</li>
-</ol>
-<p><strong>nmap -sn 192.168.0.0/24</strong></p>
-<ol>
-<li>Con (<strong>ip a)</strong> veremos de forma resumida la ip de nuestra maquina</li>
-<li>Ya conociendo la ip de nuestra maquina podemos excluirla con el comando (<strong>–exclude</strong>) para que no aparezca en el escaneo<strong>:</strong></li>
-</ol>
-<p><strong>nmap 192.168.0.0/24 --exclude 192.168.0.135 (ip de mi maquina)</strong></p>
-<ol>
-<li>Al hacer un escaneo con nmap si no especificamos los puertos a escanear con el comando (<strong>-p)</strong> haremos solo un escaneo de los 1000 puertos más comunes, pero en este caso lo usaremos para agilizar el proceso con unos pocos puertos comunes de ejemplo (21,22,80,443,445,8080) y al final agregaremos el comando <strong>(-Pn)</strong> para especificar que haga el escaneo de puertos a pesar de que el host no responda al ping inicial.</li>
-</ol>
-<p><strong>nmap -p 21,22,80,443,445,8080 192.168.0.0/24 --exclude 192.168.0.135 -Pn --open</strong> (Para mostrar solo los puertos abiertos)</p>
-<ol>
-<li>s</li>
+<li>
+<p>Hay que recordar que podemos ver el manual con:<br />
+<strong>nmap --help</strong></p>
+</li>
+<li>
+<p>Si quiero saber que hosts están en mi red sin comenzar un escaneo usamos (-sn solo es útil para dispositivos que tienen activado el ping):<br />
+<strong>nmap -sn 192.168.0.0/24</strong></p>
+</li>
+<li>
+<p>Con (<strong>ip a)</strong> veremos de forma resumida la ip de nuestra maquina</p>
+</li>
+<li>
+<p>Ya conociendo la ip de nuestra maquina podemos excluirla con el comando (<strong>–exclude</strong>) para que no aparezca en el escaneo<strong>:</strong><br />
+<strong>nmap 192.168.0.0/24 --exclude 192.168.0.135 (ip de mi maquina)</strong></p>
+</li>
+<li>
+<p>Al hacer un escaneo con nmap si no especificamos los puertos a escanear con el comando (<strong>-p)</strong> haremos solo un escaneo de los 1000 puertos más comunes, pero en este caso lo usaremos para agilizar el proceso con unos pocos puertos comunes de ejemplo (21,22,80,443,445,8080) y al final agregaremos el comando <strong>(-Pn)</strong> para especificar que haga el escaneo de puertos a pesar de que el host no responda al ping inicial.<br />
+<strong>nmap -p 21,22,80,443,445,8080 192.168.0.0/24 --exclude 192.168.0.135 -Pn --open</strong> (Para mostrar solo los puertos abiertos)</p>
+</li>
 </ol>
 
 

