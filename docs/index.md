@@ -32,7 +32,7 @@ Cada sección está pensada para ser independiente, pero se recomienda seguir es
 
 ## 👨‍💻 Autor
 
-Esta guía fue creada por [SrRusian](https://github.com/Emm4nuelCM) como parte de un proceso autodidacta para estructurar y compartir aprendizajes en el mundo del hacking ético.
+Esta guía fue creada por [SrRusian](https://github.com/SrRusian) como parte de un proceso autodidacta para estructurar y compartir aprendizajes en el mundo del hacking ético.
 
 ---
 

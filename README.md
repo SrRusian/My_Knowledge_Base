@@ -53,7 +53,7 @@ Puedes acceder a la documentación completa en GitHub Pages:
 O clonarla localmente y correrla con MkDocs:
 
 ```bash
-git clone https://github.com/emm4nuelcm/my-knowledge-base.git
+git clone https://github.com/srrusian/my-knowledge-base.git
 cd my-knowledge-base
 sudo apt install mkdocs-material
 mkdocs serve
