@@ -1,56 +1,61 @@
 ## 🛡️ My Knowledge Base - Pentesting & Cybersecurity
 
-Bienvenido a **My Knowledge Base**, un repositorio creado con el objetivo de documentar, estructurar y compartir conocimientos fundamentales y avanzados sobre **ciberseguridad ofensiva**, pruebas de penetración (pentesting) y el uso de herramientas esenciales en entornos Kali Linux.
+Welcome to **My Knowledge Base**, a repository created to document, structure, and share both foundational and advanced knowledge in **offensive cybersecurity**, penetration testing (pentesting), and the use of essential tools within Kali Linux environments.
 
-Esta guía está construida con [MkDocs](https://www.mkdocs.org/) y el tema [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), para ofrecer una documentación profesional, navegable y fácilmente accesible desde la web.
-
----
-
-## 📚 Contenido
-
-La guía abarca los siguientes temas organizados en secciones:
-
-### 🔍 Pentesting en APIs
-- Fundamentos del pentesting y su marco legal
-- Funcionamiento de las APIs, arquitecturas (REST, SOAP, GraphQL, RPC)
-- Tipos de APIs y autenticación
-- Vulnerabilidades comunes (OWASP API Security Top 10)
-- Metodologías de pentest en APIs (reconocimiento, análisis, explotación, reporte)
-
-### 🧪 Laboratorios prácticos
-- Ataques Man-in-the-Middle (Ettercap)
-- Spoofing de DNS
-- Transferencia de payloads
-- Escaneo de puertos con Nmap
-- Uso de Armitage y Metasploit Framework
-- Ataques a redes inalámbricas (WEP/WPA2)
-- Creación de troyanos con `msfvenom`
-
-### ⚙️ Configuración de entorno
-- Particiones recomendadas para Kali
-- Configuración de terminal y entorno gráfico (GNOME)
-- Automatización del arranque de servicios (Bluetooth, Apache, etc.)
-- Lanzadores personalizados en Linux
-
-### 🛠️ Herramientas utilizadas
-- **Postman**, **Swagger Inspector**, **SoapUI**
-- **Burp Suite**, **OWASP ZAP**, **Fiddler**
-- **Metasploit**, **Armitage**
-- Herramientas de fuzzing y escaneo de vulnerabilidades
-- Scripts y utilidades en Bash
-
-### 📄 Comandos básicos de Linux
-Una recopilación práctica de comandos esenciales para el manejo del entorno Kali Linux.
+This guide is built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, providing professional, navigable, and web-accessible documentation.
 
 ---
 
-## 🚀 ¿Cómo ver la guía?
+## 📚 Contents
 
-Puedes acceder a la documentación completa en GitHub Pages:
+The guide covers the following topics, organized into sections:
 
-📎 **[Ver guía en línea](https://srrusian.github.io/My_Knowledge_Base/)**
+### 🔍 API Pentesting
 
-O clonarla localmente y correrla con MkDocs:
+* Basics of pentesting and legal framework
+* How APIs work and their architectures (REST, SOAP, GraphQL, RPC)
+* Types of APIs and authentication methods
+* Common vulnerabilities (OWASP API Security Top 10)
+* API pentesting methodologies (reconnaissance, analysis, exploitation, reporting)
+
+### 🧪 Practical Labs
+
+* Man-in-the-Middle attacks (Ettercap)
+* DNS spoofing
+* Payload transfer techniques
+* Port scanning with Nmap
+* Using Armitage and Metasploit Framework
+* Wireless network attacks (WEP/WPA2)
+* Creating trojans with `msfvenom`
+
+### ⚙️ Environment Setup
+
+* Recommended partitioning for Kali
+* Terminal and graphical environment setup (GNOME)
+* Automating service startup (Bluetooth, Apache, etc.)
+* Custom launchers in Linux
+
+### 🛠️ Tools Used
+
+* **Postman**, **Swagger Inspector**, **SoapUI**
+* **Burp Suite**, **OWASP ZAP**, **Fiddler**
+* **Metasploit**, **Armitage**
+* Fuzzing and vulnerability scanning tools
+* Bash scripts and utilities
+
+### 📄 Basic Linux Commands
+
+A practical collection of essential commands for managing the Kali Linux environment.
+
+---
+
+## 🚀 How to View the Guide
+
+You can access the full documentation on GitHub Pages:
+
+📎 **[View Online Guide](https://srrusian.github.io/My_Knowledge_Base/)**
+
+Or clone it locally and run it with MkDocs:
 
 ```bash
 git clone https://github.com/srrusian/my-knowledge-base.git
@@ -61,22 +66,22 @@ mkdocs serve
 
 ---
 
-## 📌 Objetivo del repositorio
+## 📌 Repository Objective
 
-Este proyecto nace como una guía personal de estudio, reforzamiento y documentación para estudiantes, entusiastas de la ciberseguridad, y profesionales que deseen entender las bases y profundizar en pruebas de penetración aplicadas en entornos reales.
-
----
-
-## 🧠 Requisitos para edición o visualización local
-
-- `sudo apt update`
-- `sudo apt install mkdocs-material`
-- Conocimientos básicos de Markdown y Linux
+This project was created as a personal guide for study, reinforcement, and documentation for students, cybersecurity enthusiasts, and professionals who want to understand the basics and delve deeper into real-world pentesting.
 
 ---
 
-## ✍️ Autor
+## 🧠 Requirements for Local Editing or Viewing
 
-Creado por **SrRusian** como parte de una iniciativa autodidacta para documentar y compartir buenas prácticas en pentesting y hacking ético.
+* `sudo apt update`
+* `sudo apt install mkdocs-material`
+* Basic knowledge of Markdown and Linux
+
+---
+
+## ✍️ Author
+
+Created by **SrRusian** as part of a self-taught initiative to document and share best practices in pentesting and ethical hacking.
 
 ---
