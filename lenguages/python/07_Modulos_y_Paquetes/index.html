@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/07_Modulos_y_Paquetes/">
       
       
+        <link rel="prev" href="../06_Entrada_y_Salida/">
+      
+      
+        <link rel="next" href="../../../herramientas/general-cheatsheet/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>08 - Importación y Creación de Módulos 🧱📦 - My Guide</title>
+        <title>Modulos y Paquetes - My Guide</title>
       
     
     
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              08 - Importación y Creación de Módulos 🧱📦
+              Modulos y Paquetes
             
           </span>
         </div>
@@ -441,18 +445,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -468,7 +474,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lenguajes
@@ -479,18 +485,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -506,7 +514,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -658,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_Entrada_y_salida.md" class="md-nav__link">
+      <a href="../06_Entrada_y_Salida/" class="md-nav__link">
         
   
   
@@ -678,10 +686,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../07_Modulos_y_paquetes.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modulos y Paquetes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -692,6 +722,185 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-importar-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 📥 Importar módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 📥 Importar módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importacion-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Importación completa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-parcial" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Importación parcial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-estandar-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Módulos estándar útiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-crear-tus-propios-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 🔨 Crear tus propios módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 🔨 Crear tus propios módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivo-mi_modulopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo: mi_modulo.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usar-el-modulo-en-otro-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usar el módulo en otro archivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacion-del-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Organización del código
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ Organización del código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operacionespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      operaciones.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidadespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      utilidades.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivo-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivo principal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-paquetes-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 📦 Paquetes en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 📦 Paquetes en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
