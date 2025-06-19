@@ -19,8 +19,8 @@ nav:
           - Estructuras de Datos: lenguages/python/03_Estructuras_de_datos.md
           - Funciones: lenguages/python/04_Funciones.md
           - Manejo de Errores: lenguages/python/05_Manejo_de_errores.md
-          - Entradas y Salidas: lenguages/python/06_Entrada_y_salida.md
-          - Modulos y Paquetes: lenguages/python/07_Modulos_y_paquetes.md
+          - Entradas y Salidas: lenguages/python/06_Entrada_y_Salida.md
+          - Modulos y Paquetes: lenguages/python/07_Modulos_y_Paquetes.md
   - Herramientas:
       - Comandos Comunes: herramientas/general-cheatsheet.md
       - NMAP: herramientas/nmap.md
