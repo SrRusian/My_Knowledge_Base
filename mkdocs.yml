@@ -11,6 +11,16 @@ nav:
       - Ataque a Redes: teoria/ataque-redes.md
       - Infiltracion: teoria/infiltracion.md
       - Vulnerabilidades en Sitios Web: teoria/vulnerabilidades-web.md
+  - Lenguajes:
+      - Python:
+          - Introduccion: lenguages/python/00_Introduccion.md
+          - Fundamentos: lenguages/python/01_Fundamentos.md
+          - Estructuras de Control: lenguages/python/02_Estructuras_de_control.md
+          - Estructuras de Datos: lenguages/python/03_Estructuras_de_datos.md
+          - Funciones: lenguages/python/04_Funciones.md
+          - Manejo de Errores: lenguages/python/05_Manejo_de_errores.md
+          - Entradas y Salidas: lenguages/python/06_Entrada_y_salida.md
+          - Modulos y Paquetes: lenguages/python/07_Modulos_y_paquetes.md
   - Herramientas:
       - Comandos Comunes: herramientas/general-cheatsheet.md
       - NMAP: herramientas/nmap.md
@@ -36,8 +46,7 @@ nav:
       - Ataque a Redes Inalambricas: laboratorio/ataques-redes-inalambricas-lab.md
       - Como Vulnerar un Sitio Web: laboratorio/vulnerar-sitioweb.md
       - WPScan: laboratorio/wpscan-lab.md
-      
+
 site_url: https://emm4nuelcm.github.io/my-knowledge-base/
 extra_css:
   - assets/extra.css
-
