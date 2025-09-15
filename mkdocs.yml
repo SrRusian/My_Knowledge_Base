@@ -3,9 +3,6 @@ theme:
   name: material
 nav:
   - Inicio: index.md
-  - Pentesting:
-      - Introduccion: pentest/introduccion.md
-      - Pentest en APIs: pentest/pentest-apis.md
   - Teoria:
       - Modelado de Amenazas: teoria/amenazas-modelado.md
       - Ataque a Redes: teoria/ataque-redes.md
@@ -28,12 +25,9 @@ nav:
       - Metasploitable VM: herramientas/metasploitableVM.md
       - Armitage: herramientas/armitage.md
       - WPScan: herramientas/wpscan.md
-  - Configuracion de Maquina:
-      - Particiones: configuracion-maquina/particiones.md
-      - Terminal: configuracion-maquina/terminal.md
-      - GUI: configuracion-maquina/gui.md
-      - Extras: configuracion-maquina/extras.md
-      - Herramientas: configuracion-maquina/herramientas.md
+  - Pentesting:
+      - Introduccion: pentest/introduccion.md
+      - Pentest en APIs: pentest/pentest-apis.md
   - Laboratorio:
       - NMAP: laboratorio/nmap-lab.md
       - EtterCap: laboratorio/ettercap-lab.md
@@ -46,6 +40,12 @@ nav:
       - Ataque a Redes Inalambricas: laboratorio/ataques-redes-inalambricas-lab.md
       - Como Vulnerar un Sitio Web: laboratorio/vulnerar-sitioweb.md
       - WPScan: laboratorio/wpscan-lab.md
+  - Configuracion de Maquina:
+      - Particiones: configuracion-maquina/particiones.md
+      - Terminal: configuracion-maquina/terminal.md
+      - GUI: configuracion-maquina/gui.md
+      - Extras: configuracion-maquina/extras.md
+      - Herramientas: configuracion-maquina/herramientas.md
 
 site_url: https://emm4nuelcm.github.io/my-knowledge-base/
 extra_css:

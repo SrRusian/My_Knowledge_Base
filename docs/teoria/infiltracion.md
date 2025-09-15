@@ -1,13 +1,29 @@
-## TRANSFERIR PAYLOAD A UNA MAQUINA WINDOWS
+# 04 - Infiltración y Persistencia 🕵️‍♂️
 
-Existen muchas maneras de enviar un Payload, ya sea por correo electrónico, enlaces, mensajes, USB, entre otros, sin embargo, nosotros al tener acceso a las 2 máquinas lo haremos de una forma distinta.
-<center>
-[PRACTICA TRANSFERENCIA DE ARCHIVOS](../laboratorio/transferencia-archivos.md)
-</center>
+> **Resumen:** Técnicas y conceptos clave para infiltrar payloads y establecer persistencia en sistemas objetivo, con ejemplos prácticos y laboratorios.
 
-## CREAR SU PRIMER TROYANO E INFILTRARSE EN UN OBJETIVO
+---
 
-Un troyano es un tipo de software malicioso diseñado para engañar a los usuarios haciéndoles creer que es un programa legítimo o útil, pero en realidad tiene intenciones dañinas ocultas. Una vez que un usuario ejecuta o instala un troyano en su sistema, este puede realizar una variedad de acciones no autorizadas, como robar información confidencial, tomar el control del sistema, instalar malware adicional, enviar spam, realizar ataques de denegación de servicio (DDoS) o incluso dañar archivos y software.
-<center>
-[PRACTICA CREACION E INFILTRACION DE TROYANO](../laboratorio/metasploit-lab.md#laboratorio-2-creacion-de-troyano-e-infiltracion-a-objetivo)
-</center>
+## 1. Transferencia de Payloads a Windows
+
+Existen múltiples formas de transferir un payload a una máquina Windows: correo electrónico, enlaces, mensajes, USB, entre otros. En este laboratorio, aprovechamos el acceso directo a ambas máquinas para realizar la transferencia de manera controlada y didáctica.
+
+> [Ver práctica: Transferencia de archivos](../laboratorio/transferencia-archivos.md)
+
+---
+
+## 2. Creación e Infiltración de Troyanos
+
+Un troyano es un software malicioso que se disfraza de programa legítimo para engañar al usuario. Al ejecutarse, puede:
+
+- Robar información confidencial
+- Tomar el control del sistema
+- Instalar malware adicional
+- Enviar spam o realizar ataques DDoS
+- Dañar archivos y software
+
+> [Ver práctica: Creación e infiltración de troyano](../laboratorio/metasploit-lab.md#laboratorio-2-creacion-de-troyano-e-infiltracion-a-objetivo)
+
+---
+
+**Recuerda:** Todas las prácticas deben realizarse en entornos controlados y con fines educativos.

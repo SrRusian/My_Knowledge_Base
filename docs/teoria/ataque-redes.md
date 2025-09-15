@@ -1,100 +1,110 @@
-# FORMAS DE ATACAR UNA RED
+# 02 - Ataques a Redes y WiFi 🌐
 
-## WIRESHARK SIMPLIFICADO
+> **Resumen:** Técnicas y herramientas clave para atacar redes cableadas e inalámbricas, con ejemplos prácticos y laboratorios guiados.
 
-Herramienta de rastreo usada para comprender un protocolo, depurar un problema de red, analizar el tráfico, utiliza Libcap en Linux y Winpcap en Windows y su secreto está en utilizar los filtros Capturar y Mostrar.
+---
+
+## 1. Análisis de Tráfico con Wireshark
+
+Wireshark es una herramienta esencial para analizar protocolos, depurar problemas de red y comprender el tráfico. Utiliza filtros de captura y visualización para identificar patrones y anomalías.
+
 ![EJEMPLO DE 3-WAY TCP HANDSHAKE](../assets/image38.png)
-<center>
-[PRACTICA WIRESHARK](../laboratorio/wireshark-lab.md#laboratorio-1-interaccion-basica)
-</center>
 
+> [Práctica: Interacción básica con Wireshark](../laboratorio/wireshark-lab.md#laboratorio-1-interaccion-basica)
 
-## COMO FUNCIONA LA EXPLORACION DE PUERTOS
+---
 
-El escaneado de puertos es el proceso de verificar los puertos abiertos (TCP o UDP)
+## 2. Exploración y Escaneo de Puertos
 
-- Métodos de escaneo de puertos.
-    - **Connect** el cual está basado en el mecanismo de saludo TCP, implica enviar un paquete de saludo TCP completo a cada puerto objetivo, este escaneo completa el 3-Way TCP Handshake y se usa para determinar si un puerto especifico está abierto.
-    - **SYN/Stealth** el cual implica el envío de paquetes de envío a varios puertos en la máquina objetivo, no completa el 3-Way TCP Handshake, se considera más sigiloso y discreto que el Connect Scan y es utilizado para descubrir puertos abiertos sin dejar rastro en los logs del objetivo.
-    - Escaneo UDP, mientras que TCP está orientado a la conexión, UDP es sin estado por lo que no implica el establecimiento de conexión por 3-Way siendo diferente su escaneo, en este los paquetes se envían a los puertos objetivo sin esperar una respuesta de confirmación de los puertos cerrados, lo que dificulta la detección precisa de los puertos abiertos, por lo que, debido a la falta de respuesta en los puertos cerrados, el escaneo UDP puede ser más lento y menos fiable que el TCP.
-- Nmap es una gran herramienta de código abierto para escanear redes, utilizada para descubrir dispositivos, puertos abiertos y servicios en una red, ofrece técnicas de escaneo TCP, UDP y detección de SO. Ampliamente utilizada en seguridad informática y administración de redes.
-- Consideraciones sobre el tráfico al usar esta herramienta es que estos mil puertos predeterminados pueden generar hasta 70KB de tráfico dependiendo de la configuración de la red y de la respuesta de los servicios en los puertos escaneados. Sin embargo, si se amplía el escaneo para incluir todos los 65,536 puertos posibles, el tráfico generado puede ser mucho mayor, alcanzando alrededor de 4MB solo para un host.
+El escaneo de puertos permite identificar servicios abiertos (TCP/UDP) en los hosts de una red.
 
-Por lo que ahora ¿Qué tal el escaneo de una red de clase C con 254 hosts, o incluso de una red clase B? Pues imaginando que se escanean todos los puertos de todos los Host en una red de clase C podemos llegar a generar un tráfico de alrededor 1GB por lo que hacer un escaneo completo en una red clase B imagina la cantidad de tráfico que se estaría generando, conteniendo hasta 65,536 hosts.
-<center>
-[PRACTICA DE NMAP](../laboratorio/nmap-lab.md#laboratorio-1-escaneo-local-de-puertos)
-</center>
+**Métodos comunes:**
 
-## EJECUTAR ATAQUES MAN-IN-THE-MIDDLE
+- **Connect:** Completa el 3-Way Handshake TCP para verificar puertos abiertos.
+- **SYN/Stealth:** Envía paquetes SYN sin completar el handshake, más sigiloso.
+- **UDP:** Envía paquetes sin esperar respuesta, más lento y menos fiable.
 
-CIRCUNSTANCIAS NORMALES DE UNA CONEXIÓN
-![EJEMPLO CIRCUNSTANCIA NORMAL](../assets/image42.png)
+Nmap es la herramienta estándar para escaneo y descubrimiento de hosts, puertos y servicios.
 
-CIRCUNSTANCIAS ANORMALES DE UNA CONEXIÓN (ARP SPOOFED)
-![EJEMPLO CONEXION COMPROMETIDA](../assets/image43.png)
-<center>
-[PRACTICA MIM](../laboratorio/ettercap-lab.md#laboratorio-1-man-in-the-middle)
-</center>
+> Considera el impacto en la red: escanear todos los puertos de una red grande puede generar mucho tráfico.
 
-### **REALIZAR UN ATAQUE DE SUPLANTACION DE DNS**
+> [Práctica: Escaneo local de puertos con Nmap](../laboratorio/nmap-lab.md#laboratorio-1-escaneo-local-de-puertos)
 
-La suplantación DNS, es una técnica utilizada para manipular las respuestas del sistema de nombres de dominio (DNS) de manera que los usuarios sean dirigidos a direcciones IP incorrectas o maliciosas cuando intentan accedes a un sitio web.
+---
 
-Su funcionamiento básico implica interceptar y falsificar las respuestas DNS enviadas desde un servidor DNS legítimo, una vez que el atacante ha logrado falsificar las respuestas DNS puede redirigir a los usuarios a sitios web falsos que se asemejan a sitios legítimos. Esto puede conducir a diversas formas de ataques como phishing, robo de credenciales, malware, entre otros.
-<center>
-[PRACTICA SPOOFING](../laboratorio/ettercap-lab.md#laboratorio-2-dns-spoofing)
-</center>
+## 3. Ataques Man-in-the-Middle (MITM)
 
-### **PLANIFICAR ATAQUES DOS Y DDOS**
+Permiten interceptar, modificar o redirigir el tráfico entre dos partes.
 
-Estos ataques son técnicas utilizadas para inundar un sistema, red o servicio con tráfico malicioso con el objetivo de hacerlo inaccesible para los usuarios legítimos.
+**Ejemplo:**
 
-Los ataques **DOS** son ataques desde un solo dispositivo comprometido que envía una cantidad abrumadora de tráfico a un objetivo específico como un servidor web con el objetivo de sobrecargarlo y hacerlo inaccesible para los usuarios legítimos.
+- Circunstancia normal:
+  ![EJEMPLO CIRCUNSTANCIA NORMAL](../assets/image42.png)
+- Conexión comprometida (ARP spoofed):
+  ![EJEMPLO CONEXION COMPROMETIDA](../assets/image43.png)
 
-Los ataques **DDOS** son ataques desde múltiples dispositivos comprometidos conocidos como botnets que coordinan esfuerzos para enviar grandes volúmenes de tráfico malicioso hacia un objetivo específico.
+> [Práctica: MITM con Ettercap](../laboratorio/ettercap-lab.md#laboratorio-1-man-in-the-middle)
 
-CLASIFICACIONES DE LOS ATAQUES DDOS:
+---
 
-- **Basados en volumen:** Centrados en inundar la red o servicio objetivo con una gran cantidad de tráfico. Ejemplos incluyen ataques SYN, inundación UDP, inundación ICMP, etc.
-- **Basados en protocolos:** Estos explotan debilidades en los protocolos de red para sobrecargar los recursos del objetivo. Ejemplos incluyen ataques de amplificación de DNS, ataques NTP amplificados, etc.
-- **Ataques a la capa de aplicación:** Estos ataques se dirigen a las vulnerabilidades de las aplicaciones y servicios específicos en lugar de abrumar la infraestructura de red. Ejemplos incluyen ataques de inundación HTTP, ataques de SQL injection, ataques de Cross-Site Scriptin (XSS), etc.
+### 3.1 Suplantación de DNS (DNS Spoofing)
 
-## ATACAR REDES INALAMBRICAS
+Manipula respuestas DNS para redirigir usuarios a sitios maliciosos (phishing, robo de credenciales, malware).
 
-El ataque a redes inalámbricas es un tipo de ciberataque dirigido a redes Wifi para comprometer su seguridad y obtener acceso no autorizado a la red o a la información transmitida a través de ella. Los atacantes pueden aprovechar diferentes vulnerabilidades en los protocolos de seguridad utilizados por las redes Wifi para llevar a cabo estos ataques.
+> [Práctica: DNS Spoofing](../laboratorio/ettercap-lab.md#laboratorio-2-dns-spoofing)
 
-**COMPARACION DE WPAs**
+---
+
+## 4. Ataques de Denegación de Servicio (DoS y DDoS)
+
+Inundan un sistema o red con tráfico malicioso para hacerlos inaccesibles.
+
+- **DoS:** Un solo dispositivo ataca al objetivo.
+- **DDoS:** Múltiples dispositivos (botnet) coordinan el ataque.
+
+**Tipos de ataques DDoS:**
+
+- Basados en volumen (SYN flood, UDP flood, ICMP flood)
+- Basados en protocolos (amplificación DNS, NTP, etc.)
+- A la capa de aplicación (HTTP flood, SQLi, XSS, etc.)
+
+---
+
+## 5. Ataques a Redes Inalámbricas (WiFi)
+
+Comprometen la seguridad de redes WiFi para obtener acceso no autorizado o interceptar información.
+
+**Comparación de protocolos WPA:**
 ![TABLA DE COMPARACION](../assets/image54.png)
 
-### HERRAMIENTAS DE HACKING
+### 5.1 Herramientas de Hacking WiFi
 
-- WPA/WPA2
-  - **airmon-ng**: Pone la tarjeta inalámbrica en modo monitor
-  - **airdump-ng**: Guarda el tráfico aéreo en archivos PCAP y muestra información sobre las redes
-  - **aireplay-ng**: Inyector de paquetes WEP
-  - **Fern WiFi**: Crackea y recupera claves WEP/WPA/WPS y también ejecuta otros ataques de red basados en redes inalámbricas o Ethernet
-  - **Reaver**: Realiza ataques de fuerza bruta contra los PIN de registro de Wifi Protected Setup (WPS) para recuperar las contraseñas WPA/WPA2
+- **airmon-ng:** Modo monitor para tarjetas inalámbricas
+- **airodump-ng:** Captura tráfico y muestra información de redes
+- **aireplay-ng:** Inyección de paquetes (WEP)
+- **Fern WiFi:** Cracking de claves WEP/WPA/WPS y otros ataques
+- **Reaver:** Fuerza bruta contra PIN WPS para obtener contraseñas WPA/WPA2
 
-### WEP CRACKING
+---
 
-WEP fue uno de los primeros protocolos de seguridad utilizados en redes WiFi. Sin embargo, se descubrieron múltiples vulnerabilidades en su implementación que permiten a los atacantes interceptar y descifrar el tráfico de la red con relativa facilidad. Como resultado, se considera inseguro y obsoleto, y no se recomienda su uso.
-<center>
-[PRACTICA WEP CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-1-fern-wifi-cracker)
-</center>
+### 5.2 WEP Cracking
 
+WEP es un protocolo obsoleto y vulnerable. Permite interceptar y descifrar tráfico fácilmente.
 
-### WPA Y WPA2 CRACKING
+> [Práctica: WEP Crack con Fern WiFi](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-1-fern-wifi-cracker)
 
-WPA fue desarrollado como una mejora de seguridad sobre WEP. Utiliza un cifrado más robusto y técnicas de autenticación más sólidas para proteger las comunicaciones inalámbricas. Sin embargo, algunas versiones tempranas de WPA también han sido vulnerables a ataques de fuerza bruta y otros métodos de explotación.
+---
 
-WPA2 es la versión más segura y ampliamente utilizada de los protocolos de seguridad WiFi en la actualidad. Utiliza el cifrado AES (Advanced Encryption Standard) y el protocolo de autenticación de claves de precompartidas (PSK) para garantizar la seguridad de la red. Aunque WPA2 es generalmente seguro, se han descubierto algunas vulnerabilidades, como el ataque KRACK (Key Reinstallation Attack), que afectó a algunas implementaciones de WPA2.
-<center>
-[PRACTICA WPA & WPA2 CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-2-fuerza-bruta)
-</center>
+### 5.3 WPA y WPA2 Cracking
 
-### WPS CRACKING
+WPA mejora la seguridad sobre WEP, pero versiones tempranas son vulnerables a fuerza bruta. WPA2 es el estándar actual, aunque existen ataques como KRACK.
 
-WPS es un protocolo diseñado para simplificar el proceso de configuración y conexión de dispositivos a redes WiFi. Sin embargo, se han descubierto múltiples vulnerabilidades en WPS que permiten a los atacantes obtener acceso no autorizado a la red WiFi utilizando métodos como el ataque de PIN WPS y el ataque de fuerza bruta. Por esta razón, se recomienda desactivar WPS en los enrutadores y dispositivos WiFi para mejorar la seguridad de la red.
-<center>
-[PRACTICA WPS CRACK](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-3-wps-crack)
-</center>
+> [Práctica: Fuerza bruta WPA & WPA2](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-2-fuerza-bruta)
+
+---
+
+### 5.4 WPS Cracking
+
+WPS simplifica la conexión, pero es inseguro y vulnerable a ataques de PIN y fuerza bruta. Se recomienda desactivarlo.
+
+> [Práctica: WPS Crack](../laboratorio/ataques-redes-inalambricas-lab.md#laboratorio-3-wps-crack)
