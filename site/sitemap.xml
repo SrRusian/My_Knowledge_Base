@@ -2,150 +2,438 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/extras/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/gui/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/herramientas/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/particiones/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/configuracion-maquina/terminal/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/armitage/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/general-cheatsheet/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/metasploit/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/metasploitableVM/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/nmap/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/herramientas/wpscan/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/ataques-redes-inalambricas-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/burpsuite-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/ettercap-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/metasploit-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/metasploitableVM/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/nikto/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/nmap-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/transferencia-archivos/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/vulnerar-sitioweb/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/wireshark-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/laboratorio/wpscan-lab/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/00_Introduccion/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/1-introduction/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/01_Fundamentos/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/2-navigation/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/02_Estructuras_de_control/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/3-manipulation/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/03_Estructuras_de_datos/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/4-operators/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/04_Funciones/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/5-examples/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/05_Manejo_de_errores/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/6-visual-summary/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/06_Entrada_y_Salida/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/commandline/doc/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
-         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/07_Modulos_y_Paquetes/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/1-introduction/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/10-media-queries-and-responsive/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/11-pseudo-classes-and-elements/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/12-best-practices/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/13-tools-and-workflows/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/14-examples/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/15-visual-summary/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/2-syntax-and-selectors/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/3-properties-and-values/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/4-box-model/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/5-layout/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/6-typography/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/7-colors-and-backgrounds/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/8-borders-and-shadows/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/css/9-transitions-and-animations/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/git/git/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/git/github/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/1-introduction/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/10-best-practices/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/11-advanced-data-structures/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/12-modules-and-namespaces/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/13-classes-and-oop/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/14-patterns-and-practices/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/15-tools-and-workflow/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/16-examples-and-recipes/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/17-visual-summary/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/2-variables-and-types/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/3-operators/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/4-control-structures/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/5-functions/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/6-objects-and-arrays/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/7-dom-basics/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/8-json-and-fetch/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/javascript/9-error-handling/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/1-introduction/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/10-advanced-data-structures/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/11-iterators-generators/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/12-decorators-context-managers/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/13-virtualenv-pip/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/14-testing/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/15-comprehensions-lambda/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/16-regular-expressions/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/17-datetime/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/18-networking/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/19-concurrency/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/2-basics/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/20-gui/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/21-web-frameworks/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/22-data-science/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/23-best-practices/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/3-control-structures/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/4-data-structures/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/5-functions/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/6-error-handling/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/7-input-output/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/8-modules-and-packages/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/python/9-oop/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/10-functions-expressions/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/11-procedures-functions/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/12-triggers/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/13-security-users/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/14-optimization/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/15-advanced/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/advanced/16-good-practices/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/1-introduction/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/2-tables-structure/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/3-basic-querys/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/4-aggregation-clustering/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/5-joins/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/basic/6-subquerys/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/intermediate/7-data-manipulation/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/intermediate/8-management-structure/</loc>
+         <lastmod>2025-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://emm4nuelcm.github.io/my-knowledge-base/lenguages/sql/intermediate/9-transactions/</loc>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/pentest/introduccion/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/pentest/pentest-apis/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/amenazas-modelado/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/ataque-redes/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/infiltracion/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
     <url>
          <loc>https://emm4nuelcm.github.io/my-knowledge-base/teoria/vulnerabilidades-web/</loc>
-         <lastmod>2025-06-19</lastmod>
+         <lastmod>2025-09-16</lastmod>
     </url>
 </urlset>

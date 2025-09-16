@@ -9,15 +9,95 @@ nav:
       - Infiltracion: teoria/infiltracion.md
       - Vulnerabilidades en Sitios Web: teoria/vulnerabilidades-web.md
   - Lenguajes:
+      - Command Line:
+          - Introducción: lenguages/commandline/1-introduction.md
+          - Navegación: lenguages/commandline/2-navigation.md
+          - Manipulación: lenguages/commandline/3-manipulation.md
+          - Operadores: lenguages/commandline/4-operators.md
+          - Ejemplos: lenguages/commandline/5-examples.md
+          - Resumen Visual: lenguages/commandline/6-visual-summary.md
+          - Documentación: lenguages/commandline/doc.md
+      - CSS:
+          - Introducción: lenguages/css/1-introduction.md
+          - Sintaxis y Selectores: lenguages/css/2-syntax-and-selectors.md
+          - Propiedades y Valores: lenguages/css/3-properties-and-values.md
+          - Modelo de Caja: lenguages/css/4-box-model.md
+          - Layout: lenguages/css/5-layout.md
+          - Tipografía: lenguages/css/6-typography.md
+          - Colores y Fondos: lenguages/css/7-colors-and-backgrounds.md
+          - Bordes y Sombras: lenguages/css/8-borders-and-shadows.md
+          - Transiciones y Animaciones: lenguages/css/9-transitions-and-animations.md
+          - Media Queries y Responsive: lenguages/css/10-media-queries-and-responsive.md
+          - Pseudo-clases y Elementos: lenguages/css/11-pseudo-classes-and-elements.md
+          - Buenas Prácticas: lenguages/css/12-best-practices.md
+          - Herramientas y Workflows: lenguages/css/13-tools-and-workflows.md
+          - Ejemplos: lenguages/css/14-examples.md
+          - Resumen Visual: lenguages/css/15-visual-summary.md
+      - Git:
+          - Git: lenguages/git/git.md
+          - GitHub: lenguages/git/github.md
+      - JavaScript:
+          - Introducción: lenguages/javascript/1-introduction.md
+          - Variables y Tipos: lenguages/javascript/2-variables-and-types.md
+          - Operadores: lenguages/javascript/3-operators.md
+          - Estructuras de Control: lenguages/javascript/4-control-structures.md
+          - Funciones: lenguages/javascript/5-functions.md
+          - Objetos y Arreglos: lenguages/javascript/6-objects-and-arrays.md
+          - DOM Básico: lenguages/javascript/7-dom-basics.md
+          - JSON y Fetch: lenguages/javascript/8-json-and-fetch.md
+          - Manejo de Errores: lenguages/javascript/9-error-handling.md
+          - Buenas Prácticas: lenguages/javascript/10-best-practices.md
+          - Estructuras de Datos Avanzadas: lenguages/javascript/11-advanced-data-structures.md
+          - Módulos y Namespaces: lenguages/javascript/12-modules-and-namespaces.md
+          - Clases y OOP: lenguages/javascript/13-classes-and-oop.md
+          - Patrones y Prácticas: lenguages/javascript/14-patterns-and-practices.md
+          - Herramientas y Workflow: lenguages/javascript/15-tools-and-workflow.md
+          - Ejemplos y Recetas: lenguages/javascript/16-examples-and-recipes.md
+          - Resumen Visual: lenguages/javascript/17-visual-summary.md
       - Python:
-          - Introduccion: lenguages/python/00_Introduccion.md
-          - Fundamentos: lenguages/python/01_Fundamentos.md
-          - Estructuras de Control: lenguages/python/02_Estructuras_de_control.md
-          - Estructuras de Datos: lenguages/python/03_Estructuras_de_datos.md
-          - Funciones: lenguages/python/04_Funciones.md
-          - Manejo de Errores: lenguages/python/05_Manejo_de_errores.md
-          - Entradas y Salidas: lenguages/python/06_Entrada_y_Salida.md
-          - Modulos y Paquetes: lenguages/python/07_Modulos_y_Paquetes.md
+          - Introducción: lenguages/python/1-introduction.md
+          - Fundamentos: lenguages/python/2-basics.md
+          - Estructuras de Control: lenguages/python/3-control-structures.md
+          - Estructuras de Datos: lenguages/python/4-data-structures.md
+          - Funciones: lenguages/python/5-functions.md
+          - Manejo de Errores: lenguages/python/6-error-handling.md
+          - Entradas y Salidas: lenguages/python/7-input-output.md
+          - Módulos y Paquetes: lenguages/python/8-modules-and-packages.md
+          - Programación Orientada a Objetos: lenguages/python/9-oop.md
+          - Estructuras de Datos Avanzadas: lenguages/python/10-advanced-data-structures.md
+          - Iteradores y Generadores: lenguages/python/11-iterators-generators.md
+          - Decoradores y Context Managers: lenguages/python/12-decorators-context-managers.md
+          - Virtualenv y pip: lenguages/python/13-virtualenv-pip.md
+          - Testing: lenguages/python/14-testing.md
+          - Comprehensions y Lambda: lenguages/python/15-comprehensions-lambda.md
+          - Expresiones Regulares: lenguages/python/16-regular-expressions.md
+          - Fecha y Hora: lenguages/python/17-datetime.md
+          - Networking: lenguages/python/18-networking.md
+          - Concurrencia: lenguages/python/19-concurrency.md
+          - GUI: lenguages/python/20-gui.md
+          - Web Frameworks: lenguages/python/21-web-frameworks.md
+          - Data Science: lenguages/python/22-data-science.md
+          - Buenas Prácticas: lenguages/python/23-best-practices.md
+      - SQL:
+          - Básico:
+              - Introducción: lenguages/sql/basic/1-introduction.md
+              - Estructura de Tablas: lenguages/sql/basic/2-tables-structure.md
+              - Consultas Básicas: lenguages/sql/basic/3-basic-querys.md
+              - Agregación y Clustering: lenguages/sql/basic/4-aggregation-clustering.md
+              - Joins: lenguages/sql/basic/5-joins.md
+              - Subconsultas: lenguages/sql/basic/6-subquerys.md
+          - Intermedio:
+              - Manipulación de Datos: lenguages/sql/intermediate/7-data-manipulation.md
+              - Gestión de Estructura: lenguages/sql/intermediate/8-management-structure.md
+              - Transacciones: lenguages/sql/intermediate/9-transactions.md
+          - Avanzado:
+              - Funciones y Expresiones: lenguages/sql/advanced/10-functions-expressions.md
+              - Procedimientos y Funciones: lenguages/sql/advanced/11-procedures-functions.md
+              - Triggers: lenguages/sql/advanced/12-triggers.md
+              - Seguridad y Usuarios: lenguages/sql/advanced/13-security-users.md
+              - Optimización: lenguages/sql/advanced/14-optimization.md
+              - Avanzado: lenguages/sql/advanced/15-advanced.md
+              - Buenas Prácticas: lenguages/sql/advanced/16-good-practices.md
   - Herramientas:
       - Comandos Comunes: herramientas/general-cheatsheet.md
       - NMAP: herramientas/nmap.md
