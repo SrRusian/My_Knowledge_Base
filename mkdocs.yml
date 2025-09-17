@@ -2,6 +2,13 @@ site_name: Mi Guia Personal
 theme:
   name: material
 nav:
+  - Cloud:
+      - AWS:
+          - Introducción: docs/cloud/aws/1-introduction.md
+          - Fundamentos de Seguridad (2a Edición):
+              - Introducción: docs/cloud/aws/aws-security-fundamentals-second-edition/1-introduction.md
+              - Seguridad de la Nube: docs/cloud/aws/aws-security-fundamentals-second-edition/2-security-of-the-cloud.md
+              - Seguridad en la Nube: docs/cloud/aws/aws-security-fundamentals-second-edition/3-security-in-the-cloud.md
   - Inicio: index.md
   - Teoria:
       - Modelado de Amenazas: teoria/amenazas-modelado.md
