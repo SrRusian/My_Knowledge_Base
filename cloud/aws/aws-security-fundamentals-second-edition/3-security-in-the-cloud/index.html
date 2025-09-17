@@ -1,0 +1,4231 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://emm4nuelcm.github.io/my-knowledge-base/cloud/aws/aws-security-fundamentals-second-edition/3-security-in-the-cloud/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Seguridad en la Nube en AWS - Mi Guia Personal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seguridad-en-la-nube-en-aws" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Mi Guia Personal" class="md-header__button md-logo" aria-label="Mi Guia Personal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mi Guia Personal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Seguridad en la Nube en AWS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Mi Guia Personal" class="md-nav__button md-logo" aria-label="Mi Guia Personal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mi Guia Personal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/cloud/aws/1-introduction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1_2" id="__nav_1_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fundamentos de Seguridad (2a Edición)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos de Seguridad (2a Edición)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/cloud/aws/aws-security-fundamentals-second-edition/1-introduction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/cloud/aws/aws-security-fundamentals-second-edition/2-security-of-the-cloud.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad de la Nube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/cloud/aws/aws-security-fundamentals-second-edition/3-security-in-the-cloud.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad en la Nube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoria
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teoria/amenazas-modelado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelado de Amenazas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teoria/ataque-redes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque a Redes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teoria/infiltracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infiltracion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teoria/vulnerabilidades-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilidades en Sitios Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lenguajes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lenguajes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Command Line
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Command Line
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/2-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/3-manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/4-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/5-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/6-visual-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resumen Visual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/commandline/doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CSS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/2-syntax-and-selectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sintaxis y Selectores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/3-properties-and-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propiedades y Valores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/4-box-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo de Caja
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/5-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/6-typography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/7-colors-and-backgrounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colores y Fondos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/8-borders-and-shadows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bordes y Sombras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/9-transitions-and-animations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transiciones y Animaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/10-media-queries-and-responsive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Media Queries y Responsive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/11-pseudo-classes-and-elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pseudo-clases y Elementos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/12-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas Prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/13-tools-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas y Workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/14-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/css/15-visual-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resumen Visual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/git/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/git/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/2-variables-and-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables y Tipos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/3-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/4-control-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras de Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/5-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/6-objects-and-arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objetos y Arreglos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/7-dom-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOM Básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/8-json-and-fetch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON y Fetch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/9-error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/10-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas Prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/11-advanced-data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras de Datos Avanzadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/12-modules-and-namespaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos y Namespaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/13-classes-and-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clases y OOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/14-patterns-and-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patrones y Prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/15-tools-and-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas y Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/16-examples-and-recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplos y Recetas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/javascript/17-visual-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resumen Visual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/2-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/3-control-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras de Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/4-data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/5-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/6-error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/7-input-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entradas y Salidas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/8-modules-and-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos y Paquetes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/9-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programación Orientada a Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/10-advanced-data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructuras de Datos Avanzadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/11-iterators-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iteradores y Generadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/12-decorators-context-managers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decoradores y Context Managers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/13-virtualenv-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtualenv y pip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/14-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/15-comprehensions-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comprehensions y Lambda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/16-regular-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expresiones Regulares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/17-datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fecha y Hora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/18-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/19-concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/20-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/21-web-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/22-data-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Science
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/python/23-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas Prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Básico
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Básico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/1-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/2-tables-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructura de Tablas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/3-basic-querys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consultas Básicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/4-aggregation-clustering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregación y Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/5-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Joins
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/basic/6-subquerys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subconsultas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Intermedio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Intermedio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/intermediate/7-data-manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulación de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/intermediate/8-management-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gestión de Estructura
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/intermediate/9-transactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transacciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Avanzado
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Avanzado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/10-functions-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones y Expresiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/11-procedures-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedimientos y Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/12-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triggers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/13-security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad y Usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/14-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/15-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Avanzado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lenguages/sql/advanced/16-good-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas Prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Herramientas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/general-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comandos Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/metasploit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/metasploitableVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploitable VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/armitage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Armitage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../herramientas/wpscan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pentesting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pentesting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pentest/introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pentest/pentest-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pentest en APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/nmap-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NMAP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/ettercap-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EtterCap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/wireshark-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WireShark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/metasploit-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/metasploitableVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploitable VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/nikto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nikto (UNDER CONSTRUCTION)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/burpsuite-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burpsuite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/transferencia-archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transferencia de Archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/ataques-redes-inalambricas-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ataque a Redes Inalambricas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/vulnerar-sitioweb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como Vulnerar un Sitio Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../laboratorio/wpscan-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Configuracion de Maquina
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Configuracion de Maquina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuracion-maquina/particiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Particiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuracion-maquina/terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuracion-maquina/gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuracion-maquina/extras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuracion-maquina/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-identidad-y-acceso-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Identidad y Acceso en AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Identidad y Acceso en AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-aws-identity-and-access-management-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 AWS Identity and Access Management (IAM)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 AWS Identity and Access Management (IAM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buenas-practicas-iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buenas prácticas IAM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tipos-de-credenciales-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Tipos de credenciales en AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-servicios-adicionales-para-gestion-de-identidad-y-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Servicios adicionales para gestión de identidad y acceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-aws-service-spotlight-amazon-cognito" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 AWS Service Spotlight: Amazon Cognito
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-controles-detectivos-monitoreo-y-auditoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Controles Detectivos, Monitoreo y Auditoría
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Controles Detectivos, Monitoreo y Auditoría">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-aws-cloudtrail" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 AWS CloudTrail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-monitoreo-y-notificaciones-amazon-cloudwatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Monitoreo y notificaciones: Amazon CloudWatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-auditoria-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Auditoría en AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-servicios-adicionales-para-controles-detectivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Servicios adicionales para controles detectivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-aws-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 AWS Config
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proteccion-de-la-infraestructura-y-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Protección de la Infraestructura y Aplicaciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Protección de la Infraestructura y Aplicaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-proteccion-mediante-aislamiento-amazon-vpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Protección mediante aislamiento: Amazon VPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-seguridad-de-aplicaciones-y-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Seguridad de aplicaciones y sistemas operativos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-servicios-adicionales-para-proteccion-de-infraestructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Servicios adicionales para protección de infraestructura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-aws-service-spotlight-amazon-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 AWS Service Spotlight: Amazon Inspector
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-proteccion-de-datos-y-respuesta-a-incidentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Protección de Datos y Respuesta a Incidentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Protección de Datos y Respuesta a Incidentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-proteccion-de-datos-en-reposo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Protección de datos en reposo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-proteccion-de-datos-en-transito" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Protección de datos en tránsito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-servicios-adicionales-para-proteccion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Servicios adicionales para protección de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-aws-service-spotlight-aws-key-management-service-kms" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 AWS Service Spotlight: AWS Key Management Service (KMS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-respuesta-a-incidentes-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Respuesta a incidentes en AWS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Respuesta a incidentes en AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-service-spotlight-aws-step-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Service Spotlight: AWS Step Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mitigacion-de-ddos-y-proteccion-en-el-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mitigación de DDoS y Protección en el Edge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mitigación de DDoS y Protección en el Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-edge-locations-y-cloudfront" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Edge Locations y CloudFront
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-servicios-de-proteccion-fuera-de-la-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Servicios de protección fuera de la región
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-aws-service-spotlight-aws-waf" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 AWS Service Spotlight: AWS WAF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aws-well-architected-tool-y-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. AWS Well-Architected Tool y Buenas Prácticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-adicionales-y-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos adicionales y conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="seguridad-en-la-nube-en-aws">Seguridad en la Nube en AWS</h1>
+<p>La seguridad en la nube es un pilar fundamental para cualquier organización que utilice servicios en la nube pública. AWS ofrece un modelo de responsabilidad compartida, donde AWS se encarga de la seguridad de la nube (infraestructura física, red, hardware, etc.) y el cliente es responsable de la seguridad en la nube (configuración, acceso, datos, aplicaciones). Este documento cubre los principales mecanismos, servicios y buenas prácticas para proteger identidades, datos, infraestructura y aplicaciones en AWS, así como la detección, respuesta y mitigación de amenazas.</p>
+<hr />
+<h2 id="1-identidad-y-acceso-en-aws">1. Identidad y Acceso en AWS</h2>
+<p>Toda interacción con AWS (consola, CLI, SDKs, servicios) implica llamadas API autenticadas y autorizadas por IAM. Esto asegura que solo identidades válidas y con permisos adecuados puedan operar sobre los recursos. Por ejemplo, al crear un bucket S3 desde la consola, se realiza una llamada API autenticada y autorizada por IAM antes de ejecutarse. Así, AWS centraliza la gestión de seguridad y acceso.</p>
+<h3 id="11-aws-identity-and-access-management-iam">1.1 AWS Identity and Access Management (IAM)</h3>
+<p>IAM es el servicio central para la gestión de identidades y permisos en AWS. Permite crear usuarios, grupos y roles, y asignarles permisos detallados sobre los recursos de la cuenta. La gestión cuidadosa de credenciales y permisos es la base de la seguridad en la nube. IAM actúa como el centro de control de "quién puede hacer qué" en tu cuenta AWS.</p>
+<ul>
+<li><strong>Usuarios y grupos IAM:</strong> Un usuario representa una identidad individual con credenciales propias. Los grupos permiten organizar usuarios y asignar permisos de forma colectiva, facilitando la administración basada en roles (RBAC).<blockquote>
+<p>Ejemplo: Un grupo "Desarrolladores" puede tener permisos específicos para desarrollo, mientras que "Revisores" solo pueden auditar recursos.
+<img alt="Usuarios y grupos IAM" src="../images/aws-iam-users-groups.png" /></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="buenas-practicas-iam">Buenas prácticas IAM</h4>
+<ul>
+<li>Aplica el principio de privilegio mínimo.</li>
+<li>Usa roles en vez de usuarios individuales para aplicaciones y servicios.</li>
+<li>Habilita MFA para todas las cuentas.</li>
+<li>Revisa y rota credenciales periódicamente.</li>
+</ul>
+<h3 id="12-tipos-de-credenciales-en-aws">1.2 Tipos de credenciales en AWS</h3>
+<p>AWS soporta varios tipos de credenciales para autenticación y acceso:</p>
+<ul>
+<li><strong>Usuario y contraseña:</strong> Para acceso a la consola web. Se recomienda definir políticas de contraseñas robustas y rotación periódica.</li>
+<li><strong>Autenticación multifactor (MFA):</strong> Añade una capa extra de seguridad, exigiendo un segundo factor para acceder.</li>
+<li><strong>Access Keys:</strong> Claves de acceso para autenticación programática (CLI, SDKs). Deben protegerse y rotarse regularmente.</li>
+<li><strong>Pares de claves EC2:</strong> Para acceso SSH seguro a instancias EC2.</li>
+</ul>
+<p>Separar correctamente autenticación (verificar identidad) y autorización (definir permisos) es esencial para minimizar riesgos y limitar el alcance de acciones accidentales o maliciosas.</p>
+<h3 id="13-servicios-adicionales-para-gestion-de-identidad-y-acceso">1.3 Servicios adicionales para gestión de identidad y acceso</h3>
+<p>Además de IAM, AWS ofrece servicios complementarios para proteger credenciales, federar usuarios y gestionar múltiples cuentas:</p>
+<ul>
+<li><strong>AWS Secrets Manager:</strong> Gestión centralizada de secretos como contraseñas, claves API y credenciales de bases de datos. Facilita la rotación automática y el acceso programático seguro.</li>
+<li><strong>AWS IAM Identity Center:</strong> Servicio de inicio de sesión único (SSO) para gestionar el acceso centralizado a múltiples cuentas y aplicaciones. Integra SAML y Active Directory.</li>
+<li><strong>AWS Security Token Service (STS):</strong> Proporciona credenciales temporales y de privilegio limitado para usuarios o servicios que requieren acceso puntual o federado.</li>
+<li><strong>AWS Directory Service:</strong> Permite usar Microsoft Active Directory gestionado en AWS para autenticación y autorización de recursos y cargas de trabajo.</li>
+<li><strong>AWS Organizations:</strong> Facilita la gestión centralizada de políticas y cuentas AWS, agrupando cuentas en unidades organizativas y aplicando políticas de control de servicios (SCPs).</li>
+</ul>
+<h3 id="14-aws-service-spotlight-amazon-cognito">1.4 AWS Service Spotlight: Amazon Cognito</h3>
+<p><strong>Amazon Cognito</strong> permite añadir registro, inicio de sesión y control de acceso a aplicaciones web y móviles. Soporta autenticación con proveedores externos (Google, Facebook, SAML) y gestiona la federación de identidades. Cognito maneja la emisión y validación de tokens, y permite mapear usuarios a roles con permisos diferenciados.</p>
+<p>Flujo típico:</p>
+<ol>
+<li>El usuario se autentica y obtiene tokens.</li>
+<li>Los tokens se intercambian por credenciales temporales de AWS.</li>
+<li>La aplicación accede a servicios AWS usando esas credenciales, sin exponer claves de largo plazo.</li>
+</ol>
+<hr />
+<h2 id="2-controles-detectivos-monitoreo-y-auditoria">2. Controles Detectivos, Monitoreo y Auditoría</h2>
+<p>Los controles detectivos son esenciales para identificar amenazas o incidentes de seguridad. AWS ofrece servicios para capturar, recolectar y analizar logs, así como para monitorear cambios y actividades en los recursos y responder ante eventos.</p>
+<h3 id="21-aws-cloudtrail">2.1 AWS CloudTrail</h3>
+<p>AWS CloudTrail registra todas las llamadas a la API realizadas en tu cuenta, ya sea desde la consola, CLI, SDKs o entre servicios. Esto permite rastrear cambios, solucionar problemas operativos y cumplir con normativas internas y externas.</p>
+<p><strong>Buenas prácticas:</strong></p>
+<ul>
+<li>Guarda los logs de CloudTrail en una cuenta separada y con acceso restringido para garantizar su integridad y facilitar auditorías forenses.</li>
+<li>Habilita la retención de logs y la integración con servicios de análisis.</li>
+</ul>
+<h3 id="22-monitoreo-y-notificaciones-amazon-cloudwatch">2.2 Monitoreo y notificaciones: Amazon CloudWatch</h3>
+<p>Amazon CloudWatch permite monitorear recursos, recolectar logs, crear alarmas y automatizar respuestas ante eventos. Puedes integrar CloudWatch con SNS para notificaciones y con Lambda para remediación automática. Así, es posible detectar cambios no deseados y activar flujos de trabajo de respuesta.</p>
+<p>Ejemplo: Configura una alarma para detectar un uso inusual de CPU en una instancia EC2 y notificar al equipo de operaciones.</p>
+<p><img alt="image" src="../images/monitoring-notifications.png" /></p>
+<h3 id="23-auditoria-en-aws">2.3 Auditoría en AWS</h3>
+<p>La consola de AWS y la CLI permiten a los auditores revisar configuraciones y actividades para cumplir con estándares regulatorios. Los servicios clave para auditoría incluyen:</p>
+<ul>
+<li>Amazon S3 (access logs)</li>
+<li>Elastic Load Balancing (ELB access logs)</li>
+<li>Amazon CloudWatch y CloudWatch Logs</li>
+<li>AWS CloudTrail</li>
+<li>Amazon VPC (VPC Flow Logs)</li>
+</ul>
+<p><strong>Ejemplos de logs auditables:</strong></p>
+<ul>
+<li>S3: Detalles de solicitudes, recursos y fechas</li>
+<li>ELB: IP del cliente, latencias, respuestas del servidor</li>
+<li>CloudWatch Logs: Monitoreo de sistemas y aplicaciones, búsqueda de patrones</li>
+<li>VPC Flow Logs: Información sobre tráfico de red, conectividad y seguridad</li>
+</ul>
+<h3 id="24-servicios-adicionales-para-controles-detectivos">2.4 Servicios adicionales para controles detectivos</h3>
+<ul>
+<li><strong>Amazon GuardDuty:</strong> Detección inteligente de amenazas mediante machine learning y feeds de inteligencia. Identifica actividades sospechosas, ataques y compromisos de cuentas.</li>
+<li><strong>AWS Trusted Advisor:</strong> Recomienda buenas prácticas, optimización de costos, rendimiento y seguridad. Notifica cambios y brechas detectadas.</li>
+<li><strong>Amazon VPC Flow Logs:</strong> Captura información sobre el tráfico de red para análisis de conectividad y seguridad.</li>
+<li><strong>AWS Security Hub:</strong> Consolida y prioriza alertas de seguridad de múltiples servicios y partners en un solo panel.</li>
+</ul>
+<h3 id="25-aws-config">2.5 AWS Config</h3>
+<p><strong>AWS Config</strong> es un servicio de monitoreo y evaluación continua de configuraciones. Permite ver el historial y estado actual de los recursos, detectar desviaciones de políticas y ejecutar reglas de cumplimiento (predefinidas o personalizadas). Es fundamental para auditoría, análisis forense y troubleshooting.</p>
+<hr />
+<h2 id="3-proteccion-de-la-infraestructura-y-aplicaciones">3. Protección de la Infraestructura y Aplicaciones</h2>
+<p>La protección de la infraestructura busca asegurar que los sistemas y recursos estén aislados y protegidos contra accesos no autorizados y vulnerabilidades, aplicando defensa en profundidad y automatización.</p>
+<h3 id="31-proteccion-mediante-aislamiento-amazon-vpc">3.1 Protección mediante aislamiento: Amazon VPC</h3>
+<p>Con Amazon VPC puedes aislar recursos en la nube, lanzándolos en una red virtual definida por ti. Esto permite crear una topología similar a la de un centro de datos tradicional, pero con la flexibilidad de la nube. Los principales mecanismos de defensa en profundidad en VPC incluyen:</p>
+<ul>
+<li><strong>Subnet routing:</strong> Agrupa instancias y recursos según necesidades de seguridad y operación, y define rutas de acceso.</li>
+<li><strong>Network ACLs:</strong> Listas de control de acceso a nivel de subred, que actúan como firewall para controlar tráfico entrante y saliente mediante reglas de ALLOW y DENY.</li>
+<li><strong>Security Groups:</strong> Firewalls virtuales a nivel de instancia, con reglas para tráfico entrante y saliente. Son stateful y permiten granularidad en la restricción de tráfico por IP, puerto y protocolo.</li>
+</ul>
+<p><strong>Ejemplo:</strong> Crea subredes públicas y privadas para separar recursos expuestos a Internet de los internos.</p>
+<h3 id="32-seguridad-de-aplicaciones-y-sistemas-operativos">3.2 Seguridad de aplicaciones y sistemas operativos</h3>
+<p>La seguridad de red y el aseguramiento de servidores requieren endurecimiento y parches constantes. <strong>AWS Systems Manager</strong> ayuda a automatizar tareas como:</p>
+<ul>
+<li>Inventario de sistemas y software</li>
+<li>Aplicación de parches</li>
+<li>Actualización de antivirus</li>
+<li>Configuración de sistemas y aplicaciones a escala</li>
+</ul>
+<p>Entre sus principales características están:</p>
+<ul>
+<li><strong>Automation:</strong> Automatiza tareas repetitivas de gestión y operación.</li>
+<li><strong>Inventory:</strong> Recopila datos de instancias y software instalado.</li>
+<li><strong>Patch manager:</strong> Despliega parches automáticamente en grupos de instancias.</li>
+<li><strong>Parameter store:</strong> Almacena datos de configuración y secretos de forma centralizada.</li>
+<li><strong>Run command:</strong> Permite ejecutar comandos remotos sin iniciar sesión en los servidores.</li>
+<li><strong>Session manager:</strong> Acceso shell seguro a instancias sin abrir puertos ni gestionar claves SSH.</li>
+</ul>
+<p>Automatizar estas tareas reduce errores, mejora la seguridad y evita intervenciones manuales en producción.</p>
+<h3 id="33-servicios-adicionales-para-proteccion-de-infraestructura">3.3 Servicios adicionales para protección de infraestructura</h3>
+<ul>
+<li><strong>AWS Firewall Manager:</strong> Permite gestionar reglas de AWS WAF de forma centralizada en cuentas y aplicaciones, asegurando cumplimiento desde el inicio.</li>
+<li><strong>AWS Direct Connect:</strong> Proporciona una conexión privada y dedicada entre tu entorno y AWS, mejorando seguridad, rendimiento y consistencia de red.</li>
+<li><strong>AWS CloudFormation:</strong> Automatiza la creación y despliegue de recursos AWS de forma consistente, incluyendo controles de seguridad y cumplimiento.</li>
+</ul>
+<h3 id="34-aws-service-spotlight-amazon-inspector">3.4 AWS Service Spotlight: Amazon Inspector</h3>
+<p><strong>Amazon Inspector</strong> es un servicio de evaluación automática de seguridad que analiza aplicaciones desplegadas en AWS en busca de vulnerabilidades y desviaciones de buenas prácticas. Sus hallazgos se agregan en la consola de Inspector, se integran con Security Hub y pueden activar flujos de trabajo automatizados.</p>
+<p>Inspector detecta y cierra automáticamente hallazgos cuando una vulnerabilidad es corregida, facilitando la gestión continua de la seguridad.</p>
+<hr />
+<h2 id="4-proteccion-de-datos-y-respuesta-a-incidentes">4. Protección de Datos y Respuesta a Incidentes</h2>
+<p>La protección de datos es fundamental en la nube y abarca tanto el cifrado en reposo como en tránsito, la gestión segura de claves, la clasificación de datos sensibles y la respuesta ante incidentes.</p>
+<h3 id="41-proteccion-de-datos-en-reposo">4.1 Protección de datos en reposo</h3>
+<p>El cifrado de datos en reposo implica proteger la información almacenada en servicios como S3, EBS, RDS y otros. Existen dos enfoques principales:</p>
+<ul>
+<li><strong>Cifrado del lado del cliente:</strong> El usuario cifra los datos antes de enviarlos a AWS.</li>
+<li><strong>Cifrado del lado del servidor:</strong> AWS cifra los datos automáticamente al recibirlos, gestionando las claves por ti o permitiendo que uses tus propias claves.</li>
+</ul>
+<p><strong>Recomendación:</strong> Usa cifrado por defecto en todos los buckets S3 y bases de datos.</p>
+<h3 id="42-proteccion-de-datos-en-transito">4.2 Protección de datos en tránsito</h3>
+<p>Los datos transmitidos entre sistemas deben protegerse para garantizar confidencialidad e integridad. AWS recomienda:</p>
+<ul>
+<li>Usar endpoints HTTPS (TLS) para comunicación cifrada con APIs y servicios.</li>
+<li>Generar, desplegar y gestionar certificados públicos y privados con AWS Certificate Manager.</li>
+<li>Utilizar IPsec con VPN para cifrar el tráfico entre tu red y AWS.</li>
+</ul>
+<h3 id="43-servicios-adicionales-para-proteccion-de-datos">4.3 Servicios adicionales para protección de datos</h3>
+<ul>
+<li><strong>AWS CloudHSM:</strong> Proporciona módulos de seguridad hardware (HSM) para operaciones criptográficas y almacenamiento seguro de claves.</li>
+<li><strong>Amazon S3 Glacier:</strong> Almacenamiento seguro y de bajo costo para datos poco usados, con controles de cumplimiento y vault lock.</li>
+<li><strong>AWS Certificate Manager (ACM):</strong> Gestiona certificados SSL/TLS públicos y privados para aplicaciones y dispositivos.</li>
+<li><strong>Amazon Macie:</strong> Usa machine learning para descubrir, clasificar y proteger datos sensibles (PII, propiedad intelectual) y generar alertas sobre accesos o movimientos sospechosos.</li>
+</ul>
+<h3 id="44-aws-service-spotlight-aws-key-management-service-kms">4.4 AWS Service Spotlight: AWS Key Management Service (KMS)</h3>
+<p><strong>AWS KMS</strong> es un servicio gestionado para crear y controlar claves de cifrado. Permite integrarse con otros servicios AWS y aplicaciones propias, facilitando la gestión segura de claves y cumpliendo requisitos de auditoría y normativas. KMS simplifica el ciclo de vida de las claves y su uso en cifrado de datos y logs.</p>
+<h3 id="45-respuesta-a-incidentes-en-aws">4.5 Respuesta a incidentes en AWS</h3>
+<p>La respuesta a incidentes en la nube es más ágil y automatizable que en entornos tradicionales. AWS permite:</p>
+<ul>
+<li>Automatizar tareas de respuesta mediante APIs (por ejemplo, aislar instancias cambiando security groups).</li>
+<li>Realizar forense digital capturando snapshots de volúmenes EBS y configuraciones de instancias.</li>
+<li>Crear entornos "clean room" con AWS CloudFormation para investigaciones seguras y controladas.</li>
+</ul>
+<h4 id="aws-service-spotlight-aws-step-functions">AWS Service Spotlight: AWS Step Functions</h4>
+<p><strong>AWS Step Functions</strong> permite coordinar múltiples servicios AWS en flujos de trabajo serverless para responder a incidentes. Por ejemplo, puedes automatizar la verificación, aislamiento, análisis forense y notificación de incidentes usando Lambda, CloudFormation y SNS.
+<img alt="image" src="../images/aws-step-functions-workflow.png" /></p>
+<hr />
+<hr />
+<h2 id="5-mitigacion-de-ddos-y-proteccion-en-el-edge">5. Mitigación de DDoS y Protección en el Edge</h2>
+<p>La protección contra ataques de denegación de servicio distribuido (DDoS) requiere una estrategia de defensa en profundidad y el uso de servicios automáticos y escalables en el edge de la red de AWS.</p>
+<h3 id="51-edge-locations-y-cloudfront">5.1 Edge Locations y CloudFront</h3>
+<p>AWS cuenta con más de 300 Edge locations y 13 caches regionales en más de 90 ciudades y 47 países. Estas ubicaciones físicas, distintas de las Availability Zones, permiten entregar contenido con baja latencia y absorber ataques DDoS lejos de tus aplicaciones y datos principales.</p>
+<p>Cuando el acceso a ciertos datos aumenta, estos se replican en edge locations cercanas a los usuarios, mejorando el rendimiento y permitiendo que amenazas sean contenidas en el edge.</p>
+<h3 id="52-servicios-de-proteccion-fuera-de-la-region">5.2 Servicios de protección fuera de la región</h3>
+<p>Los siguientes servicios AWS trabajan juntos para crear un perímetro de seguridad escalable y flexible contra distintos tipos de ataques DDoS:</p>
+<ul>
+<li><strong>Amazon Route 53:</strong> DNS altamente disponible y escalable, con funciones avanzadas (routing, health checks, Geo DNS) y presencia global para absorber grandes volúmenes de tráfico malicioso.</li>
+<li><strong>Amazon CloudFront:</strong> CDN que entrega contenido y protege contra ataques aceptando solo conexiones HTTP/HTTPS bien formadas.</li>
+<li><strong>AWS Shield:</strong> Protección DDoS gestionada, con detección siempre activa y mitigación automática en línea para minimizar caídas y latencia.</li>
+</ul>
+<h3 id="53-aws-service-spotlight-aws-waf">5.3 AWS Service Spotlight: AWS WAF</h3>
+<p><strong>AWS WAF</strong> es un firewall de aplicaciones web que protege contra exploits comunes, mejora la disponibilidad y permite definir reglas personalizadas para filtrar tráfico malicioso (por ejemplo, SQL injection, HTTP floods). Es fundamental usar WAF y Shield para proteger recursos expuestos a Internet.</p>
+<hr />
+<hr />
+<h2 id="6-aws-well-architected-tool-y-buenas-practicas">6. AWS Well-Architected Tool y Buenas Prácticas</h2>
+<p>La herramienta AWS Well-Architected Tool es un recurso de autoevaluación que ayuda a revisar cargas de trabajo en AWS bajo un proceso consistente, identificar riesgos y planificar mejoras. Evalúa tu arquitectura en base a seis pilares:</p>
+<ul>
+<li>Excelencia operativa</li>
+<li>Seguridad</li>
+<li>Fiabilidad</li>
+<li>Eficiencia de rendimiento</li>
+<li>Optimización de costos</li>
+<li>Sostenibilidad
+  <img alt="image" src="../images/aws-well-architected-tool.png" /></li>
+</ul>
+<p><strong>¿Cómo funciona?</strong></p>
+<ol>
+<li>Define la carga de trabajo a revisar.</li>
+<li>Responde preguntas sobre los seis pilares del Well-Architected Framework.</li>
+<li>Recibe un plan de mejoras y recomendaciones.</li>
+<li>Documenta y da seguimiento a los cambios.</li>
+<li>Analiza métricas y resultados para mejorar continuamente.</li>
+</ol>
+<p><strong>Buenas prácticas generales:</strong></p>
+<ul>
+<li>Mantente actualizado sobre nuevas amenazas y servicios de AWS.</li>
+<li>Realiza revisiones periódicas de seguridad y simulacros de incidentes.</li>
+<li>Aplica el principio de mejora continua en tus arquitecturas y procesos de seguridad.</li>
+</ul>
+<hr />
+<h2 id="recursos-adicionales-y-conclusion">Recursos adicionales y conclusión</h2>
+<ul>
+<li>Consulta la <a href="https://docs.aws.amazon.com/es_es/security/">documentación oficial de AWS</a> y los whitepapers de seguridad.</li>
+<li>Realiza laboratorios prácticos y simulaciones de incidentes.</li>
+<li>Participa en comunidades y foros de AWS para compartir experiencias y aprender de otros profesionales.</li>
+</ul>
+<p><strong>Conclusión:</strong></p>
+<p>La seguridad en la nube es un proceso continuo que requiere atención, automatización y mejora constante. AWS proporciona una amplia gama de servicios y herramientas para ayudarte a proteger tus recursos, pero la responsabilidad última recae en la correcta configuración y operación por parte del usuario. Evalúa regularmente tus controles, mantente informado y adopta una mentalidad proactiva para mantener tus cargas de trabajo seguras en la nube.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
