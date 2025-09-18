@@ -15,6 +15,61 @@ nav:
               - Introducción: cloud/aws/aws-security-fundamentals-second-edition/1-introduction.md
               - Seguridad de la Nube: cloud/aws/aws-security-fundamentals-second-edition/2-security-of-the-cloud.md
               - Seguridad en la Nube: cloud/aws/aws-security-fundamentals-second-edition/3-security-in-the-cloud.md
+          - Cloud Practitioner Essentials:
+              - 1. Introducción a la Nube:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/1-introduction-to-the-cloud/1-introduction.md
+                  - AWS Cloud: cloud/aws/aws-cloud-practitioner-essentials/1-introduction-to-the-cloud/2-the-aws-cloud.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/1-introduction-to-the-cloud/3-cloud-in-real-life.md
+              - 2. Cómputo en la Nube:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/2-compute-in-the-cloud/1-introduction.md
+                  - Cómputo en la Nube: cloud/aws/aws-cloud-practitioner-essentials/2-compute-in-the-cloud/2-compute-in-the-cloud.md
+                  - Auto Scaling y Load Balancers: cloud/aws/aws-cloud-practitioner-essentials/2-compute-in-the-cloud/3-auto-scaling-and-load-balancers.md
+              - 3. Explorando Servicios de Cómputo:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/3-exploring-compute-services/1-introduction.md
+                  - Soluciones Serverless y Contenedores: cloud/aws/aws-cloud-practitioner-essentials/3-exploring-compute-services/2-serverless-containers-solutions.md
+              - 4. Going Global:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/4-going-global/1-introduction.md
+                  - Infraestructura Global de AWS: cloud/aws/aws-cloud-practitioner-essentials/4-going-global/2-aws-global-infrastructure.md
+              - 5. Redes:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/5-networking/1-introduction.md
+                  - Componentes de Red: cloud/aws/aws-cloud-practitioner-essentials/5-networking/2-network-components-in-the-aws-cloud.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/5-networking/3-cloud-in-real-life.md
+              - 6. Almacenamiento:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/6-storage/1-introduction.md
+                  - Almacenamiento en Bloques: cloud/aws/aws-cloud-practitioner-essentials/6-storage/2-block-storage.md
+                  - Almacenamiento de Objetos: cloud/aws/aws-cloud-practitioner-essentials/6-storage/3-object-storage.md
+                  - Almacenamiento de Archivos: cloud/aws/aws-cloud-practitioner-essentials/6-storage/4-file-storage.md
+                  - Soluciones Adicionales: cloud/aws/aws-cloud-practitioner-essentials/6-storage/5-additional-storage-solutions.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/6-storage/6-cloud-in-real-life.md
+              - 7. Bases de Datos:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/7-databases/1-introduction.md
+                  - Servicios de Base de Datos AWS: cloud/aws/aws-cloud-practitioner-essentials/7-databases/2-aws-database-services.md
+              - 8. IA, ML y Analítica de Datos:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/8-ai-ml-and-data-analytics/1-introduction.md
+                  - IA y ML en AWS: cloud/aws/aws-cloud-practitioner-essentials/8-ai-ml-and-data-analytics/2-ai-ml-on-aws.md
+                  - Analítica de Datos en AWS: cloud/aws/aws-cloud-practitioner-essentials/8-ai-ml-and-data-analytics/3-data-analytics-on-aws.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/8-ai-ml-and-data-analytics/4-cloud-in-real-life.md
+              - 9. Seguridad:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/9-security/1-introduction.md
+                  - Controles de Seguridad AWS: cloud/aws/aws-cloud-practitioner-essentials/9-security/2-aws-security-controls.md
+              - 10. Monitoreo, Cumplimiento y Gobernanza:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/10-monitoring-compliance-and-governance-in-the-aws-cloud/1-introduction.md
+                  - Servicios de Monitoreo y Cumplimiento: cloud/aws/aws-cloud-practitioner-essentials/10-monitoring-compliance-and-governance-in-the-aws-cloud/2-monitoring-and-compliance-services.md
+              - 11. Precios y Soporte:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/11-pricing-and-support/1-introduction.md
+                  - Conceptos de Precios: cloud/aws/aws-cloud-practitioner-essentials/11-pricing-and-support/2-aws-pricing.md
+                  - Soporte en AWS: cloud/aws/aws-cloud-practitioner-essentials/11-pricing-and-support/3-aws-support.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/11-pricing-and-support/4-cloud-in-real-life.md
+              - 12. Migración a la Nube:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/12-migrating-to-the-aws-cloud/1-introduction.md
+                  - Frameworks y Estrategias: cloud/aws/aws-cloud-practitioner-essentials/12-migrating-to-the-aws-cloud/2-migration-frameworks-and-strategies.md
+                  - Servicios y Herramientas: cloud/aws/aws-cloud-practitioner-essentials/12-migrating-to-the-aws-cloud/3-migration-services-and-tools.md
+                  - Migración de Bases de Datos: cloud/aws/aws-cloud-practitioner-essentials/12-migrating-to-the-aws-cloud/4-migrating-databases-to-aws-cloud.md
+                  - Migración de Datos: cloud/aws/aws-cloud-practitioner-essentials/12-migrating-to-the-aws-cloud/5-migrating-data-to-aws-cloud.md
+              - 13. Soluciones Bien Arquitectadas:
+                  - Introducción: cloud/aws/aws-cloud-practitioner-essentials/13-well-architected-solutions/1-introduction.md
+                  - Servicios Especializados y Framework: cloud/aws/aws-cloud-practitioner-essentials/13-well-architected-solutions/2-aws-specialized-services-and-solutions.md
+                  - Cloud en la Vida Real: cloud/aws/aws-cloud-practitioner-essentials/13-well-architected-solutions/3-cloud-in-real-life.md
   - Lenguajes:
       - Command Line:
           - Introducción: lenguages/commandline/1-introduction.md
